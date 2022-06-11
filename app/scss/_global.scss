@@ -1,0 +1,13 @@
+body {
+    @extend %opensans-600;
+    color: $dark-900;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: $white;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
