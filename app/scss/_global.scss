@@ -11,6 +11,7 @@ body {
     font-size: 14px;
     line-height: 1.4;
     background-color: $white;
+    overflow-x: hidden;
 }
 
 .main {
@@ -46,5 +47,5 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-bottom: 21px;
+    margin-bottom: 30px;
 }

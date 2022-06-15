@@ -69,17 +69,27 @@
                         <ul class="usernav__menu">
                             <li class="usernav__item">
                                 <a class="usernav__link usernav__link--user" href="#"
-                                    style="background-image: url(images/icons/user.svg);"></a>
+                                    style="background-image: url(images/icons/user.svg);">
+                                    <span class="sr-only">
+                                        Вход для пользователя
+                                    </span>
+                                </a>
                             </li>
                             <li class="usernav__item">
                                 <a class="usernav__link usernav__link--favorite" href="#"
                                     style="background-image: url(images/icons/favorite.svg);">
+                                    <span class="sr-only">
+                                        Избранное
+                                    </span>
                                     <span class="usernav__num">12</span>
                                 </a>
                             </li>
                             <li class="usernav__item">
                                 <a class="usernav__link usernav__link--cart" href="#"
                                     style="background-image: url(images/icons/cart.svg);">
+                                    <span class="sr-only">
+                                        Корзина
+                                    </span>
                                     <span class="usernav__num">12</span>
                                 </a>
                             </li>
@@ -91,8 +101,8 @@
     </header>
 
     <main class="main">
-        <section class="slider__top">
-            <ul class="slider">
+        <section class="slider">
+            <ul class="slider__items">
                 <li class="slider__item" style="background-image: url('images/slied-1.jpg');">
                     <div class="container">
                         <div class="slider__content">
@@ -195,28 +205,28 @@
                         </button>
                     </li>
                     <li class="topproducts__nav-item">
-                        <button class="products__btn" data-filter="all" type="button">
+                        <button class="products__btn" data-filter=".fruits" type="button">
                             Фрукты
                         </button>
                     </li>
                     <li class="topproducts__nav-item">
-                        <button class="products__btn" data-filter="all" type="button">
+                        <button class="products__btn" data-filter=".vegetables" type="button">
                             ОВОЩИ
                         </button>
                     </li>
                     <li class="topproducts__nav-item">
-                        <button class="products__btn" data-filter="all" type="button">
+                        <button class="products__btn" data-filter=".drinks" type="button">
                             Напитки
                         </button>
                     </li>
                     <li class="topproducts__nav-item">
-                        <button class="products__btn" data-filter="all" type="button">
+                        <button class="products__btn" data-filter=".grocery" type="button">
                             БАКАЛЕЯ
                         </button>
                     </li>
                 </ul>
                 <ul class="products__items">
-                    <li class="products__item">
+                    <li class="products__item mix fruits">
                         <div class="products__item-top">
                             <div class="products__badges">
                                 <span class="badge badge--new">НОВИНКА</span>
@@ -247,7 +257,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix fruits">
                         <div class="products__item-top">
                             <div class="products__badges">
                               
@@ -275,7 +285,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix fruits">
                         <div class="products__item-top">
                             <div class="products__badges">
                                 <span class="badge badge--top">хит</span>
@@ -293,7 +303,7 @@
                                 </h4>
                                 <div class="products__bottom">
                                     <div class="products__bill">
-                                     
+
                                         <span class="products__price">
                                             1019 ₽  
                                         </span>
@@ -303,7 +313,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix grocery">
                         <div class="products__item-top">
                             <div class="products__badges">
                                 
@@ -331,7 +341,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix vegetables">
                         <div class="products__item-top">
                             <div class="products__badges">
                                 <span class="badge badge--top">хит</span>
@@ -359,10 +369,10 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix drinks">
                         <div class="products__item-top">
                             <div class="products__badges">
-                                <span class="badge badge--sale">-50%</span>
+                                <span class="badge badge--sale">-30%</span>
                             </div>
                             <button class="products__favorite" type="button">
                             </button>
@@ -389,7 +399,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix grocery">
                         <div class="products__item-top">
                             <div class="products__badges">
                                 <span class="badge badge--new">новинка</span>
@@ -417,7 +427,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="products__item">
+                    <li class="products__item mix vegetables">
                         <div class="products__item-top">
                             <div class="products__badges">
                                 <span class="badge badge--new">новинка</span>
@@ -435,6 +445,7 @@
                                 </h4>
                                 <div class="products__bottom">
                                     <div class="products__bill">
+
                                         <span class="products__price">
                                             349 ₽ 
                                         </span>
@@ -445,7 +456,7 @@
                         </div>
                     </li>
                 </ul>
-                <button class="seemore__btn" type="button">Показать еще</button>
+                <button class="loadmore__btn" type="button">Показать еще</button>
             </div>
         </section>
     </main>
@@ -517,24 +528,21 @@
                     <span class="footer__address">Санкт-Петербург, ул. Ленина, 1</span>
                     <ul class="social">
                         <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/facebook.svg');"
-                                target="_blank">
+                            <a class="social__link" href="#" style="background-image: url('images/icons/facebook.svg');" target="_blank">
                                 <span class="sr-only">
                                     facebook
                                 </span>
                             </a>
                         </li>
                         <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/youtube.svg');"
-                                target="_blank">
+                            <a class="social__link" href="#" style="background-image: url('images/icons/youtube.svg');" target="_blank">
                                 <span class="sr-only">
                                     youtube
                                 </span>
                             </a>
                         </li>
                         <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/telegram.svg');"
-                                target="_blank">
+                            <a class="social__link" href="#" style="background-image: url('images/icons/telegram.svg');" target="_blank">
                                 <span class="sr-only">
                                     telegram
                                 </span>

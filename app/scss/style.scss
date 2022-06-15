@@ -19,7 +19,7 @@
     }
 
     &__item-bloc:not(:last-child) {
-        margin-right: 48px;
+        margin-right: 40px;
     }
 
     &__item-bloc:first-child {
@@ -31,7 +31,7 @@
     }
 
     &__item:not(:last-child) {
-        margin-right: 24px;
+        margin-right: 20px;
     }
 
     &__item-bloc,
@@ -56,6 +56,25 @@
         }
     }
 
+    &__link-item,    
+    &__link {
+        border: 3px solid transparent;
+        transition: opacity 0.3s, border-raduus 0.3s, border 0.3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            border-radius: 6px;
+            border: 3px solid $white;
+        }
+
+        &:active {                     
+            border: 3px solid $green-200;
+        }
+    }
+
     &__link-item--address::before {
         background-image: url(../images/icons/address.svg);
         width: 32px;
@@ -75,19 +94,24 @@
 
     &__bottom {
         background-color: $green-900;
-        padding: 31px 0;
+        padding: 25px 0;
+    }
+
+    &__search {
+        margin-right: 25px;             
     }
 
     &__input-search {
-        max-width: 418px;        
+        width: 418px;              
         background-color: $white;
         padding: 15px 51px;
         border-radius: 6px 0 0 6px;
-        margin-right: -7px;       
+        margin-right: -7px;        
         background-image: url(../images/icons/search.svg);
         background-repeat: no-repeat;
         background-size: 20px 20px;
-        background-position: 13px center;       
+        background-position: 13px center;  
+                 
 
         &::placeholder {
             color: $dark-800;
@@ -105,6 +129,13 @@
     justify-content: center;
     align-items: center;
     padding: 0 23px 0 18px;
+    transition: background-color 0.3s, border-radius 0.3s;
+    margin-right: 15px; 
+
+    &:hover {
+        background-color: $green-200;
+        border-radius: 6px 6px 0 0;
+    }
 
     &__icon {
         background-color: $green-900;
@@ -133,8 +164,10 @@
 
     &__menu {
         position: relative;
-        padding: 0 19px 0 23px;
+        padding: 0 19px 0 16px;
         color: $green-900;
+        letter-spacing: 0.03em;
+        transition: transform 0.3s;                      
 
         &::after {
             content: '';
@@ -145,8 +178,12 @@
             background-size: cover;
             height: 4px;
             width: 7px;
-            right: 0;
+            right: -7px;
             top: 7px;
+        }
+
+        &:hover::after {
+            transform: rotate(180deg);
         }
     }
 }
@@ -158,6 +195,19 @@
     padding: 15px 52px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    transition: background 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        background: rgba(49, 53, 43, 0.85);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+    }
+
+    &:active {
+        box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
 
 .usernav {
@@ -166,32 +216,65 @@
         justify-content: space-around;
         align-items: center;
     }
-   
+
     &__link {  
         display: block;      
-        background-position: center center;
-        background-size: cover;
+        background-position: center center;      
         background-repeat: no-repeat;
         position: relative;
+        width: 50px;
+        height: 50px;  
+        transition: border-radius 0.3s, background 0.3s, box-shadow 0.3s;
+        
+        &:hover,
+        &:focus,
+        &:active {            
+            border-radius: 3px;     
+            background: rgba(255, 255, 255, 0.1);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+         &:focus {
+            box-shadow: inset 0 0 0 3px $green-100;                      
+        }
+       
+        &:active {           
+            background: rgba(255, 255, 255, 0.5);
+        }
+       
     }
 
-    &__link--user {
-        width: 25px;
-        height: 32px;
+    &__link--user {       
+        background-size: 25px 32px;
+
+        &:active {          
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+       
     }
 
-    &__link--favorite {
-        width: 32px;
-        height: 29px;
+    &__link--favorite {      
+        background-size: 32px 29px;
+
+        &:active {          
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     }
 
     &__link--cart {
-        width: 32px;
-        height: 30px;
+        background-size: 32px 31px;
+
+        &:active {          
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     }
 
     &__item:not(:last-child) {
-        margin-right: 32px;
+        margin-right: 12px;
     }
 
     &__num {
@@ -202,8 +285,8 @@
         border-radius: 50%;
         background-color: $white;
         color: $red-900;
-        top: -9px;
-        left: -7px;
+        top: 3px;
+        left: 3px;
         letter-spacing: 0.03em;        
         font-size: 10px;
         text-align: center;        
@@ -214,17 +297,18 @@
     @extend %opensans-400;    
     background-color: $dark-800;
     color: $white;
-    padding: 36px 0 29px;
+    padding: 30px 0 29px;
     margin-bottom: 0;
 
     &__content {
         display: flex;
         justify-content: space-between;
-        padding: 30px 0 42px;
+        padding: 30px 0;
     }    
 
     &__item {
         line-height: 1;
+        margin-right: 60px;
     }
 
     &__input {
@@ -236,6 +320,7 @@
         padding: 12px;
         border-radius: 6px 0 0 6px;
         margin-right: -5px;
+        max-width: 180px;
 
         &::placeholder {
             color: #4F4F4F;
@@ -318,15 +403,44 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+        transition: opacity 0.3s, background 0.3s, box-shadow 0.3s, border-radius 0.3s, fill 0.3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            background: rgba(255, 255, 255, 0.0001);
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+
+        &:active {
+            fill: $green-200;
+        }
     }
 }
 
 .btn__email {
     @extend %opensans-700;
     background-color: $green-900;
-    padding: 15px 17px;
+    padding: 17px 17px 15px;
     border-radius: 0 6px 6px 0;
     text-transform: uppercase;
+    font-size: 12px;   
+    transition: background-color 0.3s, box-shadow 0.3s;    
+
+    &:hover {
+        background-color: #4D800C;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px $green-200;
+    }
+
+    &:active {
+        box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
 
 .slider {
@@ -346,8 +460,8 @@
         height: 315px;
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.8);
-        padding: 24px 505px 24px 24px;
-        height: 341px;
+        padding: 24px;
+        
     }
 
     &__title {
@@ -355,8 +469,9 @@
         text-transform: uppercase;
         color: $dark-500;
         font-size: 60px;
-        line-height: 1.3;  
-        padding-bottom: 12px;      
+        line-height: 1.3; 
+        max-width: 761px; 
+        // padding-bottom: 12px;      
     }
 
     &__discound {
@@ -371,14 +486,22 @@
 }
 
 .btn__buynow {
-    @extend %opensans-400;
-    font-size: 18px;
-    line-height: 1.3;
-    border-radius: 6px;
+    @extend %btn;   
     color: $white;
-    background-color: $green-900;
-    padding: 12px 24px;
-    letter-spacing: 0.03em;           
+    background-color: $green-900;  
+    transition: background-color 0.3s, box-shadow 0.3s;
+    
+    &:hover {
+        background-color: #4D810C;  
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px $green-200;
+    }
+
+    &:active {
+        box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
 
 .slick-prev,
@@ -390,6 +513,20 @@
     height: 60px;
     top: 50%;
     transform: translateY(-50%);
+    transition: background 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+    &:disabled {
+        background: rgba(255, 255, 255, 0.8);       
+    }
+
+    &:hover {
+        background-color: $green-200;        
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);       
+    }
+  
 }
 
 .slick-prev {
@@ -403,7 +540,15 @@
 
 .slick-prev__img,
 .slick-next__img {
-    margin: 0 auto;
+    margin: 0 auto;    
+    object-fit: cover;  
+    transition: filter 0.3s;  
+
+    &:hover,
+    &:active {
+        filter: invert(76%) sepia(62%) saturate(6102%) hue-rotate(52deg) brightness(96%) contrast(89%);
+    }
+
 }
 
 .benefits {
@@ -419,8 +564,8 @@
     }
 
     &__item {
-        padding: 49px 0 29px 74px;
-        position: relative;
+        padding: 49px 0 35px 74px;
+        position: relative;        
 
         &::before {
             position: absolute;
@@ -433,10 +578,10 @@
             left: 0;
         }          
         
-    }
+    }    
 
     &__item--scooter::before {
-        background-image: url(../images/icons/scooter.svg);
+        background-image: url(../images/icons/scooter.svg);        
     }
 
     &__item--return::before {
@@ -454,9 +599,10 @@
 
     &__text {
         @extend %opensans-400;
-        max-width: 190px;
+        width: 190px;
     }
 }
+
 
 .products {
     &__nav {
@@ -472,8 +618,17 @@
         font-size: 15px;
         color: $dark-500;
         border-bottom: 3px solid transparent;
+        transition: color 0.3s, border-radius 0.3s, border-bottom 0.3s, box-shadow 0.3s;
 
         &:hover {
+            color: $green-900;
+        }
+
+        &:focus {        
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+        &:active {
             border-bottom: 3px solid $green-200;
         }
     }
@@ -488,21 +643,26 @@
     &__item {
         border: 1px solid rgba(17, 17, 17, 0.2);
         border-radius: 6px;
-        height: 409px;       
-        
+        height: 409px;
+        max-width: 300px;
+
+        &:hover {
+            border: 1px solid $green-900;
+        }
     }
 
     &__item-top {
         display: flex;
         justify-content: space-between;
         padding: 12px;
-        height: 68px;        
+        height: 74px;             
     }  
 
     &__favorite {
         position: relative;
-        height: 28px;
-        width: 32px;
+        width: 44px;
+        height: 44px; 
+        transition: opacity 0.3s, box-shadow 0.3s, border-radius 0.3s;
 
         &::before {
             position: absolute;
@@ -514,8 +674,23 @@
             filter: invert(18%) sepia(3%) saturate(32%) hue-rotate(314deg) brightness(97%) contrast(87%);
             width: 32px;
             height: 28px;
-            right: 0;
-            top: 5px;
+            right: 50%;
+            top: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        &:hover,
+        &:active {
+            filter: invert(20%) sepia(28%) saturate(6583%) hue-rotate(360deg) brightness(107%) contrast(105%);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+
+        &:active {
+            opacity: 0.5;
         }
   
     }  
@@ -523,7 +698,8 @@
     &__img {
         max-height: 225px;
         max-width: 300px;
-        object-fit: cover;        
+        object-fit: cover;
+    
     } 
     
     &__discription,
@@ -538,7 +714,7 @@
     
     &__discription {
         flex-direction: column;
-        height: 105px;
+        height: 100px;
         padding: 0 18px;        
     }
 
@@ -556,7 +732,7 @@
         display: block;       
         color: $silver-600;
         margin-bottom: 3px;
-        position: relative;
+        position: relative;        
 
         &::before {
             position: absolute;
@@ -574,6 +750,49 @@
     &__price {     
         color: $dark-500; 
     }
+
+    &__link {
+        position: relative;
+        transition: opacity 0.3s, top 0.3s, right 0.3s, transforme 0.3s; 
+        
+        &::before {
+            position: absolute;
+            background-color: #000000;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            right: 0; 
+        }
+
+        &:hover::before {
+            opacity: 0.1;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url(../images/icons/search-green.svg);
+            width: 48px;
+            height: 48px;
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 50%;
+            background-color: $white;
+            right: -2000px;
+        }
+
+        &:hover::after {
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+    }
+}
+
+.mixitup-control-active {
+    border-bottom: 3px solid $green-200;
 }
 
 .topproducts {
@@ -582,18 +801,8 @@
     }
 }
 
-
 .badge {
-    @extend %opensans-700;
-    display: block;    
-    font-size: 10px;
-    line-height: 1;
-    color: $white;
-    letter-spacing: 0.03em;
-    padding: 3px 6px;
-    border-radius: 6px;  
-    text-transform: uppercase;  
-    margin-bottom: 6px;
+    @extend %badge;    
 }
 
 .badge--new {
@@ -616,6 +825,19 @@
     height: 32px;
     position: relative;
     border-radius: 3px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        background-color: #4D800C;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px $green-200;
+    }
+
+    &:active {
+        box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
 
     &::before {
         position: absolute;
@@ -632,17 +854,26 @@
     }
 }
 
-.seemore__btn {
-    @extend %opensans-400;
-    padding: 12px 24px;
+.loadmore__btn {
+    @extend %btn;    
     color: $green-900;
     background-color: $white;
-    border: 1px solid $green-900;
-    border-radius: 6px;
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 1.3; 
-    display: block;   
+    border: 1px solid $green-900;    
+    margin: 0 auto;  
+    display: block; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+    
+    &:hover {
+        background-color: $green-100;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px rgba(99, 166, 14, 0.5);
+    }
+
+    &:active {
+        box-shadow: inset 0 10px 4px rgba(0, 0, 0, 0.1);
+    }
 }
 
 @import 'media';
