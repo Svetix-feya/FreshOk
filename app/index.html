@@ -72,26 +72,35 @@
                     <div class="usernav">
                         <ul class="usernav__menu">
                             <li class="usernav__item">
-                                <a class="usernav__link usernav__link--user" href="#">
+                                <a class="usernav__link" href="#">
                                     <span class="sr-only">
                                         Вход для пользователя
                                     </span>
+                                    <svg class="usernav__icon usernav__icon--user">
+                                        <use xlink:href="images/sprite.svg#user"></use>
+                                    </svg>
                                 </a>
                             </li>
                             <li class="usernav__item">
-                                <a class="usernav__link usernav__link--favorite" href="#">
+                                <a class="usernav__link" href="#">
                                     <span class="sr-only">
                                         Избранное
                                     </span>
                                     <span class="usernav__num">12</span>
-                                </a>
+                                    <svg class="usernav__icon usernav__icon--favorite">
+                                        <use xlink:href="images/sprite.svg#favorite"></use>
+                                    </svg>
+                                </a>                                
                             </li>
                             <li class="usernav__item">
-                                <a class="usernav__link usernav__link--cart" href="#">
+                                <a class="usernav__link" href="#">
                                     <span class="sr-only">
                                         Корзина
                                     </span>
                                     <span class="usernav__num">12</span>
+                                    <svg class="usernav__icon usernav__icon--cart">
+                                        <use xlink:href="images/sprite.svg#cart"></use>
+                                    </svg>
                                 </a>
                             </li>
                         </ul>
@@ -250,10 +259,13 @@
                         <button class="product-cart__favorite">
                         </button>
                     </div>
-                    <div class="products-cart__content">
+                    <div class="product-cart__content">
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="298"
                                 height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -295,6 +307,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/lemon.jpg" alt="Лимон" width="298"
                                 height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -329,6 +344,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/dragon-fruit.jpg"
                                 alt="Питахайя красная с белой мякотью" width="298" height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -361,6 +379,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/ketchup.jpg" alt="Кетчуп" width="298"
                                 height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -395,6 +416,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/carrot.jpg" alt="Морковь" width="298"
                                 height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -429,6 +453,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/juice.jpg" alt="Напиток сокосодержащий"
                                 width="298" height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -469,6 +496,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/coffee.jpg" alt="Кофе" width="298"
                                 height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -503,6 +533,9 @@
                         <a class="product-cart__link" href="#">
                             <img class="product-cart__img" src="images/catalog/paprik.jpg" alt="Перец оранжевый"
                                 width="298" height="225">
+                            <svg class="product-cart__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
                         </a>
                         <div class="product-cart__discription">
                             <h3 class="product-cart__title">
@@ -1052,7 +1085,92 @@
     </div>
 </section>
 
-        
+        <section class="news section">
+    <div class="container">
+        <h2 class="sr-only">
+            Партнеры
+        </h2>
+        <ul class="news__partners">
+            <li class="news__partners-item">
+                <a class="news__partners-link" href="#">
+                    <img class="news__partners-pic" src="images/partners/sprite.svg" alt="Спрайт">
+                </a>
+            </li>
+            <li class="news__partners-item">
+                <a class="news__partners-link" href="#">
+                    <img class="news__partners-pic" src="images/partners/dr-pepper.svg" alt="Доктор Пеппер">
+                </a>
+            </li>
+            <li class="news__partners-item">
+                <a class="news__partners-link" href="#">
+                    <img class="news__partners-pic" src="images/partners/coca-cola.svg" alt="Кока-Кола">
+                </a>
+            </li>
+            <li class="news__partners-item"><a class="news__partners-link" href="#">
+                    <img class="news__partners-pic" src="images/partners/pepsi.svg" alt="Пепси">
+                </a>
+            </li>
+            <li class="news__partners-item"><a class="news__partners-link" href="#">
+                    <img class="news__partners-pic" src="images/partners/redbull.svg" alt="Рэд Булл">
+                </a>
+            </li>
+            <li class="news__partners-item"><a class="news__partners-link" href="#">
+                    <img class="news__partners-pic" src="images/partners/fanta.svg" alt="Фанта">
+                </a>
+            </li>
+        </ul>
+        <div class="news__title">
+            <h2 class="title">
+                наши новости
+            </h2>
+            <a class="news__link" href="#">
+                все новости
+            </a>
+        </div>
+        <ul class="news__items">
+            <li class="news__item">
+                <a class="news__item-link" href="#">
+                    <span class="news__date">
+                        июль<span class="news__num">15</span>
+                    </span>
+                    <div class="news__bg" style="background-image: url('images/news/1.jpg');"></div>
+                    <div class="news__text">
+                        <p>
+                            Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК. Торопись, пока всё
+                            не разобрали!
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li class="news__item">
+                <a class="news__item-link" href="#">
+                    <span class="news__date">
+                        май<span class="news__num">07</span>
+                    </span>
+                    <div class="news__bg" style="background-image: url('images/news/2.jpg');"></div>
+                    <div class="news__text">
+                        <p>
+                            Шикарнейший выбор манго в нашем онлайн-маркете
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li class="news__item">
+                <a class="news__item-link" href="#">
+                    <span class="news__date">
+                        февраль<span class="news__num">20</span>
+                    </span>
+                    <div class="news__bg" style="background-image: url('images/news/3.jpg');"></div>
+                    <div class="news__text">
+                        <p>
+                            Всё, что вы хотели знать о папайя
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
 
     </main>
 
