@@ -1,71 +1,9 @@
-@font-face {
-    font-family: 'Open Sans';    
-    src: url('../fonts/OpenSans-Light.woff2') format('woff2'),
-         url('../fonts/OpenSans-Light.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
-    font-style: normal;
-}
+@include font-face(Open Sans, OpenSans-Light, 300);
+@include font-face(Open Sans, OpenSans-Regular, 400);
+@include font-face(Open Sans, OpenSans-SemiBold, 600);
+@include font-face(Open Sans, OpenSans-Bold, 700);
 
-@font-face {
-    font-family: 'Open Sans';    
-    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-         url('../fonts/OpenSans-Regular.woff') format('woff');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Open Sans';    
-    src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2'),
-         url('../fonts/OpenSans-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Open Sans';    
-    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-         url('../fonts/OpenSans-Bold.woff') format('woff');
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Ruda';    
-    src: url('../fonts/Ruda-Regular.woff2') format('woff2'),
-         url('../fonts/Ruda-Regular.woff') format('woff');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Ruda';    
-    src: url('../fonts/Ruda-SemiBold.woff2') format('woff2'),
-         url('../fonts/Ruda-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Ruda';    
-    src: url('../fonts/Ruda-Bold.woff2') format('woff2'),
-         url('../fonts/Ruda-Bold.woff') format('woff');
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Ruda';    
-    src: url('../fonts/Ruda-Black.woff2') format('woff2'),
-         url('../fonts/Ruda-Black.woff') format('woff');
-    font-weight: 900;
-    font-display: swap;
-    font-style: normal;
-}
+@include font-face(Ruda, Ruda-Regular, 400);
+@include font-face(Ruda, Ruda-SemiBold, 600);
+@include font-face(Ruda, Ruda-Bold, 700);
+@include font-face(Ruda, Ruda-Black, 900);
