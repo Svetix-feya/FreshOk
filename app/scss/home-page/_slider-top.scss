@@ -1,0 +1,124 @@
+.slider-top {
+    max-height: 590px;
+    height: 100%;
+
+    &__item {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 142px 0;
+
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        border-radius: 4px;
+        background-color: rgba($white, 0.8);
+        padding: 24px;        
+    }
+
+    &__title {
+        font-family: $ruda;
+        font-weight: $fw-900;
+        text-transform: uppercase;
+        color: $dark-500;
+        font-size: 60px;
+        line-height: 1.3;
+        max-width: 761px;
+        @include line-clamp(3);
+    }
+
+    &__subtitle {
+        color: $red-900;
+    }
+
+    &__text {
+        font-size: 16px;
+        color: $dark-500;
+        margin-bottom: 32px;
+        font-weight: $fw-400;
+        @include line-clamp(3);
+    }
+
+    &__btn {
+        line-height: 1.3;
+        color: $white;
+        background-color: $green-900;
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        &:focus {
+            box-shadow: 0 0 0 4px $green-200;
+        }
+
+        &:hover {
+            background-color: $green-2;
+        }
+
+        &:active {
+            box-shadow: inset 0 4px 4px rgba($black, 0.25);
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        background-color: rgba($white, 0.8);
+        border-radius: 6px;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        &:focus {
+            box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
+        }
+
+        &:hover {
+            background-color: $green-200;
+        }       
+
+    }
+
+    .slick-prev {
+        left: 60px;
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: 60px;
+    }
+
+    .slick-prev__img,
+    .slick-next__img {
+        margin: 0 auto;
+        object-fit: cover;
+        transition: filter 0.3s;
+        width: 18px;
+        height: 32px;
+        @include recolor($dark-500);
+
+        &:hover,
+        &:active {
+            @include recolor($green-900);
+        }
+
+    }
+
+    .slick-disabled {        
+
+        .slick-prev__img,
+        .slick-next__img {
+            @include recolor($silver-600);
+        }
+
+        &:hover {
+            background-color: rgba($white, 0.8);
+        }
+
+    }
+}

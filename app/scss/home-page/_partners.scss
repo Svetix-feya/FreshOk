@@ -1,0 +1,45 @@
+.partners {
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 72px 50px 0;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center; //без этого не работает слайдер //        
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 140px; //не знаю как у последнего элемента убрать отступ//
+        }
+    }
+
+    &__link {
+        opacity: 0.5;
+        display: block;
+        max-width: 80px;
+        width: 100%;
+        border: 3px solid transparent;
+        transition: border-radius 0.3s, border-color 0.3s, opacity 0.3s;
+
+        &:focus,
+        &:active {
+            border-radius: 6px;
+            border-color: $green-200;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__logo {
+        object-fit: cover;
+        max-width: 80px;
+    }
+
+}

@@ -54,7 +54,7 @@
         <div class="header__bottom">
             <div class="container">
                 <div class="header__wrapper">
-                    <a class="logo" href="#">
+                    <a class="logo logo--header" href="#">
                         <img class="logo__img" src="images/logo.svg" alt="Логотип" width="200" height="60">
                     </a>
                     <button class="catalog" type="button">
@@ -212,7 +212,7 @@
     </div>
 </section>
 
-        <section class="topproducts section">
+        <section class="topproducts section" data-ref="top-products">
     <div class="container">
         <h2 class="title">
             Топовые товары
@@ -612,7 +612,7 @@
     </div>
 </section>
 
-        <section class="stocks section">
+        <section class="stocks section" data-ref="stocks">
     <div class="container">
         <h2 class="title">
             Акции
@@ -661,7 +661,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     1999 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -717,7 +717,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     877 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -772,7 +772,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     600 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -827,7 +827,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     960 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -882,7 +882,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     1199 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -938,7 +938,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     230 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -994,7 +994,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     5990 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -1050,7 +1050,7 @@
                                     <div class="product-cart__bottom">
                                         <ul class="product-cart__cost product-cart__cost--stock">
                                             <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old-stock">
+                                                <span class="product-cart__price product-cart__price--old">
                                                     599 <span class="product-cart__rub">₽</span>
                                                 </span>
                                             </li>
@@ -1085,40 +1085,78 @@
     </div>
 </section>
 
-        <section class="news section">
+        <section class="partners">
     <div class="container">
         <h2 class="sr-only">
             Партнеры
         </h2>
-        <ul class="news__partners">
-            <li class="news__partners-item">
-                <a class="news__partners-link" href="#">
-                    <img class="news__partners-pic" src="images/partners/sprite.svg" alt="Спрайт">
+        <ul class="partners__items">
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/sprite.svg" alt="Спрайт" width="80" height="34">
                 </a>
             </li>
-            <li class="news__partners-item">
-                <a class="news__partners-link" href="#">
-                    <img class="news__partners-pic" src="images/partners/dr-pepper.svg" alt="Доктор Пеппер">
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/dr-pepper.svg" alt="Доктор Пеппер">
                 </a>
             </li>
-            <li class="news__partners-item">
-                <a class="news__partners-link" href="#">
-                    <img class="news__partners-pic" src="images/partners/coca-cola.svg" alt="Кока-Кола">
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/coca-cola.svg" alt="Кока-Кола">
                 </a>
             </li>
-            <li class="news__partners-item"><a class="news__partners-link" href="#">
-                    <img class="news__partners-pic" src="images/partners/pepsi.svg" alt="Пепси">
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/pepsi.svg" alt="Пепси">
                 </a>
             </li>
-            <li class="news__partners-item"><a class="news__partners-link" href="#">
-                    <img class="news__partners-pic" src="images/partners/redbull.svg" alt="Рэд Булл">
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/redbull.svg" alt="Рэд Булл">
                 </a>
             </li>
-            <li class="news__partners-item"><a class="news__partners-link" href="#">
-                    <img class="news__partners-pic" src="images/partners/fanta.svg" alt="Фанта">
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/fanta.svg" alt="Фанта">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/sprite.svg" alt="Спрайт" width="80" height="34">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/dr-pepper.svg" alt="Доктор Пеппер">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/coca-cola.svg" alt="Кока-Кола">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/pepsi.svg" alt="Пепси">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/redbull.svg" alt="Рэд Булл">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#">
+                    <img class="partners__logo" src="images/partners/fanta.svg" alt="Фанта">
                 </a>
             </li>
         </ul>
+    </div>
+</section>
+
+        <section class="news section">
+    <div class="container">        
         <div class="news__title">
             <h2 class="title">
                 наши новости
@@ -1236,12 +1274,12 @@
             <address class="footer__contacts">
                 <ul class="footer__address-items">
                     <li class="footer__address-item">
-                        <a class="footer__tel-link" href="tel:+7907288365">
+                        <a class="footer__link" href="tel:+7907288365">
                             Горячая линия +7 907 288 365
                         </a>
                     </li>
                     <li class="footer__address-item">
-                        <a class="footer__address-link" href="#">
+                        <a class="footer__link" href="#">
                             Санкт-Петербург, ул. Ленина, 1
                         </a>
                     </li>
@@ -1291,7 +1329,7 @@
                 </span>
                 <ul class="footer__pay">
                     <li class="footer__pay-item">
-                        <a class="footer__pay-link footer__pay-link--visa" href="#"
+                        <a class="footer__pay-link footer__pay-link--big" href="#"
                             style="background-image: url('images/icons/visa.svg');" target="_blank">
                             <span class="sr-only">
                                 visa
@@ -1299,7 +1337,7 @@
                         </a>
                     </li>
                     <li class="footer__pay-item">
-                        <a class="footer__pay-link footer__pay-link--mc" href="#"
+                        <a class="footer__pay-link footer__pay-link--small" href="#"
                             style="background-image: url('images/icons/mc.svg');" target="_blank">
                             <span class="sr-only">
                                 mastercart

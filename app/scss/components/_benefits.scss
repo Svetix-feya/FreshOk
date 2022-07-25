@@ -1,0 +1,58 @@
+.benefits {
+    background-color: $silver-100;
+
+    &__items {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 65px;
+        }
+    }
+
+    &__item {
+        padding: 49px 0 35px 74px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            left: 0;
+        }
+
+        &--scooter {
+            &::before {
+                background-image: url('../images/icons/scooter.svg');
+            }
+        }
+
+        &--return {
+            &::before {
+                background-image: url('../images/icons/return.svg');
+            }
+        }
+
+        &--hours {
+            &::before {
+                background-image: url('../images/icons/24-hours.svg');
+            }
+        }
+    }
+
+    &__title {
+        font-weight: $fw-600;
+        font-size: 16px;
+    }
+
+    &__text {
+        font-weight: $fw-400;
+        width: 190px;
+    }
+}

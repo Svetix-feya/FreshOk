@@ -1,0 +1,75 @@
+.sales {
+    &__items {
+        display: grid;
+        grid-template-columns: 2fr repeat(2, 1fr);
+        grid-gap: 30px;
+        margin-bottom: 72px;
+    }
+
+    &__item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left bottom;
+        border-radius: 6px;
+    }
+
+    &__wrapper {
+        padding: 77px 32px;
+        text-transform: uppercase;
+        color: $dark-500;
+
+        &--white {
+            color: $white;
+            text-shadow: 2px 2px 0 rgba($black, 0.25);
+        }
+    }
+
+    &__subtitle {
+        font-weight: $fw-700;
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        margin-bottom: 18px;
+    }
+
+    &__title {
+        font-family: $ruda;
+        font-weight: $fw-600;
+        font-size: 30px;
+        margin-bottom: 12px;
+        max-width: 160px;
+        @include line-clamp(2);
+
+        &--large {
+            max-width: 350px;
+        }
+    }
+
+    &__link {
+        font-weight: $fw-700;
+        font-size: 14px;
+        line-height: 1;
+        padding-bottom: 6px;
+        border-bottom: 2px solid $dark-500;
+        transition: border-radius 0.3s, border 0.3s, opacity 0.3s;
+
+        &--white {
+            border-bottom: 2px solid $white;
+        }
+
+        &:focus {
+            border-radius: 6px;
+            border: 3px solid $white;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            border: 3px solid $green-200;
+        }
+    }
+
+}
+

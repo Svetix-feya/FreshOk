@@ -6,9 +6,26 @@ $(function(){
         infinite: false,
     });
 
-    var mixer = mixitup('.topproducts');
-    var mixer = mixitup('.stocks');
+    $('.partners__items').slick({
+        arrows: false,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+    });
 
+    var containerEl1 = document.querySelector('[data-ref="top-products"]');
+    var containerEl2 = document.querySelector('[data-ref="stocks"]');
+ 
+    var config = {
+        controls: {
+          scope: 'local'
+        }
+    };
+     
+    var mixer1 = mixitup(containerEl1, config);
+    var mixer2 = mixitup(containerEl2, config);
+
+    
     $(".product-cart__rating-star").rateYo({
         rating: 10,
         maxValue: 10,
