@@ -1,8 +1,15 @@
+@include('components/_var.html', {
+    "title": "ФрешОК - Интернет-магазин свежих продуктов | Главная страница",
+})
+
 @include('components/_head.html')
 
     @include('components/_header.html')
 
     <main class="main">
+        <h1 class="sr-only">
+            ФрешОК - Интернет-магазин свежих продуктов
+        </h1>
 
         @include('home-page/_slider-top.html')
 

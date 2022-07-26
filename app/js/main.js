@@ -26,12 +26,12 @@ $(function(){
     var mixer2 = mixitup(containerEl2, config);
 
     
-    $(".product-cart__rating-star").rateYo({
-        rating: 10,
-        maxValue: 10,
-        numStars: 1,
-        starSvg: '<svg class="star" width="16" height="16" viewBox="0 0 16 16"><use xlink:href="images/sprite.svg#star"></use></svg>',
-        starWidth: '16px',
-      });
+    // $(".product-cart__rating-star").rateYo({
+    //     rating: 10,
+    //     maxValue: 10,
+    //     numStars: 1,
+    //     starSvg: '<svg class="star" width="16" height="16" viewBox="0 0 16 16"><use xlink:href="images/sprite.svg#star"></use></svg>',
+    //     starWidth: '16px',
+    //   });
 
 });

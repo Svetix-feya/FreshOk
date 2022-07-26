@@ -1,3 +1,5 @@
+<title>ФрешОК - Интернет-магазин свежих продуктов | Главная страница</title>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -7,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icons/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon">
-    <title>ФрешОК - Интернет-магазин свежих продуктов</title>
+    <title>title</title>     
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -61,13 +63,13 @@
                         <span class="catalog__icon"></span>
                         <span class="catalog__menu">Каталог продуктов</span>
                     </button>
-                    <form class="header__search">
+                    <form class="search-form">
                         <label class="sr-only" for="search">
                             Поиск по каталогу
                         </label>
-                        <input class="header__input-search" id="search" type="search"
+                        <input class="search-form__input" id="search" type="search"
                             placeholder="Найти в магазине ..." name="search" required>
-                        <button class="header__btn btn" type="button">поиск</button>
+                        <button class="button" type="button">поиск</button>
                     </form>
                     <div class="usernav">
                         <ul class="usernav__menu">
@@ -76,7 +78,7 @@
                                     <span class="sr-only">
                                         Вход для пользователя
                                     </span>
-                                    <svg class="usernav__icon usernav__icon--user">
+                                    <svg class="usernav__icon">
                                         <use xlink:href="images/sprite.svg#user"></use>
                                     </svg>
                                 </a>
@@ -87,7 +89,7 @@
                                         Избранное
                                     </span>
                                     <span class="usernav__num">12</span>
-                                    <svg class="usernav__icon usernav__icon--favorite">
+                                    <svg class="usernav__icon">
                                         <use xlink:href="images/sprite.svg#favorite"></use>
                                     </svg>
                                 </a>                                
@@ -98,7 +100,7 @@
                                         Корзина
                                     </span>
                                     <span class="usernav__num">12</span>
-                                    <svg class="usernav__icon usernav__icon--cart">
+                                    <svg class="usernav__icon">
                                         <use xlink:href="images/sprite.svg#cart"></use>
                                     </svg>
                                 </a>
@@ -112,28 +114,30 @@
 </header>
 
     <main class="main">
+        <h1 class="sr-only">
+            ФрешОК - Интернет-магазин свежих продуктов
+        </h1>
 
-        
-<section class="slider-top">
-    <h1 class="sr-only">
-    ФрешОК - Интернет-магазин свежих продуктов
-    </h1>
+        <section class="slider-top">
+    <h2 class="sr-only">
+        Карусель скидок
+    </h2>
     <ul class="slider-top__items">
         <li class="slider-top__item" style="background-image: url('images/slied-1.jpg');">
             <div class="container">
                 <div class="slider-top__content">
-                    <h2 class="slider-top__title">
+                    <h3 class="slider-top__title">
                         свежачок вам в хату
                         <span class="slider-top__subtitle">
                             Скидка -50%
                         </span>
-                    </h2>
+                    </h3>
                     <div class="slider-top__text">
                         <p>
                             Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
                         </p>
                     </div>
-                    <a class="slider-top__btn btn" href="#">
+                    <a class="btn" href="#">
                         Купить сейчас
                     </a>
                 </div>
@@ -142,18 +146,18 @@
         <li class="slider-top__item" style="background-image: url('images/slied-2.jpg');">
             <div class="container">
                 <div class="slider-top__content">
-                    <h2 class="slider-top__title">
+                    <h3 class="slider-top__title">
                         накрути себе томатов
                         <span class="slider-top__subtitle">
                             акция: 3 кг по цене 1
                         </span>
-                    </h2>
+                    </h3>
                     <div class="slider-top__text">
                         <p>
                             Только с 12 по 15 июля скидка на домашние помидорчики
                         </p>
                     </div>
-                    <a class="slider-top__btn btn" href="#">
+                    <a class="btn" href="#">
                         Купить сейчас
                     </a>
                 </div>
@@ -162,14 +166,14 @@
         <li class="slider-top__item" style="background-image: url('images/slied-3.jpg');">
             <div class="container">
                 <div class="slider-top__content">
-                    <h2 class="slider-top__title">
+                    <h3 class="slider-top__title">
                         Пусть остальные
                         позеленеют от зависти
                         <span class="slider-top__subtitle">
                             Распродажа зелени
                         </span>
-                    </h2>
-                    <a class="slider-top__btn btn" href="#">
+                    </h3>
+                    <a class="btn" href="#">
                         Купить сейчас
                     </a>
                 </div>
@@ -212,79 +216,78 @@
     </div>
 </section>
 
-        <section class="topproducts section" data-ref="top-products">
+        <section class="top-products section" data-ref="top-products">
     <div class="container">
         <h2 class="title">
             Топовые товары
         </h2>
-        <ul class="topproducts__nav">
-            <li class="topproducts__nav-item">
-                <button class="topproducts__btn" data-filter="all" type="button">
+        <ul class="menu">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter="all" type="button">
                     Все товары
                 </button>
             </li>
-            <li class="topproducts__nav-item">
-                <button class="topproducts__btn" data-filter=".fruits" type="button">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter=".fruits" type="button">
                     Фрукты
                 </button>
             </li>
-            <li class="topproducts__nav-item">
-                <button class="topproducts__btn" data-filter=".vegetables" type="button">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter=".vegetables" type="button">
                     овощи
                 </button>
             </li>
-            <li class="topproducts__nav-item">
-                <button class="topproducts__btn" data-filter=".drinks" type="button">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter=".drinks" type="button">
                     Напитки
                 </button>
             </li>
-            <li class="topproducts__nav-item">
-                <button class="topproducts__btn" data-filter=".grocery" type="button">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter=".grocery" type="button">
                     бакалея
                 </button>
             </li>
         </ul>
-        <ul class="topproducts__items">
-            <li class="topproducts__item mix fruits">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
-                            <li class="product-cart__badges-item">
+        <ul class="top-products__items">
+            <li class="top-products__item mix fruits">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
                                 <span class="badge badge--new">новинка</span>
                             </li>
                             <li>
                                 <span class="badge badge--sale">-50%</span>
                             </li>
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="298"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="298"
                                 height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Ананас, 1кг
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price product-cart__price--old">
-                                            1999 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            999 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button">
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price product-card__price--old">
+                                        1999 <span>₽</span>
+                                    </span>
+                                    <span class="product-card__price">
+                                        999 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
                                     <span class="sr-only">
                                         Добавить в корзину
                                     </span>
@@ -294,269 +297,302 @@
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix fruits">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
+            <li class="top-products__item mix fruits">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
 
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="products-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/lemon.jpg" alt="Лимон" width="298"
+                    <div class="products-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/lemon.jpg" alt="Лимон" width="298"
                                 height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Лимон, 1кг
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            199 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price">
+                                        199 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix fruits">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
-                            <li class="product-cart__badges-item">
+            <li class="top-products__item mix fruits">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
                                 <span class="badge badge--top">хит</span>
                             </li>
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/dragon-fruit.jpg"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
                                 alt="Питахайя красная с белой мякотью" width="298" height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Питахайя красная с белой мякотью, 1шт
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            1019 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price">
+                                        1019 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix grocery">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
+            <li class="top-products__item mix grocery">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
 
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/ketchup.jpg" alt="Кетчуп" width="298"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/ketchup.jpg" alt="Кетчуп" width="298"
                                 height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            600 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price">
+                                        600 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix vegetables">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
-                            <li class="product-cart__badges-item">
+            <li class="top-products__item mix vegetables">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
                                 <span class="badge badge--top">хит</span>
                             </li>
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/carrot.jpg" alt="Морковь" width="298"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/carrot.jpg" alt="Морковь" width="298"
                                 height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Морковь молодая с бабушкиной грядки, 1кг
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            49 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price">
+                                        49 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix drinks">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
-                            <li class="product-cart__badges-item">
+            <li class="top-products__item mix drinks">
+                <article class="product-d">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
                                 <span class="badge badge--sale">-30%</span>
                             </li>
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/juice.jpg" alt="Напиток сокосодержащий"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/juice.jpg" alt="Напиток сокосодержащий"
                                 width="298" height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
                                 безалкогольн...
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price product-cart__price--old">
-                                            299 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            199 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price product-card__price--old">
+                                        299 <span>₽</span>
+                                    </span>
+                                    <span class="product-card__price">
+                                        199 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix grocery">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
-                            <li class="product-cart__badges-item">
+            <li class="top-products__item mix grocery">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
                                 <span class="badge badge--new">новинка</span>
                             </li>
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/coffee.jpg" alt="Кофе" width="298"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/coffee.jpg" alt="Кофе" width="298"
                                 height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Кофе с коноплей органический Caffé Salomoni 250г
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            877 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price">
+                                        877 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
-            <li class="topproducts__item mix vegetables">
-                <article class="product-cart">
-                    <div class="product-cart__top">
-                        <ul class="product-cart__badges">
-                            <li class="product-cart__badges-item">
+            <li class="top-products__item mix vegetables">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
                                 <span class="badge badge--new">новинка</span>
                             </li>
                         </ul>
-                        <button class="product-cart__favorite">
+                        <button class="product-card__favorite">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
                         </button>
                     </div>
-                    <div class="product-cart__content">
-                        <a class="product-cart__link" href="#">
-                            <img class="product-cart__img" src="images/catalog/paprik.jpg" alt="Перец оранжевый"
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/paprik.jpg" alt="Перец оранжевый"
                                 width="298" height="225">
-                            <svg class="product-cart__search">
+                            <svg class="product-card__search">
                                 <use xlink:href="images/sprite.svg#search"></use>
                             </svg>
                         </a>
-                        <div class="product-cart__discription">
-                            <h3 class="product-cart__title">
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
                                 Перец оранжевый, 1кг
                             </h3>
-                            <div class="product-cart__bottom">
-                                <ul class="product-cart__cost">
-                                    <li class="product-cart__cost-item">
-                                        <span class="product-cart__price">
-                                            349 <span class="product-cart__rub">₽</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <button class="product-cart__btn" type="button"></button>
+                            <div class="product-card__bottom">
+                                <div class="product-card__cost">
+                                    <span class="product-card__price">
+                                        349 <span>₽</span>
+                                    </span>
+                                </div>
+                                <button class="product-card__btn" type="button">
+                                    <span class="sr-only">
+                                        Добавить в корзину
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </article>
             </li>
         </ul>
-        <a class="topproducts__btn-bottom btn" href="#">Показать еще</a>
+        <a class="btn btn--border" href="#">Показать еще</a>
     </div>
 </section>
 
@@ -567,15 +603,15 @@
         </h2>
         <ul class="sales__items">
             <li class="sales__item" style="background-image: url('images/sales/sales-1.jpg');">
-                <div class="sales__wrapper sales__wrapper--white">
+                <div class="sales__wrapper sales__wrapper--big">
                     <span class="sales__subtitle">
                         свежайшие фрукты
                     </span>
-                    <h3 class="sales__title sales__title--large">
+                    <h3 class="sales__title">
                         начни фруктовое лето
                         всего от 99 ₽  
                     </h3>
-                    <a class="sales__link sales__link--white" href="#">
+                    <a class="sales__link" href="#">
                         перейти к покупкам
                     </a>
                 </div>
@@ -617,471 +653,450 @@
         <h2 class="title">
             Акции
         </h2>
-        <ul class="stocks__nav">
-            <li class="stocks__nav-item">
-                <button class="stocks__btn" data-filter="all" type="button">
+        <ul class="menu">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter="all" type="button">
                     Все товары
                 </button>
             </li>
-            <li class="stocks__nav-item">
-                <button class="stocks__btn" data-filter=".new" type="button">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter=".new" type="button">
                     новинки
                 </button>
             </li>
-            <li class="stocks__nav-item">
-                <button class="stocks__btn" data-filter=".top" type="button">
+            <li class="menu__item">
+                <button class="menu__btn" data-filter=".top" type="button">
                     хиты
                 </button>
             </li>
         </ul>
         <ul class="stocks__items">
             <li class="stocks__item mix new">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--new badge--stock">новинка</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="100"
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--new">новинка</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="100"
                                 height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Ананас, 1кг
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--green">
-                                        в наличии
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    1999 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    999 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">4.5</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Ананас, 1кг
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--instock">
+                                    в наличии
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            1999 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            999 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        4.5
+                                    </span>
+                                    <button class="product-card__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix new">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--new badge--stock">новинка</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/coffee.jpg" alt="Кофе" width="100"
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--new">новинка</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/coffee.jpg" alt="Кофе" width="100"
                                 height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Кофе с коноплей органический Caffé Salomoni 250г
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--red">
-                                        заканчивается
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    877 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    777 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">4.9</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Кофе с коноплей органический Caffé Salomoni 250г
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--close">
+                                    заканчивается
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            877 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            777 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        4.9
+                                    </span>
+                                    <button class="product-d__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix new">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--new badge--stock">новинка</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/strawberry.jpg" alt="Клубника" width="100" height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Клубника, 1 кг
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--gray">
-                                        нет в наличии
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    600 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    440 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">5.0</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--new">новинка</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/strawberry.jpg" width="100" height="75"
+                                alt="Клубника">
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Клубника, 1 кг
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--outofstock">
+                                    нет в наличии
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            600 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            440 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        5.0
+                                    </span>
+                                    <button class="product-card__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix new">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--new badge--stock">новинка</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/mango.jpg" alt="Манго" width="100" height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Манго, 1 шт
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--green">
-                                        в наличии
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    960 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    660 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">5.0</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--new">новинка</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/mango.jpg" width="100" height="75"
+                                alt="Манго">
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Манго, 1 шт
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--instock">
+                                    в наличии
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            960 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            660 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        5.0
+                                    </span>
+                                    <button class="product-card__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix new">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--new badge--stock">новинка</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/salmon.jpg" alt="Лосось" width="100" height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Лосось, 1 кг
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--green">
-                                        в наличии
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    1199 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    999 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">4.5</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--new">новинка</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/salmon.jpg" width="100" height="75"
+                                alt="Лосось">
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Лосось, 1 кг
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--instock">
+                                    в наличии
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            1199 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            999 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        4.5
+                                    </span>
+                                    <button class="product-card__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix top">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--top badge--stock">хит</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/veg_juice.jpg" alt="Сок овощной" width="100"
-                                height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Сок Granini овощной 100%, 0.5л
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--red">
-                                        заканчивается
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    230 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    180 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">4.9</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--top">хит</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/veg_juice.jpg" width="100" height="75"
+                                alt="Сок овощной">
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Сок Granini овощной 100%, 0.5л
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--close">
+                                    заканчивается
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            230 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            180 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        4.9
+                                    </span>
+                                    <button class="product-d__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix top">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--top badge--stock">хит</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/basket.jpg" alt="Фруктовая корзина" width="100"
-                                height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Фруктовая корзина, 1 шт
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--green">
-                                        в наличии
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    5990 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    3990 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">4.8</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--top">хит</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/basket.jpg" width="100" height="75"
+                                alt="Фруктовая корзина">
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Фруктовая корзина, 1 шт
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--instock">
+                                    в наличии
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            5990 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            3990 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        4.8
+                                    </span>
+                                    <button class="product-card__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
             <li class="stocks__item mix top">
-                <a class="stocks__link" href="#">
-                    <article class="product-cart">
-                        <div class="product-cart__top product-cart__top--stock">
-                            <ul class="product-cart__badges">
-                                <li class="product-cart__badges-item">
-                                    <span class="badge badge--top badge--stock">хит</span>
-                                </li>
-                            </ul>
-                            <button class="product-cart__favorite notvisible">
-                            </button>
-                        </div>
-                        <div class="product-cart__content product-cart__content--stock">
-                            <img class="product-cart__img" src="images/catalog/pork.jpg" alt="Свинина мякоть" width="100"
-                                height="75">
-                            <div class="product-cart__discription product-cart__discription--stock">
-                                <h3 class="product-cart__title">
-                                    Свинина мякоть, 1 кг
-                                </h3>
-                                <div class="product-cart__wrapper">
-                                    <span class="product-cart__status product-cart__status--green">
-                                        в наличии
-                                    </span>
-                                    <div class="product-cart__bottom">
-                                        <ul class="product-cart__cost product-cart__cost--stock">
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--old">
-                                                    599 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                            <li class="product-cart__cost-item">
-                                                <span class="product-cart__price product-cart__price--stock">
-                                                    499 <span class="product-cart__rub">₽</span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <ul class="product-cart__rating">
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-num">4.6</span>
-                                            </li>
-                                            <li class="product-cart__rating-item">
-                                                <span class="product-cart__rating-star"></span>
-                                            </li>
-                                        </ul>
-                                        <button class="product-cart__btn notvisible" type="button">
-                                            <span class="sr-only">
-                                                Добавить в корзину
-                                            </span>
-                                        </button>
+                <article class="product-d">
+                    <div class="product-card__top">
+                        <ul class="product-card__badges">
+                            <li class="product-card__badge">
+                                <span class="badge badge--top">хит</span>
+                            </li>
+                        </ul>
+                        <button class="product-card__favorite hidden">
+                            <span class="sr-only">
+                                В Избранное
+                            </span>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <a class="product-card__link" href="#">
+                            <img class="product-card__img" src="images/catalog/pork.jpg" width="100" height="75"
+                                alt="Свинина мякоть">
+                            <svg class="product-card__search">
+                                <use xlink:href="images/sprite.svg#search"></use>
+                            </svg>
+                        </a>
+                        <div class="product-card__discription">
+                            <h3 class="product-card__title">
+                                Свинина мякоть, 1 кг
+                            </h3>
+                            <div class="product-card__wrapper">
+                                <span class="product-card__status product-card__status--instock">
+                                    в наличии
+                                </span>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__cost">
+                                        <span class="product-card__price product-card__price--old">
+                                            599 <span>₽</span>
+                                        </span>
+                                        <span class="product-card__price">
+                                            499 <span>₽</span>
+                                        </span>
                                     </div>
+                                    <span class="product-card__rating">
+                                        4.6
+                                    </span>
+                                    <button class="product-card__btn hidden" type="button">
+                                        <span class="sr-only">
+                                            Добавить в корзину
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </a>
+                    </div>
+                </article>
             </li>
         </ul>
-        <a class="stocks__btn-bottom btn" href="#">Показать еще</a>
+        <a class="btn btn--stocks" href="#">Показать еще</a>
     </div>
 </section>
 
@@ -1092,63 +1107,63 @@
         </h2>
         <ul class="partners__items">
             <li class="partners__item">
-                <a class="partners__link" href="#">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/sprite.svg"  width="80" height="34" alt="Спрайт">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/dr-pepper.svg" width="80" height="58" alt="Доктор Пеппер">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/coca-cola.svg" width="80" height="27" alt="Кока-Кола">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/pepsi.svg" width="80" height="31" alt="Пепси">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/redbull.svg" width="80" height="49" alt="Рэд Булл">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/fanta.svg" width="80" height="59" alt="Фанта">
+                </a>
+            </li>
+            <li class="partners__item">
+                <a class="partners__link" href="#" target="_blank">
                     <img class="partners__logo" src="images/partners/sprite.svg" alt="Спрайт" width="80" height="34">
                 </a>
             </li>
             <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/dr-pepper.svg" alt="Доктор Пеппер">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/dr-pepper.svg" width="80" height="58" alt="Доктор Пеппер">
                 </a>
             </li>
             <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/coca-cola.svg" alt="Кока-Кола">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/coca-cola.svg" width="80" height="27" alt="Кока-Кола">
                 </a>
             </li>
             <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/pepsi.svg" alt="Пепси">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/pepsi.svg" width="80" height="31" alt="Пепси">
                 </a>
             </li>
             <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/redbull.svg" alt="Рэд Булл">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/redbull.svg" width="80" height="49" alt="Рэд Булл">
                 </a>
             </li>
             <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/fanta.svg" alt="Фанта">
-                </a>
-            </li>
-            <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/sprite.svg" alt="Спрайт" width="80" height="34">
-                </a>
-            </li>
-            <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/dr-pepper.svg" alt="Доктор Пеппер">
-                </a>
-            </li>
-            <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/coca-cola.svg" alt="Кока-Кола">
-                </a>
-            </li>
-            <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/pepsi.svg" alt="Пепси">
-                </a>
-            </li>
-            <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/redbull.svg" alt="Рэд Булл">
-                </a>
-            </li>
-            <li class="partners__item">
-                <a class="partners__link" href="#">
-                    <img class="partners__logo" src="images/partners/fanta.svg" alt="Фанта">
+                <a class="partners__link" href="#" target="_blank">
+                    <img class="partners__logo" src="images/partners/fanta.svg" width="80" height="59" alt="Фанта">
                 </a>
             </li>
         </ul>
@@ -1156,7 +1171,7 @@
 </section>
 
         <section class="news section">
-    <div class="container">        
+    <div class="container">
         <div class="news__title">
             <h2 class="title">
                 наши новости
@@ -1167,43 +1182,37 @@
         </div>
         <ul class="news__items">
             <li class="news__item">
-                <a class="news__item-link" href="#">
-                    <span class="news__date">
-                        июль<span class="news__num">15</span>
-                    </span>
-                    <div class="news__bg" style="background-image: url('images/news/1.jpg');"></div>
-                    <div class="news__text">
-                        <p>
-                            Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК. Торопись, пока всё
-                            не разобрали!
-                        </p>
-                    </div>
+                <time class="news__date" datetime="2022-07-15">
+                    июль<time class="news__num" datetime="2022-07-15">15</time>
+                </time>
+                <img class="news__pic" src="images/news/1.jpg" alt="Клубника" width="410" height="240">
+                <a class="news__text" href="#">
+                    <p>
+                        Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК. Торопись, пока всё
+                        не разобрали!
+                    </p>
                 </a>
             </li>
             <li class="news__item">
-                <a class="news__item-link" href="#">
-                    <span class="news__date">
-                        май<span class="news__num">07</span>
-                    </span>
-                    <div class="news__bg" style="background-image: url('images/news/2.jpg');"></div>
-                    <div class="news__text">
-                        <p>
-                            Шикарнейший выбор манго в нашем онлайн-маркете
-                        </p>
-                    </div>
+                <time class="news__date" datetime="2022-05-07">
+                    май<time class="news__num" datetime="2022-05-07">07</time>
+                </time>
+                <img class="news__pic" src="images/news/2.jpg" alt="Манго" width="410" height="240">
+                <a class="news__text" href="#">
+                    <p>
+                        Шикарнейший выбор манго в нашем онлайн-маркете
+                    </p>
                 </a>
             </li>
             <li class="news__item">
-                <a class="news__item-link" href="#">
-                    <span class="news__date">
-                        февраль<span class="news__num">20</span>
-                    </span>
-                    <div class="news__bg" style="background-image: url('images/news/3.jpg');"></div>
-                    <div class="news__text">
-                        <p>
-                            Всё, что вы хотели знать о папайя
-                        </p>
-                    </div>
+                <time class="news__date" datetime="2022-02-20">
+                    февраль<time class="news__num" datetime="2022-02-20">20</time>
+                </time>
+                <img class="news__pic" src="images/news/3.jpg" alt="Папайя" width="410" height="240">
+                <a class="news__text" href="#">
+                    <p>
+                        Всё, что вы хотели знать о папайя
+                    </p>
                 </a>
             </li>
         </ul>
@@ -1220,13 +1229,13 @@
         <div class="footer__content">
             <div class="footer__item">
                 <span class="footer__news">Следите за нашими акциями</span>
-                <form class="footer__input">
+                <form class="email-form">
                     <label class="sr-only" for="email">
                         Ввод email
                     </label>
-                    <input class="footer__input-email" id="email" type="email" placeholder="email@email.com"
+                    <input class="email-form__input" id="email" type="email" placeholder="email@email.com"
                         name="email" required>
-                    <button class="footer__btn btn">подписаться</button>
+                    <button class="button button--email" type="button">подписаться</button>
                 </form>
             </div>
             <ul class="footer__menu">
@@ -1271,15 +1280,15 @@
                     </a>
                 </li>
             </ul>
-            <address class="footer__contacts">
-                <ul class="footer__address-items">
-                    <li class="footer__address-item">
-                        <a class="footer__link" href="tel:+7907288365">
+            <address class="contacts">
+                <ul class="contacts__address-items">
+                    <li class="contacts__address-item">
+                        <a class="contacts__link" href="tel:+7907288365">
                             Горячая линия +7 907 288 365
                         </a>
                     </li>
-                    <li class="footer__address-item">
-                        <a class="footer__link" href="#">
+                    <li class="contacts__address-item">
+                        <a class="contacts__link" href="#">
                             Санкт-Петербург, ул. Ленина, 1
                         </a>
                     </li>

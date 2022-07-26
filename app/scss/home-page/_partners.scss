@@ -38,8 +38,7 @@
     }
 
     &__logo {
-        object-fit: cover;
-        max-width: 80px;
+        object-fit: contain;        
     }
 
 }
