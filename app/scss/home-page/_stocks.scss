@@ -29,6 +29,10 @@
             padding: 0;
         }
 
+        &__title {
+            padding-top: 12px;
+        }
+
         &__content {
             flex-direction: row;
             align-items: center;
