@@ -38,8 +38,7 @@
             align-items: center;
         }
 
-        &__discription {
-            height: 120px;
+        &__discription {            
             padding-bottom: 8px;
             width: 100%;
         }
@@ -63,23 +62,20 @@
             }
 
             span {
-                font-size: 12px;
+                font-size: 15px;    
+                font-weight: $fw-900;            
             }
         }
 
         &__img {
             padding: 0 10px;
-        }    
-        
-        &__search {
-            width: 10px;
-            height: 10px;
-        }
+        }  
 
         &__link {
             &::after {
                 width: 20px;
                 height: 20px;
+                background-size: 10px 10px;
             }
         }
 
@@ -89,9 +85,11 @@
     }    
 
     .badge {
-        top: 12px;
-        left: 12px;
-        z-index: 3;
+        &__item {
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+        }        
     }
 
 }

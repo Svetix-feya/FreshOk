@@ -4,6 +4,7 @@
     &__items {
         display: flex;
         justify-content: center;
+        padding: 60px 0 35px;
     }
 
     &__item {
@@ -13,7 +14,7 @@
     }
 
     &__item {
-        padding: 60px 0 35px 74px;
+        padding-left: 74px;
         position: relative;
 
         &::before {

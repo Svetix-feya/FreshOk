@@ -4,17 +4,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 72px 50px 0;
+        padding: 72px 0 0 100px;
     }
 
     .slick-track {
         display: flex;
-        align-items: center; //без этого не работает слайдер //        
+        align-items: center; 
     }
 
     &__item {
         &:not(:last-child) {
-            margin-right: 140px; //не знаю как у последнего элемента убрать отступ//
+            margin-right: 140px; 
         }
     }
 

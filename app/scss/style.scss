@@ -1,14 +1,20 @@
-@import 'mixins';
-@import 'vars';
 @import 'fonts';
+
+@import 'vars';
+
 @import 'reset';
+@import 'mixins';
 @import 'libs';
 @import 'global';
 
+//Компоненты
 @import 'components/header';
 @import 'components/benefits';
 @import 'components/footer';
+@import 'components/product-card';
 
+
+//Главная страница
 @import 'home-page/slider-top';
 @import 'home-page/top-products';
 @import 'home-page/sales';

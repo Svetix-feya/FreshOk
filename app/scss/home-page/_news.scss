@@ -78,8 +78,10 @@
     &__text {
         font-size: 16px;
         line-height: 1.5;
-        padding: 18px;
+        padding: 18px 18px 0;
         @include line-clamp(3);
+        transition: color 0.3s;
+        margin-bottom: 18px;
 
         &:hover {        
             color: $green-900;
