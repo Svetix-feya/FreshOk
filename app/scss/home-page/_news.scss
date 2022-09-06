@@ -1,9 +1,24 @@
-.news {
+.news { 
+    @include mq('phone') {
+        margin-bottom: 10px;
+    }  
 
     &__title {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+
+        @include mq('tablet') {
+            display: block;
+            margin-bottom: 20px;            
+        }
+    }
+
+    .title {
+        @include mq('tablet') {
+            text-align: start;
+            margin-bottom: 5px;
+        }
     }
 
     &__link {
@@ -13,8 +28,13 @@
         color: $green-900;
         border-bottom: 2px solid $green-900;
         padding-bottom: 2px;
+        padding-top: 10px;
         text-transform: uppercase;
         transition: border-radius 0.3s, border 0.3s, opacity 0.3s;
+
+        @include mq('tablet') {
+            max-width: 105px;
+        }
 
         &:focus {
             border-radius: 6px;
@@ -35,6 +55,16 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
 
+        @include mq('tablet-2') {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 14px;
+        }
+
     }
 
     &__item {
@@ -42,7 +72,11 @@
         border-radius: 6px;
         position: relative; 
         color: $dark-900;
-        transition: color 0.3s;       
+        transition: color 0.3s;  
+        
+        @include mq('tablet-2') {
+            max-width: 410px;
+        }
     }
 
     &__date {
@@ -73,6 +107,10 @@
     &__pic {
         object-fit: cover;
         border-radius: 6px 6px 0 0;
+
+        @include mq('tablet') {
+            max-height: 200px;
+        }
     }
 
     &__text {
@@ -82,6 +120,11 @@
         @include line-clamp(3);
         transition: color 0.3s;
         margin-bottom: 18px;
+
+        @include mq('phone') {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
 
         &:hover {        
             color: $green-900;

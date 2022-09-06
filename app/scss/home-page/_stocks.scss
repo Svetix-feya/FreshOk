@@ -6,6 +6,21 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
         margin-bottom: 48px;
+
+        @include mq('desktop') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include mq('tablet-2') {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;            
+        }
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(1, 1fr); 
+            margin-bottom: 24px;  
+            grid-gap: 15px;         
+        }
     }
 
     &__item {        
@@ -13,6 +28,11 @@
         border-radius: 6px;
         background-color: $white;
         transition: border-color 0.3s;
+
+        @include mq('tablet-2') {
+            width: 300px;
+            height: 124px;            
+        }
 
         &:hover {            
             border-color: $green-900;
@@ -24,13 +44,15 @@
     }
 
     .product-card {
+        height: 124px;
+
         &__top {
             height: 0;
             padding: 0;
         }
 
         &__title {
-            padding-top: 12px;
+            padding-top: 12px;                     
         }
 
         &__content {
@@ -69,6 +91,11 @@
 
         &__img {
             padding: 0 10px;
+
+            @include mq('tablet-2') {
+                width: 100px;
+                height: 75px;
+            }
         }  
 
         &__link {
@@ -82,6 +109,7 @@
         &__bottom {
             margin-bottom: 0;
         }        
+        
     }    
 
     .badge {

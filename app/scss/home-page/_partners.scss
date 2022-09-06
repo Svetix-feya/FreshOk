@@ -5,6 +5,14 @@
         justify-content: space-between;
         align-items: center;
         padding: 72px 0 0 100px;
+
+        @include mq('tablet') {
+            padding: 48px 0 0 100px;
+        }
+
+        @include mq('phone') {
+            padding-left: 48px;
+        }
     }
 
     .slick-track {

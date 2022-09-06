@@ -5,10 +5,29 @@
     padding: 30px 0 29px;
     margin-bottom: 0;
 
+    @include mq('tablet') {
+        padding: 24px 0;
+    }
+
+    .container {
+        @include mq('tablet-2') {
+            padding: 0;
+        }
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
         padding: 30px 0;
+
+        @include mq('tablet-2') {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include mq('tablet') {
+            padding: 24px 0;
+        }
     }
 
     &__item {
@@ -16,11 +35,31 @@
         margin-right: 60px;
         max-width: 310px;
         width: 100%;
+
+        @include mq('tablet-2') {
+            order: 1;
+            padding-top: 24px;
+            margin-right: 0;
+        }
     }    
 
     &__menu {
         column-count: 3;
         column-gap: 75px;
+
+        @include mq('tablet-2') {
+            border-top: 1px solid rgba($white, 0.1);
+            width: 100%;
+            padding: 24px 15px;  
+            border-bottom: 1px solid rgba($white, 0.1);
+            column-gap: 20px;
+            padding-left: 50px;
+        }
+
+        @include mq('tablet') {
+            column-count: 2;
+
+        }
     }
 
     &__menu-item {
@@ -48,7 +87,7 @@
     }   
 
     &__coperait {
-        padding-top: 28px;
+        padding-top: 24px;
         border-top: 1px solid rgba($white, 0.1);
     }
 
@@ -56,14 +95,27 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include mq('tablet-2') {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__coperait-info {
         text-transform: uppercase;
+
+        @include mq('tablet-2') {
+            order: 1;
+        }
     }
 
     &__pay {
         display: flex;
+
+        @include mq('tablet-2') {
+           margin-bottom: 24px;
+        }
     }
 
     &__pay-item {
@@ -124,10 +176,44 @@
 
 }
 
-.contacts {
+.contacts {    
+
+    @include mq('tablet-2') {
+       order: -1;
+    }
+
     &__address-item {
         display: block;
-        padding-bottom: 18px;
+        padding-bottom: 18px;   
+        
+        &--menu {
+            padding-left: 40px;
+            position: relative;            
+
+            &::before {
+                position: absolute;                
+                content: '';
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left center;
+                width: 24px;
+                height: 32px;
+                left: 0;                
+            }
+        }
+
+        &--tel {
+            &::before {
+                background-image: url('../images/icons/tel.svg');
+                filter: invert(82%) sepia(9%) saturate(811%) hue-rotate(42deg) brightness(96%) contrast(92%);
+            }
+        }
+
+        &--address {
+            &::before {
+                background-image: url('../images/icons/point.svg');
+            }
+        }
     }
 
     &__link {
@@ -148,10 +234,21 @@
         }
     }   
 
+    &--menu {
+        padding-left: 15px;
+        padding-top: 26px;
+        border-bottom: 1px solid rgba($silver-600, 0.3);
+    }
+
 }
 
 .social {
     display: flex;
+
+    @include mq('tablet-2') {
+        justify-content: center;
+        margin-bottom: 24px;        
+    }
 
     &__item {
         &:not(:last-child) {
@@ -164,9 +261,9 @@
         width: 32px;
         height: 32px;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
-        transition: opacity 0.3s, background-color 0.3s, box-shadow 0.3s, border-radius 0.3s, fill 0.3s;
+        transition: opacity 0.3s, background-color 0.3s, box-shadow 0.3s, border-radius 0.3s, fill 0.3s;  
 
         &:focus {           
             box-shadow: 0 0 0 3px $green-200;
@@ -180,5 +277,9 @@
         &:active {
             fill: $green-200;
         }
+    } 
+    
+    &--menu {
+        justify-content: left;
     }
 }
