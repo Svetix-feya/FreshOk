@@ -1,0 +1,76 @@
+.benefits {
+    background-color: $silver-100;
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0 35px;
+        flex-wrap: wrap;
+        @include mq('tablet-2') {
+            padding-top: 31px;
+        }
+        @include mq('tablet') {
+            justify-content: left;
+        }
+
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 65px;
+            @include mq('tablet-2') {
+            margin-bottom: 31px;
+            }    
+
+            @include mq('phone') {
+                margin-bottom: 20px;
+            }
+        }
+       
+    }
+
+    &__item {
+        padding-left: 74px;
+        position: relative;
+        
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            left: 0;
+        }
+
+        &--scooter {
+            &::before {
+                background-image: url('../images/icons/scooter.svg');
+            }
+        }
+
+        &--return {
+            &::before {
+                background-image: url('../images/icons/return.svg');
+            }
+        }
+
+        &--hours {
+            &::before {
+                background-image: url('../images/icons/24-hours.svg');
+            }
+        }
+    }
+
+    &__title {
+        font-weight: $fw-600;
+        font-size: 16px;
+    }
+
+    &__text {
+        font-weight: $fw-400;
+        width: 190px;
+    }
+}

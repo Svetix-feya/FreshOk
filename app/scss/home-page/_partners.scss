@@ -1,0 +1,52 @@
+.partners {
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 72px 0 0 100px;
+
+        @include mq('tablet') {
+            padding: 48px 0 0 100px;
+        }
+
+        @include mq('phone') {
+            padding-left: 48px;
+        }
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center; 
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 140px; 
+        }
+    }
+
+    &__link {
+        opacity: 0.5;
+        display: block;
+        max-width: 80px;
+        width: 100%;
+        border: 3px solid transparent;
+        transition: border-radius 0.3s, border-color 0.3s, opacity 0.3s;
+
+        &:focus,
+        &:active {
+            border-radius: 6px;
+            border-color: $green-200;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__logo {
+        object-fit: contain;        
+    }
+
+}

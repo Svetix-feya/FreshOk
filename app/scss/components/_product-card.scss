@@ -1,0 +1,264 @@
+.product-card {
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        height: 60px;
+        position: relative;
+        
+    }
+
+    &__favorite {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        transition: opacity 0.3s, box-shadow 0.3s, border-radius 0.3s;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 44px;
+            height: 44px;
+            background-image: url('../images/sprite.svg#favorite');
+            background-size: 32px 28px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            @include recolor ($silver-600);
+            right: 0;
+            top: 0;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+
+        &:hover,
+        &:active {
+            @include recolor ($orange-900);
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    &__img {
+        max-height: 225px;
+        max-width: 300px;
+        object-fit: contain;    
+        @include mq('tablet-2') {
+            width: 168px;
+            height: 126px;
+        }   
+    }
+
+    &__discription,
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__bottom {
+        align-items: flex-end;                
+    }
+
+    &__discription {
+        flex-direction: column;
+        height: 110px;
+        padding: 0 12px 10px;        
+    }
+
+    &__title {
+        letter-spacing: 0.03em;
+        font-size: 14px;        
+        @include line-clamp(3);
+        border: 3px solid transparent; 
+        transition: opacity 0.3s, border 0.3s, border-radius 0.3s;       
+
+        &:focus,
+        &:active {
+           border: 3px solid $green-200;
+           border-radius: 6px; 
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+        
+    }
+
+    &__cost {
+        font-weight: $fw-400;
+        line-height: 1;
+        letter-spacing: 0.03em;        
+    }
+
+    &__price {
+        color: $dark-500;
+
+        &--old {
+            position: relative;
+            display: block;
+            color: $silver-600;
+            padding-bottom: 3px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 1px;
+                transform: rotate(-12deg);
+                background-color: $silver-600;
+                right: 0;
+                bottom: 50%;
+            }
+        }     
+    }    
+
+    &__link {
+        position: relative;       
+        padding-bottom: 12px;
+
+        &::after,
+        &::before {
+           position: absolute; 
+           content: '';
+        }
+
+        &::before {            
+            background-color: $black;
+            opacity: 0;
+            width: 100%;
+            height: 100%;            
+            right: 0;
+            z-index: 1;
+            transition: opacity 0.3s;
+        }
+
+        &:hover::before {
+            opacity: 0.1;
+        }
+
+        &::after {            
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: $white;
+            right: -1500px;
+            z-index: 2;
+            // transition: transform 0.1s;
+        }
+
+        &:hover::after {
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            background-image: url('../images/icons/search-green.svg');
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: center center;
+                     
+        }
+
+        &:hover {
+            .product-card__search {
+                right: 50%;
+                transform: translate(50%, -50%);
+                top: 50%;
+                z-index: 3;
+            }
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+        position: relative;
+    }
+
+    &__btn {
+        background-color: $green-900;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        border-radius: 3px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        &:focus {
+            box-shadow: 0 0 0 4px $green-200;
+        }
+
+        &:hover {
+            background-color: $green-700;
+        }
+
+        &:active {
+            box-shadow: inset 0 4px 4px rgba($black, 0.25);
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            background-image: url('../images/sprite.svg#cart');
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include recolor ($white);
+        }
+    }
+
+    &__rating {
+        position: relative;
+        font-weight: $fw-700;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        color: $dark-500;
+        padding-right: 20px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-image: url('../images/sprite.svg#star');
+            background-position: left center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include recolor($yellow-900);
+            right: 0;
+        }
+    }
+    
+
+    &__status {
+        margin: auto 0;
+        font-size: 10px;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+
+        &--instock {
+            color: $green-900;
+        }
+
+        &--close {
+            color: $red-900;
+        }
+
+        &--outofstock {
+            color: $silver-600;
+        }
+    }
+}

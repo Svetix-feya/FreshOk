@@ -1,0 +1,132 @@
+
+.top-products {
+    
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        margin-bottom: 48px;
+
+        @include mq('desktop-3') {
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;            
+        }
+
+        @include mq('tablet-2') {
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+        }
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            margin-bottom: 24px;
+        }
+
+        @include mq('phone') {
+            grid-template-columns: repeat(2, 1fr);           
+        }
+
+    }
+
+    &__item {
+        border: 1px solid $silver-200;
+        border-radius: 6px;        
+        max-width: 300px;
+        transition: border-color 0.3s;        
+
+        &:hover {            
+            border-color: $green-900;
+        }     
+
+        @include mq('tablet-2') {
+            width: 170px;
+            // в макете высота каторчек разная           
+        }
+    }
+
+    .mixitup-control-active {
+        border-bottom: 3px solid $green-200;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+
+    @include mq('tablet') {
+        margin-bottom: 5px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+
+    &__btn {
+        font-weight: $fw-700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        font-size: 15px;
+        color: $dark-500;
+        border-bottom: 3px solid transparent;
+        transition: color 0.3s, border-radius 0.3s, border-bottom 0.3s, box-shadow 0.3s;
+
+        @include mq('tablet') {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+
+        &:hover {
+            color: $green-900;
+        }
+
+        &:active {
+            border-bottom: 3px solid $green-200;
+        }
+    }
+}
+
+.badge {
+    &__item {
+        font-weight: $fw-700;
+        display: block;
+        font-size: 10px;
+        line-height: 1;
+        color: $white;
+        letter-spacing: 0.03em;
+        padding: 2px 6px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        height: 16px;
+        position: absolute;    
+
+        &--new {
+            background-color: $green-900;
+        }
+
+        &--sale {
+            background-color: $red-900;        
+            bottom: 0;
+        }
+
+        &--top {
+            background-color: $orange-900;        
+        }
+
+        &--sale,
+        &--top {
+            width: 35px;
+        }
+    }
+    
+}

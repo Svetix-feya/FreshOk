@@ -1,0 +1,133 @@
+.news { 
+    @include mq('phone') {
+        margin-bottom: 10px;
+    }  
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include mq('tablet') {
+            display: block;
+            margin-bottom: 20px;            
+        }
+    }
+
+    .title {
+        @include mq('tablet') {
+            text-align: start;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__link {
+        display: block;
+        font-weight: $fw-700;
+        line-height: 1.3;
+        color: $green-900;
+        border-bottom: 2px solid $green-900;
+        padding-bottom: 2px;
+        padding-top: 10px;
+        text-transform: uppercase;
+        transition: border-radius 0.3s, border 0.3s, opacity 0.3s;
+
+        @include mq('tablet') {
+            max-width: 105px;
+        }
+
+        &:focus {
+            border-radius: 6px;
+            border: 3px solid $white;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            border: 3px solid $green-200;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+
+        @include mq('tablet-2') {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 14px;
+        }
+
+    }
+
+    &__item {
+        box-shadow: 0 3px 3px rgba($black, 0.25);
+        border-radius: 6px;
+        position: relative; 
+        color: $dark-900;
+        transition: color 0.3s;  
+        
+        @include mq('tablet-2') {
+            max-width: 410px;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        display: block;
+        width: 67px;
+        height: 76px;
+        border-radius: 0 0 4px 4px;
+        background-color: $white;
+        font-weight: $fw-700;
+        font-size: 10px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 18px 0 4px;
+        left: 20px;
+
+    }
+
+    &__num {
+        display: block;
+        font-family: $ruda;
+        font-size: 30px;
+        font-weight: $fw-600;
+        line-height: 1;
+    }
+
+    &__pic {
+        object-fit: cover;
+        border-radius: 6px 6px 0 0;
+
+        @include mq('tablet') {
+            max-height: 200px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 18px 18px 0;
+        @include line-clamp(3);
+        transition: color 0.3s;
+        margin-bottom: 18px;
+
+        @include mq('phone') {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        &:hover {        
+            color: $green-900;
+        }
+    }
+}
