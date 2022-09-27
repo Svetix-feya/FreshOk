@@ -5,6 +5,8 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
+        margin: 0 auto;
+        max-width: max-content;
         margin-bottom: 48px;
 
         @include mq('desktop') {
@@ -19,7 +21,8 @@
         @include mq('tablet') {
             grid-template-columns: repeat(1, 1fr); 
             margin-bottom: 24px;  
-            grid-gap: 15px;         
+            grid-gap: 15px; 
+            padding: 9px 0 3px;        
         }
     }
 
@@ -52,7 +55,7 @@
         }
 
         &__title {
-            padding-top: 12px;                     
+            padding: 12px 0 54px;                     
         }
 
         &__content {
@@ -102,7 +105,7 @@
             &::after {
                 width: 20px;
                 height: 20px;
-                background-size: 10px 10px;
+                background-size: 10px 10px;                
             }
         }
 

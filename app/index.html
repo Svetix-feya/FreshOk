@@ -23,18 +23,22 @@
                     <img class="logo__img" src="images/logo-green.svg" alt="Логотип" width="200" height="60">
                 </a>
                 <div class="usernav">
-                    <ul class="usernav__menu usernav__menu--nav">
+                    <button class="header__close">
+                        <span class="header__line"></span>
+                        <span class="sr-only">Кнопка Закрыть</span>
+                    </button> 
+                    <ul class="usernav__menu">
                         <li class="usernav__item usernav__item--menu">
-                            <a class="usernav__link usernav__link--menu" href="#">
+                            <a class="usernav__link" href="#">
                                 Вход
-                                <svg class="usernav__icon usernav__icon--menu">
+                                <svg class="usernav__icon">
                                     <use xlink:href="images/sprite.svg#user"></use>
                                 </svg>
                             </a>
                         </li>
                         <span>|</span>
                         <li class="usernav__item usernav__item--menu">
-                            <a class="usernav__link usernav__link--menu" href="#">
+                            <a class="usernav__link" href="#">
                                 Регистарация
                             </a>
                         </li>
@@ -42,11 +46,11 @@
                 </div>
                 <a class="catalog catalog--menu" href="#">
                     <span class="catalog__burger"></span>
-                    <span class="catalog__menu catalog__menu--menu">Каталог продуктов</span>
+                    <span class="catalog__menu">Каталог продуктов</span>
                 </a>
-                <address class="contacts contacts--menu">
+                <address class="contacts">
                     <ul class="contacts__address-items">
-                        <li class="contacts__address-item contacts__address-item--menu contacts__address-item--tel">
+                        <li class="contacts__address-item contacts__address-item--tel">
                             <a class="contacts__link" href="tel:+7907288365">
                                 +7 907 288 365
                             </a>
@@ -135,12 +139,12 @@
                     </li>
                 </ul>
             </div>            
-            <div class="container">
-                <button class="header__btn" type="button">
-                    <span class="header__burger"></span>
-                    <span class="sr-only">Меню</span>
-                </button>                
+            <div class="container">                             
                 <div class="header__menu">
+                    <button class="header__btn" type="button">
+                        <span class="header__burger"></span>
+                        <span class="sr-only">Меню</span>
+                    </button> 
                     <ul class="header__info">
                         <li class="header__item-bloc">
                             <a class="header__link-item header__link-item--address" href="#">
@@ -179,7 +183,7 @@
                     <a class="logo logo--header" href="#">
                         <img class="logo__img" src="images/logo.svg" alt="Логотип" width="200" height="60">
                     </a>
-                    <a class="logo-short" href="#">
+                    <a class="logo logo--short" href="#">
                         <img class="logo-short__img" src="images/logo-short.svg" alt="Логотип мини" width="36"
                             height="40">
                     </a>
@@ -187,6 +191,7 @@
                         <span class="catalog__icon"></span>
                         <span class="catalog__menu">Каталог продуктов</span>
                     </button>
+                    
                     <form class="search-form">
                         <label class="sr-only" for="search">
                             Поиск по каталогу
@@ -1166,7 +1171,7 @@
                 </article>
             </li>
         </ul>
-        <a class="btn btn--green" href="#">Показать еще</a>
+        <a class="btn btn--width" href="#">Показать еще</a>
     </div>
 </section>
 
@@ -1305,7 +1310,7 @@
                     </label>
                     <input class="email-form__input" id="email" type="email" placeholder="email@email.com"
                         name="email" required>
-                    <button class="button button--green" type="button">подписаться</button>
+                    <button class="button button--green" type="submit">подписаться</button>
                 </form>
             </div>
             <ul class="footer__menu">

@@ -6,6 +6,10 @@
         padding: 17px 0 15px;
         background-color: $dark-800;
         position: relative;
+
+        @include mq('tablet-2') {
+            padding: 3px 0;
+        }
     }
 
     &__info,
@@ -17,15 +21,14 @@
     }
 
     &__menu {
-        @include mq('tablet-2') {
-            justify-content: right;
+        @include mq('tablet-2') {           
             margin-right: -15px;
         }
     }
 
     &__btn {
         display: none;
-        position: absolute;
+        position: relative;
         width: 44px;
         height: 44px;
         top: 0;
@@ -35,6 +38,44 @@
         }
     }
 
+    &__close {       
+        display: none;
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        top: 35px;
+        right: 10%;
+        transition: transforme 0.3s;
+        
+        @include mq('tablet-2') {
+            display: block;
+        }
+    }
+
+    &__line,
+    &__line::after {
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: $black;
+        border-radius: 2px;
+        z-index: 10;
+        transition: transform 0.3s;
+    }
+
+    &__line {
+        transform: rotate(135deg);      
+    }
+
+    &__line::after {
+        transform: rotate(-90deg);
+        left: 0;
+    }
+
+    &__line::after {
+        content: '';
+    }      
+
     &__burger,
     &__burger::after,
     &__burger::before {
@@ -43,8 +84,8 @@
         height: 2px;
         background-color: $white;
         border-radius: 2px;
-        left: 5px;
-        z-index: 10;
+        left: 5px;     
+        transition: transform 0.3s;
     }
 
     &__burger::after,
@@ -100,20 +141,19 @@
             background-repeat: no-repeat;
             content: '';
             background-position: center center;
-            background-size: cover;
+            background-size: contain;
             height: 22px;
+            width: 27px;
 
             @include mq('tablet-2') {
-                top: 50%;
-                transform: translateY(-50%);
+                top: 50%;                
             }
         }
 
 
         &--address {
             &::before {
-                background-image: url('../images/icons/address.svg');
-                width: 32px;
+                background-image: url('../images/icons/address.svg');              
                 left: -44px;
                 top: -3px;
             }
@@ -121,8 +161,7 @@
 
         &--tel {
             &::before {
-                background-image: url('../images/icons/tel.svg');
-                width: 22px;
+                background-image: url('../images/icons/tel.svg');                
                 left: -32px;
 
                 @include mq('tablet-2') {
@@ -190,6 +229,63 @@
         height: 100vh;
         overflow-x: hidden;
         transition: transform 0.3s;
+        opacity: 0;
+
+        &--active {
+            transition: transform 0.3s;
+        }
+
+        @include mq('tablet-2') {
+            opacity: 1;
+        }
+
+        .usernav__link {            
+            padding-top: 10px;
+            width: 100%;                
+        }
+
+        .usernav__menu {
+            justify-content: left;
+            padding-left: 55px;
+            background-color: $green-900;
+            color: $white;
+            line-height: 1;
+        }
+
+        .usernav__icon {
+            left: -54px;
+        }
+
+        .catalog__menu {
+            color: $dark-800;
+            line-height: 1;
+            font-weight: $fw-600;
+            display: block;
+            padding: 0;
+        }
+
+        .contacts {
+            padding-left: 15px;
+            padding-top: 26px;
+            border-bottom: 1px solid rgba($silver-600, 0.3);
+        }
+
+        .contacts__address-item {
+            padding-left: 40px;
+            position: relative;            
+
+            &::before {
+                position: absolute;                
+                content: '';
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left center;
+                width: 24px;
+                height: 32px;
+                left: 0;                
+            }
+        }
+
     }
 
     &__links {
@@ -212,37 +308,37 @@
             background-color: $green-200;
         }
     }
-
 }
 
 .header__menu-nav.header__menu-nav--active {
-    transform: translateY(-17px);
+    transform: translateY(0); 
+    z-index: 10;   
 }
 
-.header__btn.header__btn--active .header__burger {
-    transform: rotate(135deg);
-    background-color: $black;
-    width: 25px;
-}
+// .header__btn.header__btn--active .header__burger {
+//     // transform: rotate(135deg);
+//     background-color: $black;
+//     width: 25px;    
+// }
 
-.header__btn.header__btn--active .header__burger::after {
-    transform: rotate(0);
-    top: 0;
-    background-color: $black;
-    width: 25px;
-}
+// .header__btn.header__btn--active .header__burger::after {
+//     transform: rotate(0);
+//     top: 0;
+//     background-color: $black;
+//     width: 25px;    
+// }
 
-.header__btn.header__btn--active .header__burger::before {
-    transform: rotate(-90deg);
-    bottom: 0;
-    background-color: $black;
-    width: 25px;
-}
+// .header__btn.header__btn--active .header__burger::before {
+//     // transform: rotate(-90deg);
+//     bottom: 0;
+//     background-color: $black;
+//     width: 25px;    
+// }
 
-.header__btn.header__btn--active {
-    right: 25%;
-    top: 23px;
-}
+// .header__btn.header__btn--active {
+//     right: 25%;
+//     top: 23px;
+// }
 
 .search-form {
     margin-right: 50px;
@@ -349,15 +445,7 @@
         padding: 0 19px 0 16px;
         color: $green-900;
         letter-spacing: 0.03em;
-        transition: transform 0.3s;
-
-        &--menu {
-            color: $dark-800;
-            line-height: 1;
-            font-weight: $fw-600;
-            display: block;
-            padding: 0;
-        }
+        transition: transform 0.3s;       
 
         &::after {
             content: '';
@@ -407,8 +495,6 @@
             top: -7px;
         }
     }
-
-
 }
 
 .catalog.catalog--menu {
@@ -419,15 +505,7 @@
     &__menu {
         display: flex;
         justify-content: space-around;
-        align-items: center;
-
-        &--nav {
-            justify-content: left;
-            padding-left: 55px;
-            background-color: $green-900;
-            color: $white;
-            line-height: 1;
-        }
+        align-items: center;      
     }
 
     &__link {
@@ -442,11 +520,6 @@
         @include mq('tablet-2') {
             width: 40px;
             height: 40px;
-        }
-
-        &--menu {
-            padding-top: 10px;
-            width: 100%;
         }
 
         &:focus,
@@ -477,12 +550,7 @@
         @include mq('tablet-2') {
             width: 24px;
             height: 21px;
-        }
-
-        &--menu {
-            left: -54px;
-        }
-
+        }  
     }
 
     span {
@@ -529,4 +597,5 @@
 
 .usernav__item.usernav__item--menu {
     transform: translateY(0);
+    
 }

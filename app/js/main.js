@@ -48,12 +48,34 @@ $(function(){
 
     $('.usernav__item--search').on('click', function () {
         $('.search-form').toggleClass('search-form--active');
-    });      
-   
-    $('.header__btn').on('click', function () {
-        $('.header__menu-nav').toggleClass('header__menu-nav--active');
-        $('.header__btn').toggleClass('header__btn--active');
+        
+    }); 
+    
+
+    // $('.search-form').hasClass('search-form--active').on        ('click', function () {
+    //         $(this).toggleClass('search-form--active'); 
+    // });
+    
+    $('.header__btn, .header__close').on('click', function () {
+        $('.header__menu-nav').toggleClass('header__menu-nav--active');       
         $('.wrapper').toggleClass('wrapper--lock')
-    });
+    });  
+
+    // document.addEventListener('DOMContentLoaded', () => {
+        
+    //     const burger = document.querySelector('.header__btn'); //наша кнопка
+    //     const mobileMenu = document.querySelector('.header__menu-nav'); //мобильное меню
+    //     const bodyLock = document.querySelector('.wrapper'); //ищем как селектор ТЕГА
+      
+    //     document.addEventListener('click', function (e) {
+    //         if (e.target !== burger && e.target !== mobileMenu) {                
+    //         mobileMenu.classList.remove('header__menu-nav--active');
+    //         bodyLock.classList.remove('.wrapper--lock');
+    //         }
+    //     });
+        
+    // });
+
+    
 
 });

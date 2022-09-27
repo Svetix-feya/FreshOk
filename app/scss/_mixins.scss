@@ -52,13 +52,16 @@
 }
 
 $breakpoints: (
+
+  "phone-mini": 321px,
   "phone": 576px,
   "tablet": 768px, 
   "tablet-2": 992px,
   "desktop": 1200px,
-  "desktop-3": 1340px,
-  "desktop-2": 1566px,  
+  "desktop-2": 1340px,
+  "desktop-3": 1566px,  
 );
+
 @mixin mq($width, $type: max) {
   @if map_has_key($breakpoints, $width) {
    $width: map_get($breakpoints, $width);

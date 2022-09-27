@@ -36,6 +36,10 @@
             max-width: 105px;
         }
 
+        @include mq('phone') {
+            padding-top: 0;
+        }
+
         &:focus {
             border-radius: 6px;
             border: 3px solid $white;
@@ -57,12 +61,13 @@
 
         @include mq('tablet-2') {
             grid-template-columns: repeat(2, 1fr);
-            justify-items: center;
+            justify-items: end;
         }
 
         @include mq('tablet') {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 14px;
+            justify-items: center;
         }
 
     }
@@ -76,6 +81,17 @@
         
         @include mq('tablet-2') {
             max-width: 410px;
+        }
+
+        &:nth-child(2) {
+
+            @include mq('tablet-2') {
+                justify-self: start;
+            }
+
+            @include mq('tablet-2') {
+                justify-self: center;
+            }
         }
     }
 
