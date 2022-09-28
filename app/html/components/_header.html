@@ -19,7 +19,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <span>|</span>
+                        <span class="usernav__symbol">|</span>
                         <li class="usernav__item usernav__item--menu">
                             <a class="usernav__link" href="#">
                                 Регистарация
@@ -235,7 +235,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </button>                    
+                    </button>
                     <form class="search-form">
                         <label class="sr-only" for="search">
                             Поиск по каталогу
@@ -277,7 +277,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="usernav__item">
+                            <li class="usernav__item usernav__item-cart">
                                 <a class="usernav__link" href="#">
                                     <span class="sr-only">
                                         Корзина
@@ -289,6 +289,94 @@
                                 </a>
                             </li>
                         </ul>
+                        <div class="usernav__cart hidden">
+                            <div class="usernav__top">
+                                <h3 class="usernav__title">
+                                    Корзина
+                                </h3>
+                                <button class="usernav__clean-cart" type="button">
+                                    очистить корзину
+                                </button>
+                                <button class="usernav__close" type="button">
+                                    <span class="usernav__line"></span>
+                                </button>
+                            </div>
+                            <ul class="usernav__content">
+                                <li class="usernav__card">
+                                    <article class="product-card">
+                                        <button class="product-card__close">
+                                            <span class="product-card__line"></span>
+                                        </button>
+                                        <div class="product-card__content">
+                                            <a class="product-card__link" href="#">
+                                                <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                                    alt="Ананас" width="80" height="60">
+                                            </a>
+                                            <div class="product-card__discription">
+                                                <a class="product-card__title" href="#">
+                                                    Ананас, 1кг
+                                                </a>
+                                                <span class="product-card__price">
+                                                    999 <span>₽</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__button">
+                                                <button class="product-card__minus"></button>
+                                                <span class="product-card__num">2</span>
+                                                <button class="product-card__plus"></button>
+                                            </div>
+                                            <span class="product-card__sum">
+                                                1998 <span>₽</span>
+                                            </span>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="usernav__card">
+                                    <article class="product-card">
+                                        <button class="product-card__close">
+                                            <span class="product-card__line"></span>
+                                        </button>
+                                        <div class="product-card__content">
+                                            <a class="product-card__link" href="#">
+                                                <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                                    alt="Питахайя" width="80" height="60">
+                                            </a>
+                                            <div class="product-card__discription">
+                                                <a class="product-card__title" href="#">
+                                                    Питахайя красная с белой мякотью, 1шт
+                                                </a>
+                                                <span class="product-card__price">
+                                                    999 <span>₽</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__button">
+                                                <button class="product-card__minus"></button>
+                                                <span class="product-card__num">2</span>
+                                                <button class="product-card__plus"></button>
+                                            </div>
+                                            <span class="product-card__sum">
+                                                1998 <span>₽</span>
+                                            </span>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                            <div class="usernav__total">
+                                <h4 class="usernav__total-title">
+                                    Товаров на сумму
+                                </h4>
+                                <span class="usernav__total-sum">
+                                    2038 <span>₽</span>
+                                </span>
+                            </div>
+                            <button class="btn btn--big" type="submit">
+                                Оформить заказ
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

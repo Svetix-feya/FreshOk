@@ -121,9 +121,7 @@ body {
             object-fit: cover;
         }        
     }
-
 }
-
 
 .title {
     font-family: $ruda;
@@ -194,6 +192,11 @@ body {
     &--width {
         max-width: 179px;
         margin: 0 auto;
+    }
+
+    &--big {
+        width: 100%;
+        border-radius: 0;
     }
 
 }

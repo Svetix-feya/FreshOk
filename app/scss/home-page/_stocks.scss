@@ -55,7 +55,7 @@
         }
 
         &__title {
-            padding: 12px 0 54px;                     
+            padding: 12px 0 5px;                     
         }
 
         &__content {
@@ -102,6 +102,7 @@
         }  
 
         &__link {
+            
             &::after {
                 width: 20px;
                 height: 20px;

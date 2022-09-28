@@ -76,6 +76,8 @@ $(function(){
         
     // });
 
-    
+    $('.usernav__item-cart, .usernav__close').on('click', function () {
+        $('.usernav__cart').toggleClass('hidden');  
+    }); 
 
 });
