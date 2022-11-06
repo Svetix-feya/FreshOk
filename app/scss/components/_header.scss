@@ -1,14 +1,17 @@
 .header {
-    position: fixed;
+    
     z-index: 10;
     width: 100%;
+
     &__top {
         padding: 17px 0 15px;
         background-color: $dark-800;
         position: relative;
 
-        @include mq('tablet-2') {
-            padding: 3px 0;
+        @include mq('lg') {
+            position: fixed;
+            padding: 3px 0;           
+            width: 100%;
         }
     }
 
@@ -20,8 +23,9 @@
         justify-content: space-between;
     }
 
-    &__menu {
-        @include mq('tablet-2') {           
+    &__menu {  
+
+        @include mq('lg') {                    
             margin-right: -15px;
         }
     }
@@ -33,7 +37,7 @@
         height: 44px;
         top: 0;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: block;
         }
     }
@@ -47,7 +51,7 @@
         right: 10%;
         transition: transforme 0.3s;
         
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: block;
         }
     }
@@ -108,7 +112,7 @@
         &:not(:last-child) {
             margin-right: 40px;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 margin-right: 0;
             }
         }
@@ -132,7 +136,7 @@
     &__link-item {
         position: relative;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             font-size: 0;
         }
 
@@ -145,7 +149,7 @@
             height: 22px;
             width: 27px;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 top: 50%;                
             }
         }
@@ -164,7 +168,7 @@
                 background-image: url('../images/icons/tel.svg');                
                 left: -32px;
 
-                @include mq('tablet-2') {
+                @include mq('lg') {
                     top: -3px;
                 }
             }
@@ -172,7 +176,7 @@
     }
 
     &__items {
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: none;
         }
     }
@@ -182,7 +186,7 @@
         border: 3px solid transparent;
         transition: opacity 0.3s, border-radius 0.5s, border-color 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             border: none;
         }
 
@@ -199,22 +203,36 @@
         &:active {
             border: 3px solid $green-200;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 border: none;
             }
         }
     }
 
     &__wrapper {
-        align-items: center;
+        align-items: center;        
     }
 
     &__bottom {
         background-color: $green-900;
-        padding: 25px 0;
+        padding: 25px 0; 
+        position: fixed;   
+        width: 100%;   
+        transition: padding 0.3s, top 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             padding: 5px 0;
+            top: 50px;
+        }
+
+        &--active {
+            padding: 10px 0;
+            top: 0;
+
+            @include mq('lg') {
+                padding: 5px 0;
+                top: 50px;
+            }
         }
     }
 
@@ -235,7 +253,7 @@
             transition: transform 0.3s;
         }
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             opacity: 1;
         }
 
@@ -320,11 +338,11 @@
     display: flex;
     flex-grow: 1;
 
-    @include mq('tablet') {
+    @include mq('md') {
         flex-grow: 0;
     }
 
-    @include mq('tablet-2') {
+    @include mq('lg') {
         transform: translateY(-200px);
         position: absolute;
         z-index: 1;
@@ -342,7 +360,7 @@
         background-size: 20px 20px;
         background-position: 13px center;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             border-radius: 0;
             border: 1px solid $dark-800;
         }
@@ -370,11 +388,11 @@
     transition: background-color 0.3s, border-radius 0.3s;
     margin-right: 30px;
 
-    @include mq('tablet-2') {
+    @include mq('lg') {
         transform: translateY(-200px);
     }
 
-    @include mq('tablet') {
+    @include mq('md') {
         width: 0;
     }
 
@@ -468,7 +486,7 @@
             top: 7px;
             @include recolor($green-600);
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 display: none;
             }
         }
@@ -526,7 +544,7 @@
         height: 50px;
         transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             width: 40px;
             height: 40px;
         }
@@ -556,7 +574,7 @@
         width: 28px;
         height: 30px;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             width: 24px;
             height: 21px;
         }  
@@ -574,13 +592,13 @@
         &--search {
             display: none;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 display: block;
             }
         }
 
         &:first-child {
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 transform: translateY(-200px);
 
             }
@@ -606,24 +624,31 @@
     &__cart {
         position: absolute;        
         line-height: 1.2;
-        right: 0;
-        top: 160px; 
+        right: 0;   
+        width: 475px;
+        top: -50px;        
+        z-index: 4;        
 
-        @include mq('tablet-2') {
-            top: 110px;
+        &--active {
+            top: 0;
         }
     }
 
     &__top {
         background-color: $white;
-        padding: 22px 0 13px 15px;
+        padding: 19px 0 12px 24px;
         position: relative;
     }
 
     &__title {
         font-weight: $fw-400;
-        font-size: 18px;
-        margin-bottom: 15px;       
+        font-size: 24px;
+        margin-bottom: 12px;   
+        
+        @include mq('sm') {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
     }
 
     &__clean-cart {
@@ -632,8 +657,11 @@
 
     &__close {
         position: absolute;
-        right: 65px;
+        right: 26px;
         top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
     }
 
     &__line {
@@ -656,35 +684,37 @@
 
     &__content {
         background-color: $silver-100;
-        padding: 13px 15px 6px 15px;        
+        padding: 12px; 
+        height: calc(100vh - 194px);       
     }
 
     &__card {
         background-color: $white;
         border: 1px solid $silver-600;
         border-radius: 3px;
-        max-width: 345px;
-        height: 126px;
+        width: 100%;
+        height: 84px;
 
-        @include mq('phone-mani') {
-            max-width: 300px;
+        @include mq('sm') {
+            width: 345px;
+            height: 126px;
         }
 
         &:not(:last-child) {
-            margin-bottom: 6px;
+            margin-bottom: 12px;
         }
     }
 
     .product-card {
-        padding: 15px 16px 12px 15px;
-
-        @include mq('phone-mini') {
-            padding-top: 6px;
-        }
+        padding: 13px 16px 12px 6px;
+        display: flex;
+        justify-content: space-between;        
 
         &__close {
             position: absolute;
             right: 45px;
+            width: 12px;
+            height: 12px;
         }
 
         &__line {
@@ -726,24 +756,24 @@
 
         &__sum {
             color: $dark-500;
+            display: flex;            
         }
 
         &__link {
-            margin-bottom: 3px;
-            
-            &::after {
-                width: 20px;
-                height: 20px;
-                transition: background-size 0.3s;                              
+            margin-bottom: 3px;   
+
+            &:hover::after {                
+                opacity: 0;
             }
 
-            &:hover::after {
-                background-size: 10px 10px;  
+            &:hover::before {
+                opacity: 0;
             }
         }
 
-        &__img {            
-            @include mq('tablet-2') {
+        &__img {  
+
+            @include mq('lg') {
                 width: 80px;
                 height: 60px;
             }
@@ -754,10 +784,48 @@
             display: flex;
         }
 
+        &__button {
+            margin-right: 12px;
+        }
+
         &__footer {
-            justify-content: space-between;
-            align-items: center;
-        }        
+            justify-content: right;
+            align-items: flex-end;    
+            margin-bottom: 20px;        
+        }  
+
+        .jq-number__spin {
+            position: absolute;            
+            background: $green-900;
+            width: 24px;
+            height: 24px;           
+        }
+
+        .jq-number__spin.plus {
+            right: 100px;
+        }
+
+        .jq-number__spin.minus {
+            right: 162px;
+        }
+
+        .jq-number__spin::after,
+        .jq-number__spin.plus::before {
+            position: absolute;
+            content: '';
+            background-color: $white;
+            width: 16px;
+            height: 1px;
+            top: 12px;
+            left: 4px;
+        }
+
+        .jq-number__spin.plus::before {
+            transform: rotate(90deg);
+            left: 4px;
+            bottom: 11px;
+            right: 0;
+        }
 
         &__minus,
         &__plus {
@@ -778,29 +846,18 @@
             height: 1px;
         }
 
-        &__minus::before,
-        &__plus::before {
-            top: 12px;
-            left: 4px;
-        }
-
-        &__plus::after {
-            transform: rotate(90deg);
-            left: 4px;
-            bottom: 11px;
-        }
-
-        &__num {
+        .jq-number__field input {
             width: 36px;
             background-color: rgba($green-900, 0.1);
             height: 24px;
             display: block;            
             font-weight: $fw-400;
             font-size: 16px;
-            line-height: 1;
-            padding-top: 3px;
-            text-align: center;
-        }          
+            line-height: 1;           
+            font-family: $opensans;  
+            text-align: center;     
+            margin-right: 28px;   
+        }       
         
     }
 

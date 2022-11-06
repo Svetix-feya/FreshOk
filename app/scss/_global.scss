@@ -56,7 +56,7 @@ body {
 .section {
     padding: 70px 0;
 
-    @include mq('tablet') {
+    @include mq('md') {
         padding: 47px 0;
     }  
 }
@@ -90,7 +90,7 @@ body {
 
     &--header {
         margin-right: 24px;
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: none;
         }
     }
@@ -102,18 +102,17 @@ body {
     }
 
     &--footer {
-        @include mq('tablet-2') {
+        @include mq('lg') {
             margin: 0 auto;            
         }
     }
 
     &--short {
         display: none;
-        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;    
-        width: 100%;
+        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;   
         max-width: 40px;  
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: block;
         }    
 
@@ -132,7 +131,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 30px;
 
-    @include mq('tablet') {
+    @include mq('md') {
         font-size: 24px;
         margin-bottom: 20px;
     }
@@ -151,7 +150,7 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;    
     text-align: center; 
     
-    @include mq('phone') {
+    @include mq('sm') {
        font-size: 14px;        
     } 
 
@@ -212,7 +211,7 @@ body {
     font-weight: $fw-600;
 
     &--search {
-        @include mq('tablet-2') {
+        @include mq('lg') {
             border-radius: 0;
         }
     }

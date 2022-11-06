@@ -7,25 +7,25 @@
         grid-gap: 30px;
         margin-bottom: 48px;
 
-        @include mq('desktop-2') {
+        @include mq('xxl') {
             grid-template-columns: repeat(3, 1fr);
             margin: 0 auto;
             max-width: max-content;  
             margin-bottom: 48px;      
         }
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 15px;            
         }
 
-        @include mq('tablet') {
+        @include mq('md') {
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 5px;
             margin-bottom: 24px;
         }
 
-        @include mq('phone') {
+        @include mq('sm') {
             grid-template-columns: repeat(2, 1fr);           
         }
 
@@ -41,13 +41,9 @@
             border-color: $green-900;
         }     
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             width: 170px;                      
-        }
-
-        @include mq('phone-mini') {
-            width: 145px;                      
-        }
+        }        
     }
 
     .mixitup-control-active {

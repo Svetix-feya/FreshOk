@@ -170,7 +170,7 @@
                         <img class="logo-short__img" src="images/logo-short.svg" alt="Логотип мини" width="36"
                             height="40">
                     </a>
-                    <button class="catalog" type="button">
+                    <div class="catalog">
                         <span class="catalog__icon"></span>
                         <span class="catalog__menu">Каталог продуктов</span>
                         <ul class="catalog__items">
@@ -235,7 +235,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </button>
+                    </div>
                     <form class="search-form">
                         <label class="sr-only" for="search">
                             Поиск по каталогу
@@ -321,16 +321,13 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__button">
-                                                <button class="product-card__minus"></button>
-                                                <span class="product-card__num">2</span>
-                                                <button class="product-card__plus"></button>
-                                            </div>
+                                        <form class="product-card__footer">
+                                            <input class="product-card__button" type="number" value="2">        
+                                            </input>
                                             <span class="product-card__sum">
                                                 1998 <span>₽</span>
                                             </span>
-                                        </div>
+                                        </form>
                                     </article>
                                 </li>
                                 <li class="usernav__card">
@@ -352,16 +349,13 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__button">
-                                                <button class="product-card__minus"></button>
-                                                <span class="product-card__num">2</span>
-                                                <button class="product-card__plus"></button>
-                                            </div>
+                                        <form class="product-card__footer">
+                                            <input class="product-card__button" type="number" value="2">                                               
+                                            </input>
                                             <span class="product-card__sum">
                                                 1998 <span>₽</span>
                                             </span>
-                                        </div>
+                                        </form>
                                     </article>
                                 </li>
                             </ul>
