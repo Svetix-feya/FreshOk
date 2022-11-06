@@ -627,7 +627,11 @@
         right: 0;   
         width: 475px;
         top: -50px;        
-        z-index: 4;        
+        z-index: 4;   
+        
+        @include mq('sm') {
+            width: 100%;
+        }
 
         &--active {
             top: 0;
@@ -695,8 +699,7 @@
         width: 100%;
         height: 84px;
 
-        @include mq('sm') {
-            width: 345px;
+        @include mq('sm') {            
             height: 126px;
         }
 
@@ -708,7 +711,11 @@
     .product-card {
         padding: 13px 16px 12px 6px;
         display: flex;
-        justify-content: space-between;        
+        justify-content: space-between;  
+        
+        @include mq('sm') {
+            display: block;
+        }
 
         &__close {
             position: absolute;
@@ -791,7 +798,12 @@
         &__footer {
             justify-content: right;
             align-items: flex-end;    
-            margin-bottom: 20px;        
+            margin-bottom: 20px;  
+            
+            @include mq('sm') {
+                justify-content: space-between;
+                padding-left: 35px;
+            }
         }  
 
         .jq-number__spin {
@@ -803,10 +815,18 @@
 
         .jq-number__spin.plus {
             right: 100px;
+
+            @include mq('sm') {
+                left: 90px;
+            }
         }
 
         .jq-number__spin.minus {
             right: 162px;
+
+            @include mq('sm') {
+                left: 29px;
+            }
         }
 
         .jq-number__spin::after,
@@ -827,24 +847,24 @@
             right: 0;
         }
 
-        &__minus,
-        &__plus {
-            background-color: $green-900;
-            width: 24px;
-            height: 24px;
-            display: block;
-            position: relative;
-        }
+        // &__minus,
+        // &__plus {
+        //     background-color: $green-900;
+        //     width: 24px;
+        //     height: 24px;
+        //     display: block;
+        //     position: relative;
+        // }
 
-        &__minus::before,
-        &__plus::before,
-        &__plus::after {
-            position: absolute;
-            content: '';
-            background-color: $white;
-            width: 16px;
-            height: 1px;
-        }
+        // &__minus::before,
+        // &__plus::before,
+        // &__plus::after {
+        //     position: absolute;
+        //     content: '';
+        //     background-color: $white;
+        //     width: 16px;
+        //     height: 1px;
+        // }
 
         .jq-number__field input {
             width: 36px;
@@ -856,7 +876,7 @@
             line-height: 1;           
             font-family: $opensans;  
             text-align: center;     
-            margin-right: 28px;   
+            margin-right: 28px;               
         }       
         
     }
