@@ -189,6 +189,12 @@
             top: 240px;
         }        
     }
+
+    .logo {
+        @include mq('lg') {
+            margin: 0 auto;            
+        }
+    }
 }
 
 .email-form {

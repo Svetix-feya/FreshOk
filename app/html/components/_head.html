@@ -13,3 +13,210 @@
 
 <body>
     <div class="wrapper">
+        <div class="cart hidden">
+            <div class="cart__top">
+                <span class="cart__title">
+                    Корзина
+                </span>
+                <button class="cart__clean-cart" type="button">
+                    очистить корзину
+                </button>
+                <button class="cart__close" type="button">
+                    <span class="cart__line"></span>
+                </button>
+            </div>
+            <ul class="cart__content">
+                <li class="cart__card">
+                    <button class="cart__close-item">
+                        <span class="cart__line-item"></span>
+                    </button>
+                    <article class="product-card">
+                        <div class="product-card__content">
+                            <a class="product-card__link" href="#">
+                                <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                    alt="Ананас" width="80" height="60">
+                            </a>
+                            <div class="product-card__discription">
+                                <a class="product-card__title-link" href="#">
+                                    <h3 class="product-card__title">
+                                        Ананас, 1кг
+                                    </h3>
+                                </a>
+                                <span class="product-card__price">
+                                    999 <span>₽</span>
+                                </span>
+                            </div>
+                        </div>
+                        <form class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                            </input>
+                            <span class="product-card__sum">
+                                1998 <span>₽</span>
+                            </span>
+                        </form>
+                    </article>
+                </li>
+                <li class="cart__card">
+                    <button class="cart__close-item">
+                        <span class="cart__line-item"></span>
+                    </button>
+                    <article class="product-card">
+                        <div class="product-card__content">
+                            <a class="product-card__link" href="#">
+                                <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                    alt="Питахайя" width="80" height="60">
+                            </a>
+                            <div class="product-card__discription">
+                                <a class="product-card__title-link" href="#">
+                                    <h3 class="product-card__title">
+                                        Питахайя красная с белой мякотью, 1шт
+                                    </h3>
+                                </a>
+                                <span class="product-card__price">
+                                    1019 <span>₽</span>
+                                </span>
+                            </div>
+                        </div>
+                        <form class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                            </input>
+                            <span class="product-card__sum">
+                                2038 <span>₽</span>
+                            </span>
+                        </form>
+                    </article>
+                </li>
+            </ul>
+            <div class="cart__total">
+                <span class="cart__total-title">
+                    Товаров на сумму
+                </span>
+                <span class="cart__total-sum">
+                    2038 <span>₽</span>
+                </span>
+            </div>
+            <a class="btn btn--big" href="#">
+                Оформить заказ
+            </a>
+        </div>
+        <div class="burger-menu">
+            <a class="logo logo--menu" href="#">
+                <img class="logo__img" src="images/logo/logo-green.svg" alt="Логотип" width="200" height="60">
+            </a>
+            <div class="usernav">
+                <button class="burger-menu__close">
+                    <span class="burger-menu__line"></span>
+                    <span class="sr-only">Кнопка Закрыть Мобильное Меню</span>
+                </button>
+                <ul class="usernav__menu">
+                    <li class="usernav__item usernav__item--menu">
+                        <a class="usernav__link" href="#">
+                            Вход
+                            <svg class="usernav__icon">
+                                <use xlink:href="images/sprite.svg#user"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <span class="usernav__symbol">|</span>
+                    <li class="usernav__item usernav__item--menu">
+                        <a class="usernav__link" href="#">
+                            Регистарация
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a class="catalog catalog--menu" href="#">
+                <span class="catalog__burger"></span>
+                <span class="catalog__menu">Каталог продуктов</span>
+            </a>
+            <address class="contacts">
+                <ul class="contacts__address-items">
+                    <li class="contacts__address-item contacts__address-item--tel">
+                        <a class="contacts__link" href="tel:+7907288365">
+                            +7 907 288 365
+                        </a>
+                    </li>
+                    <li class="contacts__address-item contacts__address-item--menu contacts__address-item--address">
+                        <a class="contacts__link" href="#">
+                            Санкт-Петербург, ул. Ленина, 1
+                        </a>
+                    </li>
+                </ul>
+                <ul class="social social--menu">
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/fb.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                facebook
+                            </span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/yt.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                youtube
+                            </span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/tg.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                telegram
+                            </span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/inst.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                instagram
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </address>
+            <ul class="burger-menu__links">
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Доставка
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        О нас
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Новости
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Контакты
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Акции
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Вакансии
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Отзывы
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Публичная оферта
+                    </a>
+                </li>
+            </ul>
+        </div>

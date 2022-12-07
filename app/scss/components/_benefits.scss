@@ -1,5 +1,5 @@
 .benefits {
-    background-color: $silver-100;
+    background-color: $silver-100;    
 
     &__items {
         display: flex;
@@ -67,6 +67,7 @@
     &__title {
         font-weight: $fw-600;
         font-size: 16px;
+        color: $dark-900;
     }
 
     &__text {

@@ -137,6 +137,7 @@
         @include line-clamp(3);
         transition: color 0.3s;
         margin-bottom: 18px;
+        font-weight: $fw-600;
 
         @include mq('sm') {
             font-size: 14px;

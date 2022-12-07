@@ -20,7 +20,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        padding: 142px 0 142px;       
+        padding: 142px 0 42px;       
         height: 600px;
 
         @include mq('lg') {
@@ -96,7 +96,7 @@
         transition: background-color 0.3s, box-shadow 0.3s;
 
         @include mq('xxl') {
-            display: none;
+            display: none !important; 
         }
 
         &:focus {

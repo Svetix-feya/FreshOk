@@ -1,7 +1,7 @@
 body {
-    font-family: $opensans;
-    font-weight: $fw-600;
-    color: $dark-900;
+    font-family: $opensans, Roboto, sans-serif;
+    font-weight: $fw-400;
+    color: $dark-500;
     font-size: 14px;
     line-height: 1.4;
     background-color: $white;
@@ -12,11 +12,11 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     position: relative;
-
+    
     &--lock {
         width: 100%;
         position: fixed;
-        overflow: hidden;        
+        overflow: hidden;  
 
         &::after {
             content: '';
@@ -24,8 +24,11 @@ body {
             left: 0;
             right: 0;
             top: 0;
-            bottom: 0;
-            background-color: rgba($black, 0.5);               
+            bottom: 0;            
+            z-index: 11;    
+            background-color: $black;
+            opacity: 0.5;  
+                
         }
     }
 }
@@ -88,37 +91,19 @@ body {
         background-color: rgba($white, 0.5);
     }
 
-    &--header {
-        margin-right: 24px;
-        @include mq('lg') {
-            display: none;
-        }
-    }
-
     &--menu {
         padding: 26px 0;  
         padding-left: 15px; 
         max-width: 215px
     }
 
-    &--footer {
+    &__pic {
+        display: block;
+        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;           
+        
         @include mq('lg') {
-            margin: 0 auto;            
-        }
-    }
-
-    &--short {
-        display: none;
-        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;   
-        max-width: 40px;  
-
-        @include mq('lg') {
-            display: block;
-        }    
-
-        &__img {
-            object-fit: cover;
-        }        
+            max-width: 40px;        
+        }  
     }
 }
 
@@ -149,6 +134,7 @@ body {
     background-color: $green-900;
     transition: background-color 0.3s, box-shadow 0.3s;    
     text-align: center; 
+    max-width: fit-content;
     
     @include mq('sm') {
        font-size: 14px;        
@@ -186,18 +172,12 @@ body {
         &:active {
             box-shadow: inset 0 10px 4px rgba($black, 0.1);
         }
-    }  
-
-    &--width {
-        max-width: 179px;
-        margin: 0 auto;
-    }
+    }      
 
     &--big {
-        width: 100%;
+        max-width: 100%;
         border-radius: 0;
     }
-
 }
 
 .button {
