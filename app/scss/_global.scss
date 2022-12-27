@@ -1,7 +1,7 @@
 body {
-    font-family: $opensans;
-    font-weight: $fw-600;
-    color: $dark-900;
+    font-family: $opensans, Roboto, sans-serif;
+    font-weight: $fw-400;
+    color: $dark-500;
     font-size: 14px;
     line-height: 1.4;
     background-color: $white;
@@ -11,11 +11,25 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-
+    position: relative;
+    
     &--lock {
         width: 100%;
         position: fixed;
-        overflow: hidden;
+        overflow: hidden;  
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;            
+            z-index: 11;    
+            background-color: $black;
+            opacity: 0.5;  
+                
+        }
     }
 }
 
@@ -45,13 +59,9 @@ body {
 .section {
     padding: 70px 0;
 
-    @include mq('tablet') {
-        padding: 48px 0;
-    }
-
-    @include mq('phone') {
-        padding: 40px 0;
-    }
+    @include mq('md') {
+        padding: 47px 0;
+    }  
 }
 
 .logo {
@@ -62,6 +72,8 @@ body {
 
     &__img {
         object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 
     &:focus,
@@ -77,13 +89,6 @@ body {
     &:active {
         border-radius: 3px;
         background-color: rgba($white, 0.5);
-    }
-
-    &--header {
-        margin-right: 24px;
-        @include mq('tablet-2') {
-            display: none;
-        }
     }
 
     &--menu {
@@ -92,41 +97,13 @@ body {
         max-width: 215px
     }
 
-    &--footer {
-        @include mq('tablet-2') {
-            margin: 0 auto;            
-        }
-    }
-
-}
-
-.logo-short {
-    display: none;
-    transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;    
-    width: 100%;
-    max-width: 40px;  
-
-    @include mq('tablet-2') {
+    &__pic {
         display: block;
-    }    
-
-    &__img {
-        object-fit: cover;
-    }
-
-    &:focus,
-    &:hover {
-        border-radius: 3px;
-        background-color: rgba($white, 0.1);
-    }
-
-    &:focus {
-        box-shadow: inset 0 0 0 3px $green-100;
-    }
-
-    &:active {
-        border-radius: 3px;
-        background-color: rgba($white, 0.5);
+        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;           
+        
+        @include mq('lg') {
+            max-width: 40px;        
+        }  
     }
 }
 
@@ -139,7 +116,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 30px;
 
-    @include mq('tablet') {
+    @include mq('md') {
         font-size: 24px;
         margin-bottom: 20px;
     }
@@ -157,8 +134,9 @@ body {
     background-color: $green-900;
     transition: background-color 0.3s, box-shadow 0.3s;    
     text-align: center; 
+    max-width: fit-content;
     
-    @include mq('phone') {
+    @include mq('sm') {
        font-size: 14px;        
     } 
 
@@ -194,13 +172,12 @@ body {
         &:active {
             box-shadow: inset 0 10px 4px rgba($black, 0.1);
         }
-    }  
+    }      
 
-    &--green {
-        max-width: 179px;
-        margin: 0 auto;
+    &--big {
+        max-width: 100%;
+        border-radius: 0;
     }
-
 }
 
 .button {
@@ -214,7 +191,7 @@ body {
     font-weight: $fw-600;
 
     &--search {
-        @include mq('tablet-2') {
+        @include mq('lg') {
             border-radius: 0;
         }
     }

@@ -1,5 +1,6 @@
-.news { 
-    @include mq('phone') {
+.news {    
+
+    @include mq('sm') {
         margin-bottom: 10px;
     }  
 
@@ -8,14 +9,14 @@
         justify-content: space-between;
         align-items: flex-start;
 
-        @include mq('tablet') {
+        @include mq('md') {
             display: block;
             margin-bottom: 20px;            
         }
     }
 
     .title {
-        @include mq('tablet') {
+        @include mq('md') {
             text-align: start;
             margin-bottom: 5px;
         }
@@ -32,8 +33,12 @@
         text-transform: uppercase;
         transition: border-radius 0.3s, border 0.3s, opacity 0.3s;
 
-        @include mq('tablet') {
+        @include mq('md') {
             max-width: 105px;
+        }
+
+        @include mq('sm') {
+            padding-top: 0;
         }
 
         &:focus {
@@ -55,14 +60,15 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             grid-template-columns: repeat(2, 1fr);
-            justify-items: center;
+            justify-items: end;
         }
 
-        @include mq('tablet') {
+        @include mq('md') {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 14px;
+            justify-items: center;
         }
 
     }
@@ -74,8 +80,19 @@
         color: $dark-900;
         transition: color 0.3s;  
         
-        @include mq('tablet-2') {
+        @include mq('lg') {
             max-width: 410px;
+        }
+
+        &:nth-child(2) {
+
+            @include mq('lg') {
+                justify-self: start;
+            }
+
+            @include mq('lg') {
+                justify-self: center;
+            }
         }
     }
 
@@ -108,7 +125,7 @@
         object-fit: cover;
         border-radius: 6px 6px 0 0;
 
-        @include mq('tablet') {
+        @include mq('md') {
             max-height: 200px;
         }
     }
@@ -120,8 +137,9 @@
         @include line-clamp(3);
         transition: color 0.3s;
         margin-bottom: 18px;
+        font-weight: $fw-600;
 
-        @include mq('phone') {
+        @include mq('sm') {
             font-size: 14px;
             margin-bottom: 10px;
         }
@@ -129,5 +147,13 @@
         &:hover {        
             color: $green-900;
         }
+    }
+}
+
+.news.section {
+    padding: 60px 0 75px;
+
+    @include mq('md') {
+        padding: 47px 0;
     }
 }

@@ -1,4 +1,4 @@
-.partners {
+.partners {    
 
     &__items {
         display: flex;
@@ -6,11 +6,11 @@
         align-items: center;
         padding: 72px 0 0 100px;
 
-        @include mq('tablet') {
+        @include mq('md') {
             padding: 48px 0 0 100px;
         }
 
-        @include mq('phone') {
+        @include mq('sm') {
             padding-left: 48px;
         }
     }

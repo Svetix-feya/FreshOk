@@ -5,16 +5,16 @@
         grid-gap: 30px;
         margin-bottom: 72px;
 
-        @include mq('tablet-2') {            
+        @include mq('lg') {            
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);           
         }
 
-        @include mq('tablet') {
+        @include mq('md') {
             margin-bottom: 48px;
         }
 
-        @include mq('phone') {
+        @include mq('sm') {
             display: block;            
         }
     }
@@ -24,14 +24,14 @@
         background-size: cover;
         background-position: left bottom;
         border-radius: 6px;          
-        @include mq('tablet-2') {
+        @include mq('lg') {
 
             &:first-child {
             grid-column: 1/3;
             }
         }
         
-        @include mq('phone') {
+        @include mq('sm') {
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
@@ -44,7 +44,7 @@
         padding: 77px 32px 82px;
         text-transform: uppercase;
         color: $dark-500;
-        @include mq('phone') {
+        @include mq('sm') {
             padding: 76px 15px 38px;            
         } 
 
@@ -77,8 +77,10 @@
         font-size: 30px;
         margin-bottom: 10px;
         max-width: 160px;
+
         @include line-clamp(2); 
-        @include mq('phone') {
+
+        @include mq('sm') {
             font-size: 24px;  
             margin-bottom: 70px;        
         } 

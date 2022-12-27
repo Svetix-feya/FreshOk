@@ -14,133 +14,223 @@
 
 <body>
     <div class="wrapper">
+        <div class="cart hidden">
+            <div class="cart__top">
+                <span class="cart__title">
+                    Корзина
+                </span>
+                <button class="cart__clean-cart" type="button">
+                    очистить корзину
+                </button>
+                <button class="cart__close" type="button">
+                    <span class="cart__line"></span>
+                </button>
+            </div>
+            <ul class="cart__content">
+                <li class="cart__card">
+                    <button class="cart__close-item">
+                        <span class="cart__line-item"></span>
+                    </button>
+                    <article class="product-card">
+                        <div class="product-card__content">
+                            <a class="product-card__link" href="#">
+                                <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                    alt="Ананас" width="80" height="60">
+                            </a>
+                            <div class="product-card__discription">
+                                <a class="product-card__title-link" href="#">
+                                    <h3 class="product-card__title">
+                                        Ананас, 1кг
+                                    </h3>
+                                </a>
+                                <span class="product-card__price">
+                                    999 <span>₽</span>
+                                </span>
+                            </div>
+                        </div>
+                        <form class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                            </input>
+                            <span class="product-card__sum">
+                                1998 <span>₽</span>
+                            </span>
+                        </form>
+                    </article>
+                </li>
+                <li class="cart__card">
+                    <button class="cart__close-item">
+                        <span class="cart__line-item"></span>
+                    </button>
+                    <article class="product-card">
+                        <div class="product-card__content">
+                            <a class="product-card__link" href="#">
+                                <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                    alt="Питахайя" width="80" height="60">
+                            </a>
+                            <div class="product-card__discription">
+                                <a class="product-card__title-link" href="#">
+                                    <h3 class="product-card__title">
+                                        Питахайя красная с белой мякотью, 1шт
+                                    </h3>
+                                </a>
+                                <span class="product-card__price">
+                                    1019 <span>₽</span>
+                                </span>
+                            </div>
+                        </div>
+                        <form class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                            </input>
+                            <span class="product-card__sum">
+                                2038 <span>₽</span>
+                            </span>
+                        </form>
+                    </article>
+                </li>
+            </ul>
+            <div class="cart__total">
+                <span class="cart__total-title">
+                    Товаров на сумму
+                </span>
+                <span class="cart__total-sum">
+                    2038 <span>₽</span>
+                </span>
+            </div>
+            <a class="btn btn--big" href="#">
+                Оформить заказ
+            </a>
+        </div>
+        <div class="burger-menu">
+            <a class="logo logo--menu" href="#">
+                <img class="logo__img" src="images/logo/logo-green.svg" alt="Логотип" width="200" height="60">
+            </a>
+            <div class="usernav">
+                <button class="burger-menu__close">
+                    <span class="burger-menu__line"></span>
+                    <span class="sr-only">Кнопка Закрыть Мобильное Меню</span>
+                </button>
+                <ul class="usernav__menu">
+                    <li class="usernav__item usernav__item--menu">
+                        <a class="usernav__link" href="#">
+                            Вход
+                            <svg class="usernav__icon">
+                                <use xlink:href="images/sprite.svg#user"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <span class="usernav__symbol">|</span>
+                    <li class="usernav__item usernav__item--menu">
+                        <a class="usernav__link" href="#">
+                            Регистарация
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a class="catalog catalog--menu" href="#">
+                <span class="catalog__burger"></span>
+                <span class="catalog__menu">Каталог продуктов</span>
+            </a>
+            <address class="contacts">
+                <ul class="contacts__address-items">
+                    <li class="contacts__address-item contacts__address-item--tel">
+                        <a class="contacts__link" href="tel:+7907288365">
+                            +7 907 288 365
+                        </a>
+                    </li>
+                    <li class="contacts__address-item contacts__address-item--menu contacts__address-item--address">
+                        <a class="contacts__link" href="#">
+                            Санкт-Петербург, ул. Ленина, 1
+                        </a>
+                    </li>
+                </ul>
+                <ul class="social social--menu">
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/fb.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                facebook
+                            </span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/yt.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                youtube
+                            </span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/tg.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                telegram
+                            </span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="#" style="background-image: url('images/icons/inst.svg');"
+                            target="_blank">
+                            <span class="sr-only">
+                                instagram
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </address>
+            <ul class="burger-menu__links">
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Доставка
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        О нас
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Новости
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Контакты
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Акции
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Вакансии
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Отзывы
+                    </a>
+                </li>
+                <li class="burger-menu__item">
+                    <a class="burger-menu__link" href="#">
+                        Публичная оферта
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     <header class="header">
     <nav class="header__nav">
         <div class="header__top">
-            <div class="header__menu-nav">
-                <a class="logo logo--menu" href="#">
-                    <img class="logo__img" src="images/logo-green.svg" alt="Логотип" width="200" height="60">
-                </a>
-                <div class="usernav">
-                    <ul class="usernav__menu usernav__menu--nav">
-                        <li class="usernav__item usernav__item--menu">
-                            <a class="usernav__link usernav__link--menu" href="#">
-                                Вход
-                                <svg class="usernav__icon usernav__icon--menu">
-                                    <use xlink:href="images/sprite.svg#user"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <span>|</span>
-                        <li class="usernav__item usernav__item--menu">
-                            <a class="usernav__link usernav__link--menu" href="#">
-                                Регистарация
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="catalog catalog--menu" href="#">
-                    <span class="catalog__burger"></span>
-                    <span class="catalog__menu catalog__menu--menu">Каталог продуктов</span>
-                </a>
-                <address class="contacts contacts--menu">
-                    <ul class="contacts__address-items">
-                        <li class="contacts__address-item contacts__address-item--menu contacts__address-item--tel">
-                            <a class="contacts__link" href="tel:+7907288365">
-                                +7 907 288 365
-                            </a>
-                        </li>
-                        <li class="contacts__address-item contacts__address-item--menu contacts__address-item--address">
-                            <a class="contacts__link" href="#">
-                                Санкт-Петербург, ул. Ленина, 1
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="social social--menu">
-                        <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/fb.svg');"
-                                target="_blank">
-                                <span class="sr-only">
-                                    facebook
-                                </span>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/yt.svg');"
-                                target="_blank">
-                                <span class="sr-only">
-                                    youtube
-                                </span>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/tg.svg');"
-                                target="_blank">
-                                <span class="sr-only">
-                                    telegram
-                                </span>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a class="social__link" href="#" style="background-image: url('images/icons/inst.svg');"
-                                target="_blank">
-                                <span class="sr-only">
-                                    instagram
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </address>
-                <ul class="header__links">
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Доставка
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            О нас
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Новости
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Контакты
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Акции
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Вакансии
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Отзывы
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">
-                            Публичная оферта
-                        </a>
-                    </li>
-                </ul>
-            </div>            
             <div class="container">
-                <button class="header__btn" type="button">
-                    <span class="header__burger"></span>
-                    <span class="sr-only">Меню</span>
-                </button>                
                 <div class="header__menu">
+                    <button class="header__btn" type="button">
+                        <span class="header__burger"></span>
+                        <span class="sr-only">Меню</span>
+                    </button>
                     <ul class="header__info">
                         <li class="header__item-bloc">
                             <a class="header__link-item header__link-item--address" href="#">
@@ -176,24 +266,85 @@
         <div class="header__bottom">
             <div class="container">
                 <div class="header__wrapper">
-                    <a class="logo logo--header" href="#">
-                        <img class="logo__img" src="images/logo.svg" alt="Логотип" width="200" height="60">
+                    <a class="logo" href="#">
+                        <picture class="logo__pic" >
+                            <source srcset="images/logo/logo-short.svg" media="(max-width: 992px)" >
+                        <img class="logo__img" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
+                        </picture>
                     </a>
-                    <a class="logo-short" href="#">
-                        <img class="logo-short__img" src="images/logo-short.svg" alt="Логотип мини" width="36"
-                            height="40">
-                    </a>
-                    <button class="catalog" type="button">
-                        <span class="catalog__icon"></span>
-                        <span class="catalog__menu">Каталог продуктов</span>
-                    </button>
+                    <div class="catalog">
+                        <button class="catalog__icon" type="button"></button>
+                        <button class="catalog__menu" type="button">Каталог продуктов</button>
+                        <ul class="catalog__items" >
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Овощи и фрукты
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Бакалея
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Молочные продукты
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Хлеб
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Мясо
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Колбаса
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Рыба
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Алкоголь
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Напитки
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Торты
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Мясо
+                                </a>
+                            </li>
+                            <li class="catalog__item">
+                                <a class="catalog__link" href="#">
+                                    Чай, кофе
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <form class="search-form">
                         <label class="sr-only" for="search">
                             Поиск по каталогу
                         </label>
                         <input class="search-form__input" id="search" type="search" placeholder="Найти в магазине ..."
                             name="search" required>
-                        <button class="button button--search" type="button">поиск</button>
+                        <button class="button button--search" type="submit">поиск</button>
                     </form>
                     <div class="usernav">
                         <ul class="usernav__menu">
@@ -228,7 +379,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="usernav__item">
+                            <li class="usernav__item usernav__item-cart">
                                 <a class="usernav__link" href="#">
                                     <span class="sr-only">
                                         Корзина
@@ -257,7 +408,7 @@
         Карусель скидок
     </h2>
     <ul class="slider-top__items">
-        <li class="slider-top__item" style="background-image: url('images/slied-1.jpg');">
+        <li class="slider-top__item" style="background-image: url('images/slider-top/slied-1.jpg');">
             <div class="container">
                 <div class="slider-top__content">
                     <h3 class="slider-top__title">
@@ -277,7 +428,7 @@
                 </div>
             </div>
         </li>
-        <li class="slider-top__item" style="background-image: url('images/slied-2.jpg');">
+        <li class="slider-top__item" style="background-image: url('images/slider-top/slied-2.jpg');">
             <div class="container">
                 <div class="slider-top__content">
                     <h3 class="slider-top__title">
@@ -297,7 +448,7 @@
                 </div>
             </div>
         </li>
-        <li class="slider-top__item" style="background-image: url('images/slied-3.jpg');">
+        <li class="slider-top__item" style="background-image: url('images/slider-top/slied-3.jpg');">
             <div class="container">
                 <div class="slider-top__content">
                     <h3 class="slider-top__title">
@@ -405,8 +556,10 @@
                             <img class="product-card__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Ананас, 1кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Ананас, 1кг
+                                </h3> 
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -444,8 +597,10 @@
                             <img class="product-card__img" src="images/catalog/lemon.jpg" alt="Лимон" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Лимон, 1кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Лимон, 1кг
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -482,8 +637,10 @@
                             <img class="product-card__img" src="images/catalog/dragon-fruit.jpg" alt="Питахайя красная с белой мякотью" width="298" height="225">                            
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Питахайя красная с белой мякотью, 1шт
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Питахайя красная с белой мякотью, 1шт
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -518,8 +675,10 @@
                             <img class="product-card__img" src="images/catalog/ketchup.jpg" alt="Кетчуп" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -556,8 +715,10 @@
                             <img class="product-card__img" src="images/catalog/carrot.jpg" alt="Морковь" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Морковь молодая с бабушкиной грядки, 1кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Морковь молодая с бабушкиной грядки, 1кг
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -576,7 +737,7 @@
                 </article>
             </li>
             <li class="top-products__item mix drinks">
-                <article class="product-d">
+                <article class="product-card">
                     <div class="product-card__top">
                         <ul class="badge">
                             <li class="badge__item badge__item--sale">
@@ -594,9 +755,11 @@
                             <img class="product-card__img" src="images/catalog/juice.jpg" alt="Напиток сокосодержащий" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
                                 безалкогольн...
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -636,8 +799,10 @@
                             <img class="product-card__img" src="images/catalog/coffee.jpg" alt="Кофе" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Кофе с коноплей органический Caffé Salomoni 250г
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Кофе с коноплей органический Caffé Salomoni 250г
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -674,8 +839,10 @@
                             <img class="product-card__img" src="images/catalog/paprik.jpg" alt="Перец оранжевый" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Перец оранжевый, 1кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title">
+                                    Перец оранжевый, 1кг
+                                </h3>                                
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
@@ -792,8 +959,10 @@
                             <img class="product-card__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="100" height="75">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Ананас, 1кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Ананас, 1кг
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--instock">
@@ -841,8 +1010,10 @@
                             <img class="product-card__img" src="images/catalog/coffee.jpg" alt="Кофе" width="100" height="75">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Кофе с коноплей органический Caffé Salomoni 250г
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Кофе с коноплей органический Caffé Salomoni 250г
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--close">
@@ -890,8 +1061,10 @@
                             <img class="product-card__img" src="images/catalog/strawberry.jpg" width="100" height="75" alt="Клубника">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Клубника, 1 кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Клубника, 1 кг
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--outofstock">
@@ -939,8 +1112,10 @@
                             <img class="product-card__img" src="images/catalog/mango.jpg" width="100" height="75" alt="Манго">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Манго, 1 шт
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Манго, 1 шт
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--instock">
@@ -988,8 +1163,10 @@
                             <img class="product-card__img" src="images/catalog/salmon.jpg" width="100" height="75" alt="Лосось">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Лосось, 1 кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Лосось, 1 кг
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--instock">
@@ -1037,8 +1214,10 @@
                             <img class="product-card__img" src="images/catalog/veg_juice.jpg" width="100" height="75" alt="Сок овощной">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Сок Granini овощной 100%, 0.5л
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Сок Granini овощной 100%, 0.5л
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--close">
@@ -1086,8 +1265,10 @@
                             <img class="product-card__img" src="images/catalog/basket.jpg" width="100" height="75" alt="Фруктовая корзина">                          
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Фруктовая корзина, 1 шт
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Фруктовая корзина, 1 шт
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--instock">
@@ -1117,7 +1298,7 @@
                 </article>
             </li>
             <li class="stocks__item mix top">
-                <article class="product-d">
+                <article class="product-card">
                     <div class="product-card__top">
                         <ul class="badge">
                             <li class="badge__item badge__item--top">
@@ -1135,8 +1316,10 @@
                             <img class="product-card__img" src="images/catalog/pork.jpg" width="100" height="75" alt="Свинина мякоть">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title" href="#">
-                                Свинина мякоть, 1 кг
+                            <a class="product-card__title-link" href="#">
+                                <h3 class="product-card__title" >
+                                    Свинина мякоть, 1 кг
+                                </h3>                                
                             </a>
                             <div class="product-card__wrapper">
                                 <span class="product-card__status product-card__status--instock">
@@ -1166,7 +1349,7 @@
                 </article>
             </li>
         </ul>
-        <a class="btn btn--green" href="#">Показать еще</a>
+        <a class="btn btn--width" href="#">Показать еще</a>
     </div>
 </section>
 
@@ -1293,19 +1476,19 @@
 
     <footer class="footer">
     <div class="container">
-        <a class="logo logo--footer" href="#">
-            <img class="logo__img" src="images/logo.svg" alt="Логотип" width="200" height="60">
+        <a class="logo" href="#">
+            <img class="logo__img" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
         </a>
         <div class="footer__content">
             <div class="footer__item">
-                <span class="footer__news">Следите за нашими акциями</span>
+                <label class="footer__news">Следите за нашими акциями</label>
                 <form class="email-form">
                     <label class="sr-only" for="email">
                         Ввод email
                     </label>
                     <input class="email-form__input" id="email" type="email" placeholder="email@email.com"
                         name="email" required>
-                    <button class="button button--green" type="button">подписаться</button>
+                    <button class="button button--green" type="submit">подписаться</button>
                 </form>
             </div>
             <ul class="footer__menu">
@@ -1429,7 +1612,8 @@
     </div>
 </footer>
 
-</div>    
+</div> 
+<!-- это див от wrapper -->    
 
 
 

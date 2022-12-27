@@ -1,12 +1,17 @@
-.product-card {
+.product-card {    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $dark-900;
 
     &__top {
+        position: absolute;
         display: flex;
         justify-content: space-between;
         padding: 12px;
         height: 60px;
-        position: relative;
-        
+        position: relative;           
     }
 
     &__favorite {
@@ -46,22 +51,25 @@
 
     &__content {
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;    
+        justify-content: space-between;  
+        height: 100%;  
     }
 
     &__img {
         max-height: 225px;
         max-width: 300px;
-        object-fit: contain;    
-        @include mq('tablet-2') {
+        object-fit: contain;  
+
+        @include mq('lg') {
             width: 168px;
             height: 126px;
-        }   
+        }    
     }
 
     &__discription,
     &__bottom {
-        display: flex;
+        display: flex;        
         justify-content: space-between;
     }
 
@@ -70,17 +78,31 @@
     }
 
     &__discription {
-        flex-direction: column;
-        height: 110px;
-        padding: 0 12px 10px;        
+        flex-direction: column;       
+        padding: 0 18px 18px;   
+        max-height: 112px;  
+        height: 100%;       
+        
+        @include mq('sm') {
+           max-height: 138px;
+           height: 100%;
+        }
     }
 
     &__title {
         letter-spacing: 0.03em;
-        font-size: 14px;        
+        font-size: 14px;     
+        font-weight: $fw-600;   
         @include line-clamp(3);
-        border: 3px solid transparent; 
-        transition: opacity 0.3s, border 0.3s, border-radius 0.3s;       
+        border: 3px solid transparent;         
+        transition: opacity 0.3s, border 0.3s, border-radius 0.3s;   
+
+        @include mq('sm') {
+            margin-bottom: 49px;
+        }
+    }
+
+    &__title-link {        
 
         &:focus,
         &:active {
@@ -91,7 +113,6 @@
         &:hover {
             opacity: 0.7;
         }
-        
     }
 
     &__cost {
@@ -129,7 +150,7 @@
         &::after,
         &::before {
            position: absolute; 
-           content: '';
+           content: '';           
         }
 
         &::before {            
@@ -138,8 +159,8 @@
             width: 100%;
             height: 100%;            
             right: 0;
-            z-index: 1;
-            transition: opacity 0.3s;
+            z-index: 1; 
+            transition: opacity 0.3s;           
         }
 
         &:hover::before {
@@ -150,21 +171,20 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background-color: $white;
-            right: -1500px;
-            z-index: 2;
-            // transition: transform 0.1s;
-        }
-
-        &:hover::after {
-            top: 50%;
-            right: 50%;
+            background-color: $white;          
+            z-index: 2; 
+            opacity: 0;  
             transform: translate(50%, -50%);
             background-image: url('../images/icons/search-green.svg');
             background-size: 20px 20px;
             background-repeat: no-repeat;
-            background-position: center center;
-                     
+            background-position: center center;         
+        }
+
+        &:hover::after {
+            top: 50%;
+            right: 50%;            
+            opacity: 1;         
         }
 
         &:hover {

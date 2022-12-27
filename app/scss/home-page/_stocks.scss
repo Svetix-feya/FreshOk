@@ -5,21 +5,24 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
+        margin: 0 auto;
+        max-width: max-content;
         margin-bottom: 48px;
 
-        @include mq('desktop') {
+        @include mq('xl') {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             grid-template-columns: repeat(2, 1fr);
             justify-items: center;            
         }
 
-        @include mq('tablet') {
+        @include mq('md') {
             grid-template-columns: repeat(1, 1fr); 
             margin-bottom: 24px;  
-            grid-gap: 15px;         
+            grid-gap: 15px; 
+            padding: 9px 0 3px;        
         }
     }
 
@@ -29,7 +32,7 @@
         background-color: $white;
         transition: border-color 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             width: 300px;
             height: 124px;            
         }
@@ -44,15 +47,12 @@
     }
 
     .product-card {
-        height: 124px;
+        height: 124px;        
+        padding: 12px;
 
         &__top {
             height: 0;
             padding: 0;
-        }
-
-        &__title {
-            padding-top: 12px;                     
         }
 
         &__content {
@@ -61,7 +61,8 @@
         }
 
         &__discription {            
-            padding-bottom: 8px;
+            padding: 0;
+            max-height: 100%;          
             width: 100%;
         }
 
@@ -75,8 +76,7 @@
         &__price {
             font-size: 20px;
             font-weight: $fw-600;
-            margin-right: 12px;
-            padding-top: 5px;
+            margin-right: 12px;           
 
             &--old {
                 font-size: 12px;
@@ -85,31 +85,37 @@
 
             span {
                 font-size: 15px;    
-                font-weight: $fw-900;            
+                font-weight: fw-900;                           
             }
         }
 
         &__img {
             padding: 0 10px;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 width: 100px;
                 height: 75px;
             }
         }  
 
         &__link {
+            
             &::after {
                 width: 20px;
                 height: 20px;
-                background-size: 10px 10px;
+                background-size: 10px 10px;                
             }
         }
 
         &__bottom {
             margin-bottom: 0;
-        }        
-        
+        }  
+
+        &__title {
+            @include mq('sm') {
+                margin-bottom: 0;
+            }
+        }
     }    
 
     .badge {
@@ -118,6 +124,10 @@
             left: 12px;
             z-index: 3;
         }        
+    }
+
+    .btn {
+        margin: 0 auto;
     }
 
 }

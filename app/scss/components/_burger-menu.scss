@@ -1,0 +1,135 @@
+.burger-menu {
+    background-color: $white;
+    width: 80%;
+    font-size: 18px;
+    font-weight: $fw-400;
+    transform: translateY(-1000px);
+    position: absolute;
+    z-index: 20;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: transform 0.3s;
+    opacity: 0;
+
+    @include mq('lg') {
+            opacity: 1;
+        }
+
+    &--active {
+        transition: transform 0.3s;
+    }
+
+    &__close {       
+        display: none;
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        top: 35px;
+        right: 10%;
+        transition: transforme 0.3s;
+        
+        @include mq('lg') {
+            display: block;
+        }
+    }
+
+    &__line,
+    &__line::after {
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: $black;
+        border-radius: 2px;
+        z-index: 10;
+        transition: transform 0.3s;
+    }
+
+    &__line {
+        transform: rotate(135deg);      
+    }
+
+    &__line::after {
+        transform: rotate(-90deg);
+        left: 0;
+    }
+
+    &__line::after {
+        content: '';
+    }      
+
+
+    .usernav__link {            
+        padding-top: 10px;
+        width: 100%;                
+    }
+
+    .usernav__menu {
+        justify-content: left;
+        padding-left: 55px;
+        background-color: $green-900;
+        color: $white;
+        line-height: 1;
+    }
+
+    .usernav__icon {
+        left: -54px;
+    }
+
+    .catalog__menu {
+        color: $dark-800;
+        line-height: 1;
+        font-weight: $fw-600;
+        display: block;
+        padding: 0;
+    }
+
+    .contacts {
+        padding-left: 15px;
+        padding-top: 26px;
+        border-bottom: 1px solid rgba($silver-600, 0.3);
+    }
+
+    .contacts__address-item {
+        padding-left: 40px;
+        position: relative;            
+
+        &::before {
+            position: absolute;                
+            content: '';
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            width: 24px;
+            height: 32px;
+            left: 0;                
+        }
+    }
+
+    &__links {
+    padding: 17px 15px;
+    }    
+
+
+    &__link {
+        display: inline-block;
+        width: 100%;
+        padding: 7px 0;
+        transition: box-shadow 0.3s, border-radius 0.3s, background-color 0.3s;
+    
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+    
+        &:hover {
+            background-color: $green-200;
+        }
+    }  
+
+}
+
+.burger-menu.burger-menu--active {
+    transform: translateY(0); 
+    z-index: 15;   
+}

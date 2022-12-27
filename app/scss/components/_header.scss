@@ -1,11 +1,18 @@
 .header {
-    position: fixed;
+    
     z-index: 10;
     width: 100%;
+
     &__top {
         padding: 17px 0 15px;
         background-color: $dark-800;
         position: relative;
+
+        @include mq('lg') {
+            position: fixed;
+            padding: 3px 0;           
+            width: 100%;
+        }
     }
 
     &__info,
@@ -16,24 +23,62 @@
         justify-content: space-between;
     }
 
-    &__menu {
-        @include mq('tablet-2') {
-            justify-content: right;
+    &__menu {  
+
+        @include mq('lg') {                    
             margin-right: -15px;
         }
     }
 
     &__btn {
         display: none;
-        position: absolute;
+        position: relative;
         width: 44px;
         height: 44px;
         top: 0;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: block;
         }
     }
+
+    // &__close {       
+    //     display: none;
+    //     position: absolute;
+    //     width: 44px;
+    //     height: 44px;
+    //     top: 35px;
+    //     right: 10%;
+    //     transition: transforme 0.3s;
+        
+    //     @include mq('lg') {
+    //         display: block;
+    //     }
+    // }
+
+    // &__line,
+    // &__line::after {
+    //     position: absolute;
+    //     width: 25px;
+    //     height: 2px;
+    //     background-color: $black;
+    //     border-radius: 2px;
+    //     z-index: 10;
+    //     transition: transform 0.3s;
+    // }
+
+    // &__line {
+    //     transform: rotate(135deg);      
+    // }
+
+    // &__line::after {
+    //     transform: rotate(-90deg);
+    //     left: 0;
+    // }
+
+    // &__line::after {
+    //     content: '';
+    // }      
 
     &__burger,
     &__burger::after,
@@ -43,8 +88,8 @@
         height: 2px;
         background-color: $white;
         border-radius: 2px;
-        left: 5px;
-        z-index: 10;
+        left: 5px;     
+        transition: transform 0.3s;
     }
 
     &__burger::after,
@@ -67,7 +112,7 @@
         &:not(:last-child) {
             margin-right: 40px;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 margin-right: 0;
             }
         }
@@ -91,7 +136,7 @@
     &__link-item {
         position: relative;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             font-size: 0;
         }
 
@@ -100,20 +145,19 @@
             background-repeat: no-repeat;
             content: '';
             background-position: center center;
-            background-size: cover;
+            background-size: contain;
             height: 22px;
+            width: 27px;
 
-            @include mq('tablet-2') {
-                top: 50%;
-                transform: translateY(-50%);
+            @include mq('lg') {
+                top: 50%;                
             }
         }
 
 
         &--address {
             &::before {
-                background-image: url('../images/icons/address.svg');
-                width: 32px;
+                background-image: url('../images/icons/address.svg');              
                 left: -44px;
                 top: -3px;
             }
@@ -121,11 +165,10 @@
 
         &--tel {
             &::before {
-                background-image: url('../images/icons/tel.svg');
-                width: 22px;
+                background-image: url('../images/icons/tel.svg');                
                 left: -32px;
 
-                @include mq('tablet-2') {
+                @include mq('lg') {
                     top: -3px;
                 }
             }
@@ -133,7 +176,7 @@
     }
 
     &__items {
-        @include mq('tablet-2') {
+        @include mq('lg') {
             display: none;
         }
     }
@@ -143,7 +186,7 @@
         border: 3px solid transparent;
         transition: opacity 0.3s, border-radius 0.5s, border-color 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             border: none;
         }
 
@@ -160,100 +203,150 @@
         &:active {
             border: 3px solid $green-200;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 border: none;
             }
         }
     }
 
     &__wrapper {
-        align-items: center;
+        align-items: center;        
     }
 
     &__bottom {
         background-color: $green-900;
-        padding: 25px 0;
+        padding: 25px 0; 
+        position: fixed;   
+        width: 100%;   
+        transition: padding 0.3s, top 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             padding: 5px 0;
-        }
-    }
-
-    &__menu-nav {
-        background-color: $white;
-        width: 80%;
-        font-size: 18px;
-        font-weight: $fw-400;
-        transform: translateY(-1000px);
-        position: absolute;
-        z-index: 10;
-        height: 100vh;
-        overflow-x: hidden;
-        transition: transform 0.3s;
-    }
-
-    &__links {
-        padding: 17px 15px;
-    }
-
-    &__nav-link {
-        display: inline-block;
-        width: 100%;
-        padding: 7px 0;
-        transition: box-shadow 0.3s, border-radius 0.3s, background-color 0.3s;
-
-        &:focus,
-        &:active {
-            box-shadow: 0 0 0 3px $green-200;
-            border-radius: 3px;
+            top: 50px;
         }
 
-        &:hover {
-            background-color: $green-200;
+        &--active {
+            padding: 10px 0;
+            top: 0;
+
+            @include mq('lg') {
+                padding: 5px 0;
+                top: 50px;
+            }
         }
     }
+}
+//     &__menu-nav {
+//         background-color: $white;
+//         width: 80%;
+//         font-size: 18px;
+//         font-weight: $fw-400;
+//         transform: translateY(-1000px);
+//         position: absolute;
+//         z-index: 20;
+//         height: 100vh;
+//         overflow-x: hidden;
+//         transition: transform 0.3s;
+//         opacity: 0;
 
+//         &--active {
+//             transition: transform 0.3s;
+//         }
+
+//         @include mq('lg') {
+//             opacity: 1;
+//         }
+
+//         .usernav__link {            
+//             padding-top: 10px;
+//             width: 100%;                
+//         }
+
+//         .usernav__menu {
+//             justify-content: left;
+//             padding-left: 55px;
+//             background-color: $green-900;
+//             color: $white;
+//             line-height: 1;
+//         }
+
+//         .usernav__icon {
+//             left: -54px;
+//         }
+
+//         .catalog__menu {
+//             color: $dark-800;
+//             line-height: 1;
+//             font-weight: $fw-600;
+//             display: block;
+//             padding: 0;
+//         }
+
+//         .contacts {
+//             padding-left: 15px;
+//             padding-top: 26px;
+//             border-bottom: 1px solid rgba($silver-600, 0.3);
+//         }
+
+//         .contacts__address-item {
+//             padding-left: 40px;
+//             position: relative;            
+
+//             &::before {
+//                 position: absolute;                
+//                 content: '';
+//                 background-size: contain;
+//                 background-repeat: no-repeat;
+//                 background-position: left center;
+//                 width: 24px;
+//                 height: 32px;
+//                 left: 0;                
+//             }
+//         }
+
+//     }
+
+//     &__links {
+//         padding: 17px 15px;
+//     }
+
+//     &__nav-link {
+//         display: inline-block;
+//         width: 100%;
+//         padding: 7px 0;
+//         transition: box-shadow 0.3s, border-radius 0.3s, background-color 0.3s;
+
+//         &:focus,
+//         &:active {
+//             box-shadow: 0 0 0 3px $green-200;
+//             border-radius: 3px;
+//         }
+
+//         &:hover {
+//             background-color: $green-200;
+//         }
+//     }  
+// }
+
+.logo {
+    margin-right: 24px;
 }
 
-.header__menu-nav.header__menu-nav--active {
-    transform: translateY(-17px);
-}
-
-.header__btn.header__btn--active .header__burger {
-    transform: rotate(135deg);
-    background-color: $black;
-    width: 25px;
-}
-
-.header__btn.header__btn--active .header__burger::after {
-    transform: rotate(0);
-    top: 0;
-    background-color: $black;
-    width: 25px;
-}
-
-.header__btn.header__btn--active .header__burger::before {
-    transform: rotate(-90deg);
-    bottom: 0;
-    background-color: $black;
-    width: 25px;
-}
-
-.header__btn.header__btn--active {
-    right: 25%;
-    top: 23px;
-}
+// .header__menu-nav.header__menu-nav--active {
+//     transform: translateY(0); 
+//     z-index: 15;   
+// }
 
 .search-form {
     margin-right: 50px;
     display: flex;
     flex-grow: 1;
 
-    @include mq('tablet') {
+    @include mq('md') {
         flex-grow: 0;
     }
 
-    @include mq('tablet-2') {
+    @include mq('lg') {
         transform: translateY(-200px);
         position: absolute;
         z-index: 1;
@@ -271,7 +364,7 @@
         background-size: 20px 20px;
         background-position: 13px center;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             border-radius: 0;
             border: 1px solid $dark-800;
         }
@@ -287,6 +380,7 @@
 }
 
 .catalog {
+    position: relative;
     background-color: $white;
     max-width: 240px;
     height: 50px;
@@ -298,12 +392,51 @@
     transition: background-color 0.3s, border-radius 0.3s;
     margin-right: 30px;
 
-    @include mq('tablet-2') {
+    @include mq('lg') {
         transform: translateY(-200px);
     }
 
-    @include mq('tablet') {
+    @include mq('md') {
         width: 0;
+    }
+
+    &--active {
+        background-color: $green-200;
+        border-radius: 6px 6px 0 0;
+    }
+
+    &__items {
+        display: block;
+        background-color: $white;
+        width: 237px;
+        border-radius: 0px 0px 6px 6px;
+        font-weight: $fw-400;
+        font-size: 16px;
+        line-height: 1.2;
+        position: absolute;
+        left: 0;
+        top: -700px;
+        text-align: start;
+        overflow-y: scroll;
+        max-height: 70vh;
+        
+        &--active {
+            top: 50px;           
+        }
+    }
+
+    &__item {
+        padding: 15px 0 15px 21px;
+        border-left: 3px solid transparent;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($silver-600, 0.3);
+        }
+
+        &:hover {
+            border-left: 3px solid $green-900;
+            color: $green-900;
+        }
     }
 
     &--menu {
@@ -312,12 +445,7 @@
         border-radius: 0;
         width: 100%;
         justify-content: left;
-    }
-
-    &:hover {
-        background-color: $green-200;
-        border-radius: 6px 6px 0 0;
-    }
+    }    
 
     &__icon {
         background-color: $green-900;
@@ -349,15 +477,7 @@
         padding: 0 19px 0 16px;
         color: $green-900;
         letter-spacing: 0.03em;
-        transition: transform 0.3s;
-
-        &--menu {
-            color: $dark-800;
-            line-height: 1;
-            font-weight: $fw-600;
-            display: block;
-            padding: 0;
-        }
+        transition: transform 0.3s;       
 
         &::after {
             content: '';
@@ -372,7 +492,7 @@
             top: 7px;
             @include recolor($green-600);
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 display: none;
             }
         }
@@ -407,27 +527,18 @@
             top: -7px;
         }
     }
-
-
 }
 
 .catalog.catalog--menu {
     transform: translateY(0);
 }
 
-.usernav {
+.usernav {     
+
     &__menu {
         display: flex;
         justify-content: space-around;
-        align-items: center;
-
-        &--nav {
-            justify-content: left;
-            padding-left: 55px;
-            background-color: $green-900;
-            color: $white;
-            line-height: 1;
-        }
+        align-items: center;      
     }
 
     &__link {
@@ -439,14 +550,9 @@
         height: 50px;
         transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             width: 40px;
             height: 40px;
-        }
-
-        &--menu {
-            padding-top: 10px;
-            width: 100%;
         }
 
         &:focus,
@@ -474,18 +580,13 @@
         width: 28px;
         height: 30px;
 
-        @include mq('tablet-2') {
+        @include mq('lg') {
             width: 24px;
             height: 21px;
-        }
-
-        &--menu {
-            left: -54px;
-        }
-
+        }  
     }
 
-    span {
+    &__symbol {
         margin-right: 15px;
     }
 
@@ -497,13 +598,13 @@
         &--search {
             display: none;
 
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 display: block;
             }
         }
 
         &:first-child {
-            @include mq('tablet-2') {
+            @include mq('lg') {
                 transform: translateY(-200px);
 
             }
@@ -525,8 +626,10 @@
         text-align: center;
         z-index: 1;
     }
+
 }
 
 .usernav__item.usernav__item--menu {
     transform: translateY(0);
+    
 }
