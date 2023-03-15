@@ -99,11 +99,16 @@
         }  
 
         &__link {
+            padding-top: 37px;
             
             &::after {
                 width: 20px;
                 height: 20px;
                 background-size: 10px 10px;                
+            }
+
+            &::before {
+                background-color: transparent;
             }
         }
 
@@ -120,8 +125,8 @@
 
     .badge {
         &__item {
-            top: 12px;
-            left: 12px;
+            top: 16px;
+            left: 6px;
             z-index: 3;
         }        
     }

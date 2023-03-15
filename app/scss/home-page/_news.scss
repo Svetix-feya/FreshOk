@@ -42,17 +42,17 @@
         }
 
         &:focus {
-            border-radius: 6px;
-            border: 3px solid $white;
+            border-radius: 6px;           
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: 0px 0px 0px 3px $green-200;
         }
 
         &:hover {
             opacity: 0.7;
-        }
-
-        &:active {
-            border: 3px solid $green-200;
-        }
+        }        
     }
 
     &__items {
@@ -133,10 +133,10 @@
     &__text {
         font-size: 16px;
         line-height: 1.5;
-        padding: 18px 18px 0;
+        padding: 18px 18px 3px 18px;
         @include line-clamp(3);
         transition: color 0.3s;
-        margin-bottom: 18px;
+        margin-bottom: 15px;
         font-weight: $fw-600;
 
         @include mq('sm') {
@@ -144,9 +144,18 @@
             margin-bottom: 10px;
         }
 
-        &:hover {        
-            color: $green-900;
-        }
+        p  {        
+            &:focus,
+            &:active {
+                box-shadow: 0 0 0 3px $green-200;
+                border-radius: 3px;
+            }
+
+            &:hover {        
+                color: $green-900;
+            }
+
+        } 
     }
 }
 

@@ -3,11 +3,7 @@
     line-height: 1.2;
     right: 0;   
     width: 475px;    
-    z-index: 20; 
-
-    @include mq('lg') {
-        top: 9px;
-    } 
+    z-index: 20;     
     
     @include mq('sm') {
         width: 100%;
@@ -66,7 +62,7 @@
         background-color: $silver-100;
         padding: 12px; 
         height: calc(100vh - 194px);    
-        overflow-y: scroll; 
+        overflow-y: scroll;         
     }
 
     &__card {
@@ -125,6 +121,7 @@
         &__content {
             flex-direction: row; 
             justify-content: start; 
+            padding-bottom: 0;
             
             @include mq('sm') {
                 height: auto;
@@ -133,16 +130,24 @@
 
         &__title {
             padding-bottom: 0;  
-            @include line-clamp(2);         
+            @include line-clamp(2); 
+            
+            @include mq('sm') {
+                margin-bottom: 0;
+            }
         }
 
         &__discription {
-            display: block;
+            padding: 0 18px;
+
+            @include mq('sm') {
+                // display: block;
+            }
         }
 
         &__price,
         &__sum {
-            font-weight: f$fw-600;
+            font-weight: $fw-600;
             font-size: 20px;
             line-height: 1;            
         }

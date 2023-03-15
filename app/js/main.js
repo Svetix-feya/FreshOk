@@ -100,7 +100,7 @@ $(function(){
     
     $('.header__btn').on('click', function () {
         $('.burger-menu').toggleClass('burger-menu--active');       
-        $('.wrapper').addClass('wrapper--lock')
+        $('.wrapper').toggleClass('wrapper--lock')
     }); 
 
     
@@ -135,7 +135,7 @@ $(function(){
         }
     });
 
-    $('.burger-menu__close').on('click', function () {
+    $('.burger-menu__close, .burger-menu__link').on('click', function () {
         $('.burger-menu').toggleClass('burger-menu--active');
         $('.wrapper').removeClass('wrapper--lock');
     }); 
