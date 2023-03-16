@@ -1,0 +1,42 @@
+.search-form {
+    margin-right: 50px;
+    display: flex;
+    flex-grow: 1;
+
+    @include mq('md') {
+        flex-grow: 0;
+    }
+
+    @include mq('lg') {
+        transform: translateY(-200px);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: $white;
+        padding: 15px 51px;
+        border-radius: 6px 0 0 6px;
+        background-image: url('../images/sprite.svg#search');
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 13px center;
+
+        @include mq('lg') {
+            border-radius: 0;
+            border: 1px solid $dark-800;
+        }
+
+        &::placeholder {
+            color: $dark-800;
+        }
+    }
+
+    &.search-form--active {
+        transform: translateY(55px);
+    }
+}
+

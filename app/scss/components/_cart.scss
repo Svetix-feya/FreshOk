@@ -100,8 +100,8 @@
         &::after {
             position: absolute;
             content: '';
-            width: 15px;
-            height: 1px;
+            width: 100%;
+            height: 100%;
             background-color: $silver-600;
             transform: rotate(-90deg);
             left: 0;
@@ -196,62 +196,63 @@
             }
         }  
 
-        .jq-number__spin {
-            position: absolute;            
-            background: $green-900;
-            width: 24px;
-            height: 24px;           
-        }
-
-        .jq-number__spin.plus {
-            right: 100px;
-            cursor: pointer;
-
-            @include mq('sm') {
-                left: 78px;
-            }
-        }
-
-        .jq-number__spin.minus {
-            right: 157px;
-            cursor: pointer;
-
-            @include mq('sm') {
-                left: 16px;
-            }
-        }
-
-        .jq-number__spin::after,
-        .jq-number__spin.plus::before {
-            position: absolute;
-            content: '';
-            background-color: $white;
-            width: 16px;
-            height: 1px;
-            top: 12px;
-            left: 4px;
-        }
-
-        .jq-number__spin.plus::before {
-            transform: rotate(90deg);
-            left: 4px;
-            bottom: 11px;
-            right: 0;
-        }
+        .jq-number {
+            &__spin {
+                position: absolute;            
+                background: $green-900;
+                width: 24px;
+                height: 24px;    
+                
+                &.plus {
+                    right: 100px;
+                    cursor: pointer;
         
-        .jq-number__field input {
-            width: 36px;
-            background-color: rgba($green-900, 0.1);
-            height: 24px;
-            display: block;            
-            font-weight: $fw-400;
-            font-size: 16px;
-            line-height: 1;           
-            font-family: $opensans; 
-            margin-right: 36px; 
-            text-align: center;  
-        }       
+                    @include mq('sm') {
+                        left: 78px;
+                    }
+                }
+
+                &.minus {
+                    right: 157px;
+                    cursor: pointer;
         
+                    @include mq('sm') {
+                        left: 16px;
+                    }
+                }
+
+                &::after,
+                &.plus::before {
+                    position: absolute;
+                    content: '';
+                    background-color: $white;
+                    width: 16px;
+                    height: 1px;
+                    top: 12px;
+                    left: 4px;
+                }
+
+                &.plus::before {
+                    transform: rotate(90deg);
+                    left: 4px;
+                    bottom: 11px;
+                    right: 0;
+                }
+            }  
+            
+            &__field input {
+                width: 36px;
+                background-color: rgba($green-900, 0.1);
+                height: 24px;
+                display: block;            
+                font-weight: $fw-400;
+                font-size: 16px;
+                line-height: 1;           
+                font-family: $opensans; 
+                margin-right: 36px; 
+                text-align: center;  
+            }            
+        }  
     }
 
     &__total {

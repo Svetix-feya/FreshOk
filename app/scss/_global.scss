@@ -100,7 +100,7 @@ body {
 
     &__pic {
         display: block;
-        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;           
+        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;      //если это убрать не применяется ниже ширина//     
         
         @include mq('lg') {
             max-width: 40px;        

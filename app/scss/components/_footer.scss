@@ -129,23 +129,18 @@
 
     &__pay-link {
         display: block;
-        width: 44px;
+        width: 93px;
         height: 29px;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
         transition: background-color 0.3s, box-shadow 0.3s, border-radius 0.3s, opacity 0.3s, fill 0.3s;
 
-        &--big {
-            width: 93px;
-        }
-
         &--small {
             width: 48px;
         }
 
-        &:focus {
-            background-color: rgba($white, 0.0001);
+        &:focus {           
             box-shadow: 0 0 0 3px $green-200;
             border-radius: 3px;
         }
@@ -197,103 +192,87 @@
     }
 }
 
-.email-form {
-    padding-top: 18px;
+// .contacts {    
 
-    &__input {
-        background-color: $white;
-        padding: 12px;
-        border-radius: 6px 0 0 6px;
-        margin-right: -5px;
-        max-width: 180px;
+//     @include mq('lg') {
+//        order: -1;
+//     }
 
-        &::placeholder {
-            color: $gray-600;
-        }
-    }
-}
-
-.contacts {    
-
-    @include mq('lg') {
-       order: -1;
-    }
-
-    &__address-item {
-        display: block;
-        padding-bottom: 18px;          
+//     &__address-item {
+//         display: block;
+//         padding-bottom: 18px;          
        
-        &--tel {
-            &::before {
-                background-image: url('../images/icons/tel.svg');
-                filter: invert(82%) sepia(9%) saturate(811%) hue-rotate(42deg) brightness(96%) contrast(92%);
-            }
-        }
+//         &--tel {
+//             &::before {
+//                 background-image: url('../images/icons/tel.svg');
+//                 filter: invert(82%) sepia(9%) saturate(811%) hue-rotate(42deg) brightness(96%) contrast(92%);
+//             }
+//         }
 
-        &--address {
-            &::before {
-                background-image: url('../images/icons/point.svg');
-            }
-        }
-    }
+//         &--address {
+//             &::before {
+//                 background-image: url('../images/icons/point.svg');
+//             }
+//         }
+//     }
 
-    &__link {
-        border: 3px solid transparent;
-        transition: opacity 0.3s, border-radius 0.5s, border-color 0.3s;
+//     &__link {
+//         border: 3px solid transparent;
+//         transition: opacity 0.3s, border-radius 0.5s, border-color 0.3s;
 
-        &:focus {
-            border-radius: 6px;            
-            border-color: $white;
-        }
+//         &:focus {
+//             border-radius: 6px;            
+//             border-color: $white;
+//         }
 
-        &:hover {
-            opacity: 0.7;
-        }
+//         &:hover {
+//             opacity: 0.7;
+//         }
 
-        &:active {
-            border: 3px solid $green-200;
-        }
-    }  
-}
+//         &:active {
+//             border: 3px solid $green-200;
+//         }
+//     }  
+// }
 
-.social {
-    display: flex;
+// .social {
+//     display: flex;
 
-    @include mq('lg') {
-        justify-content: center;
-        margin-bottom: 24px;        
-    }
+//     @include mq('lg') {
+//         justify-content: center;
+//         margin-bottom: 24px;        
+//     }
 
-    &__item {
-        &:not(:last-child) {
-            margin-right: 11px;
-        }
-    }
+//     &__item {
+//         &:not(:last-child) {
+//             margin-right: 11px;
+//         }
+//     }
 
-    &__link {
-        display: block;
-        width: 32px;
-        height: 32px;
-        background-position: center center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transition: opacity 0.3s, background-color 0.3s, box-shadow 0.3s, border-radius 0.3s, fill 0.3s;  
+//     &__link {
+//         display: block;
+//         width: 32px;
+//         height: 32px;
+//         background-position: center center;
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         transition: opacity 0.3s, background-color 0.3s, box-shadow 0.3s, border-radius 0.3s, fill 0.3s;  
 
-        &:focus {           
-            box-shadow: 0 0 0 3px $green-200;
-            border-radius: 3px;
-        }
+//         &:focus {           
+//             box-shadow: 0 0 0 3px $green-200;
+//             border-radius: 3px;
+//         }
 
-        &:hover {
-            opacity: 0.7;
-        }
+//         &:hover {
+//             opacity: 0.7;
+//         }
 
-        &:active {
-            fill: $green-200;
-        }
-    } 
+//         &:active {
+//             fill: $green-200;
+//         }
+//     } 
     
-    &--menu {
-        justify-content: left;
-    }
-}
+//     &--menu {
+//         justify-content: left;
+//     }
+// }
