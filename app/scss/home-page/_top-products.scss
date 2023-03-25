@@ -42,8 +42,12 @@
         }     
 
         @include mq('lg') {
-            width: 170px;                      
-        }        
+            max-width: 170px;                      
+        }
+        
+        @include mq('sm') {
+            max-width: 160px;                      
+        }  
     }
 
     .mixitup-control-active {

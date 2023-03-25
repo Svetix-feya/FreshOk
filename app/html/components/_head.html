@@ -27,8 +27,9 @@
             </div>
             <ul class="cart__content">
                 <li class="cart__card">
-                    <button class="cart__close-item">
+                    <button class="cart__close-item" type="button">
                         <span class="cart__line-item"></span>
+                        <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
                     </button>
                     <article class="product-card">
                         <div class="product-card__content">
@@ -47,17 +48,18 @@
                                 </span>
                             </div>
                         </div>
-                        <form class="product-card__footer">
-                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                        <div class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="1" max="99">
                             <span class="product-card__sum">
                                 1998 <span>₽</span>
                             </span>
-                        </form>
+                        </div>
                     </article>
                 </li>
                 <li class="cart__card">
-                    <button class="cart__close-item">
+                    <button class="cart__close-item" type="button">
                         <span class="cart__line-item"></span>
+                        <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
                     </button>
                     <article class="product-card">
                         <div class="product-card__content">
@@ -76,12 +78,12 @@
                                 </span>
                             </div>
                         </div>
-                        <form class="product-card__footer">
-                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                        <div class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="1" max="99">
                             <span class="product-card__sum">
                                 2038 <span>₽</span>
                             </span>
-                        </form>
+                        </div>
                     </article>
                 </li>
             </ul>
@@ -112,7 +114,7 @@
                             Вход
                             <svg class="usernav__icon">
                                 <use xlink:href="images/sprite.svg#user"></use>
-                            </svg>
+                            </svg>                            
                         </a>
                     </li>
                     <li class="usernav__item">

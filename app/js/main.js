@@ -32,20 +32,21 @@ $(function(){
                 }
             },
         ]
-    });
+    });   
 
 
     var scrolled;
     window.onscroll = function () {
         scrolled = window.pageYOffset || document.documentElement.scrollTop;
         if (scrolled > 50) {
-            $(".header__bottom").addClass('header__bottom--active'); 
+            $(".header__bottom").addClass('header__bottom--active');   
+            $(".slider-top").addClass('slider-top--active');         
         }
         if (50 > scrolled) {
-            $(".header__bottom").removeClass('header__bottom--active');
+            $(".header__bottom").removeClass('header__bottom--active');   
+            $(".slider-top").removeClass('slider-top--active');          
         }
     }
-
 
     $('.usernav__item-cart, .cart__close').on('click', function () {
         $('.cart').toggleClass('hidden');  
@@ -65,7 +66,8 @@ $(function(){
 
 
     $('.cart__close-item').on('click', function () {
-        $(this).parent().toggleClass('hidden');  
+        $(this).parent().toggleClass('hidden'); 
+        
     });
 
 

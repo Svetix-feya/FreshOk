@@ -44,6 +44,7 @@
         fill: $white;
         width: 28px;
         height: 30px;
+        z-index: 1;
 
         @include mq('lg') {
             width: 24px;
@@ -66,14 +67,7 @@
             @include mq('lg') {
                 display: block;
             }
-        }
-
-        &:first-child {
-            @include mq('lg') {
-                transform: translateY(-200px);
-
-            }
-        }
+        }        
     }
 
     &__num {

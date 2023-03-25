@@ -6,7 +6,7 @@
     &__top {
         padding: 17px 0 15px;
         background-color: $dark-800;
-        position: relative;
+        position: relative;       
 
         @include mq('lg') {
             position: fixed;
@@ -169,17 +169,18 @@
 
     &__bottom {
         background-color: $green-900;
-        padding: 25px 0; 
-        position: fixed;   
+        padding: 25px 0;          
         width: 100%;   
-        transition: padding 0.3s, top 0.3s;
+        transition: padding 0.5s, top 0.5s;        
 
         @include mq('lg') {
             padding: 5px 0;
             top: 50px;
+            position: relative;
         }
 
         &--active {
+            position: fixed;  
             padding: 10px 0;
             top: 0;
 

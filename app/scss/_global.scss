@@ -1,5 +1,5 @@
 body {
-    font-family: $opensans, Roboto, sans-serif;
+    font-family: $opensans, 'Roboto', sans-serif;
     font-weight: $fw-400;
     color: $dark-500;
     font-size: 14px;
@@ -71,6 +71,10 @@ body {
     max-height: 60px;
     transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;
 
+    @include mq('lg') {
+        max-width: 40px;        
+    }
+
     &__img {
         object-fit: cover;
         width: 100%;
@@ -93,19 +97,10 @@ body {
     }
 
     &--menu {
-        padding: 26px 0;  
+        padding: 26px 0 78px;  //высота картинки 8px, нигде не могу найти почему так стало
         padding-left: 15px; 
-        max-width: 215px
-    }
-
-    &__pic {
-        display: block;
-        transition: border-radius 0.3s, background-color 0.3s, box-shadow 0.3s;      //если это убрать не применяется ниже ширина//     
-        
-        @include mq('lg') {
-            max-width: 40px;        
-        }  
-    }
+        max-width: 215px;        
+    }    
 }
 
 .title {
@@ -178,6 +173,12 @@ body {
     &--big {
         max-width: 100%;
         border-radius: 0;
+        padding: 23px 0 23px;
+
+        
+        @include mq('sm') {
+            padding: 12px 0 12px;            
+        }
     }
 }
 
@@ -232,5 +233,5 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important; //иначе ломается корзина//
 }

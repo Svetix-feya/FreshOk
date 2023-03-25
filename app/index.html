@@ -28,8 +28,9 @@
             </div>
             <ul class="cart__content">
                 <li class="cart__card">
-                    <button class="cart__close-item">
+                    <button class="cart__close-item" type="button">
                         <span class="cart__line-item"></span>
+                        <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
                     </button>
                     <article class="product-card">
                         <div class="product-card__content">
@@ -48,17 +49,18 @@
                                 </span>
                             </div>
                         </div>
-                        <form class="product-card__footer">
-                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                        <div class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="1" max="99">
                             <span class="product-card__sum">
                                 1998 <span>₽</span>
                             </span>
-                        </form>
+                        </div>
                     </article>
                 </li>
                 <li class="cart__card">
-                    <button class="cart__close-item">
+                    <button class="cart__close-item" type="button">
                         <span class="cart__line-item"></span>
+                        <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
                     </button>
                     <article class="product-card">
                         <div class="product-card__content">
@@ -77,12 +79,12 @@
                                 </span>
                             </div>
                         </div>
-                        <form class="product-card__footer">
-                            <input class="product-card__button" type="number" value="2" min="0" max="99">
+                        <div class="product-card__footer">
+                            <input class="product-card__button" type="number" value="2" min="1" max="99">
                             <span class="product-card__sum">
                                 2038 <span>₽</span>
                             </span>
-                        </form>
+                        </div>
                     </article>
                 </li>
             </ul>
@@ -113,7 +115,7 @@
                             Вход
                             <svg class="usernav__icon">
                                 <use xlink:href="images/sprite.svg#user"></use>
-                            </svg>
+                            </svg>                            
                         </a>
                     </li>
                     <li class="usernav__item">
@@ -268,7 +270,7 @@
             <div class="container">
                 <div class="header__wrapper">
                     <a class="logo" href="#">
-                        <picture class="logo__pic">
+                        <picture>
                             <source srcset="images/logo/logo-short.svg" media="(max-width: 992px)" >
                         <img class="logo__img" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
                         </picture>
@@ -957,7 +959,7 @@
                     </div>
                     <div class="product-card__content">
                         <a class="product-card__link" href="#">
-                            <img class="product-card__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="100" height="75">
+                            <img class="product-card__img product-card__img--pineapple" src="images/catalog/pineapple.jpg" alt="Ананас" width="100" height="75">
                         </a>
                         <div class="product-card__discription">
                             <a class="product-card__title-link" href="#">
@@ -1008,7 +1010,7 @@
                     </div>
                     <div class="product-card__content">
                         <a class="product-card__link" href="#">
-                            <img class="product-card__img" src="images/catalog/coffee.jpg" alt="Кофе" width="100" height="75">
+                            <img class="product-card__img product-card__img--coffee" src="images/catalog/coffee.jpg" alt="Кофе" width="100" height="75">
                         </a>
                         <div class="product-card__discription">
                             <a class="product-card__title-link" href="#">

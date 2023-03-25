@@ -47,8 +47,16 @@
     }
 
     .product-card {
-        height: 124px;        
+        max-height: 124px;        
         padding: 12px;
+
+        @include mq('xxl') {
+            padding: 10px 0 10px;           
+        }
+
+        @include mq('xl') {
+            padding: 12px;           
+        }
 
         &__top {
             height: 0;
@@ -91,6 +99,12 @@
 
         &__img {
             padding: 0 10px;
+            width: max-content;
+
+            &--pineapple,
+            &--coffee {
+                padding: 0;
+            }
 
             @include mq('lg') {
                 width: 100px;

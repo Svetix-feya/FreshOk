@@ -67,8 +67,12 @@
         object-fit: contain;  
 
         @include mq('lg') {
-            width: 168px;
-            height: 126px;
+            max-width: 168px;
+            max-height: 126px;
+        }    
+
+        @include mq('sm') {
+            max-width: 157px;           
         }    
     }
 
