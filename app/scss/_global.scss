@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: $opensans, 'Roboto', sans-serif;
     font-weight: $fw-400;
@@ -5,6 +10,14 @@ body {
     font-size: 14px;
     line-height: 1.4;
     background-color: $white;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper {
@@ -12,6 +25,8 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     position: relative;
+    flex-grow: 1;
+    height: 100%;
     
     &--lock {
         width: 100%;
@@ -115,6 +130,42 @@ body {
     @include mq('md') {
         font-size: 24px;
         margin-bottom: 20px;
+    }
+}
+
+.breadcrumbs {
+    background-color: $silver-100;
+
+    &__list {
+        padding: 24px 0;
+        display: flex;
+        
+    }
+
+    &__item {
+        padding-right: 16px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icons/chevron.svg');
+            width: 6px;
+            height: 10px;
+            right: 5px;
+            top: 5px;
+            
+        }
+        
+        &:last-child {
+            padding-right: 0;
+            &::after {
+                display: none;
+            }            
+        }
+    }
+
+    &__link {
+        color: inherit;
     }
 }
 
