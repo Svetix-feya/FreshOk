@@ -39,7 +39,7 @@
 
     &__close {
         position: absolute;
-        right: 26px;
+        right: 8px;
         top: 50%;
         transform: translateY(-50%);
         width: 40px;
@@ -52,6 +52,9 @@
         height: 1px;
         background-color: $black;               
         transform: rotate(135deg);
+        left: 0;
+        right: 0;   
+        
 
         &::after {
             position: absolute;

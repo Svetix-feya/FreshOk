@@ -44,14 +44,14 @@
         fill: $white;
         width: 28px;
         height: 30px;
-        z-index: 1;
+        z-index: 1;       
 
         @include mq('lg') {
             width: 24px;
             height: 21px;
         }  
     }
-
+    
     &__symbol {
         margin-right: 15px;
     }
