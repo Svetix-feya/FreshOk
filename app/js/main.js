@@ -1,4 +1,76 @@
-$(function(){
+$(function(){ 
+
+
+    var $range = $(".filter-price__item");
+    var $inputFrom = $(".filter-price__from");
+    var $inputTo = $(".filter-price__to");
+    var instance;
+    var min = 0;
+    var max = 1000;
+    var from = 0;
+    var to = 0;
+    
+    $range.ionRangeSlider({
+        skin: "round",
+        type: "double",
+        min: min,
+        max: max,
+        from: 100,
+        to: 1000,
+        onStart: updateInputs,
+        onChange: updateInputs,
+        onFinish: updateInputs
+    });
+    instance = $range.data("ionRangeSlider");
+    
+    function updateInputs (data) {
+        from = data.from;
+        to = data.to;
+    
+        $inputFrom.prop("value", from);
+        $inputTo.prop("value", to);
+    }
+    
+    $inputFrom.on("change", function () {
+        var val = $(this).prop("value");
+    
+        // validate
+        if (val < min) {
+            val = min;
+        } else if (val > to) {
+            val = to;
+        }
+    
+        instance.update({
+            from: val
+        });
+    
+        $(this).prop("value", val);
+    
+    });
+    
+    $inputTo.on("change", function () {
+        var val = $(this).prop("value");
+    
+        // validate
+        if (val < from) {
+            val = from;
+        } else if (val > max) {
+            val = max;
+        }
+    
+        instance.update({
+            to: val
+        });
+    
+        $(this).prop("value", val);
+    });
+    
+
+    
+
+   
+
     $('.slider-top__items').slick({
         prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
         nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
@@ -74,17 +146,17 @@ $(function(){
     $('.product-card__button').styler();
 
 
-    var containerEl1 = document.querySelector('[data-ref="top-products"]');
-    var containerEl2 = document.querySelector('[data-ref="stocks"]');
+    // var containerEl1 = document.querySelector('[data-ref="top-products"]');
+    // var containerEl2 = document.querySelector('[data-ref="stocks"]');
  
-    var config = {
-        controls: {
-          scope: 'local'
-        }
-    };
+    // var config = {
+    //     controls: {
+    //       scope: 'local'
+    //     }
+    // };
      
-    var mixer1 = mixitup(containerEl1, config);
-    var mixer2 = mixitup(containerEl2, config);
+    // var mixer1 = mixitup(containerEl1, config);
+    // var mixer2 = mixitup(containerEl2, config);
 
     $('.usernav__item--search').on('click', function () {
         $('.search-form').toggleClass('search-form--active');
