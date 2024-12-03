@@ -146,17 +146,7 @@ $(function(){
     $('.product-card__button').styler();
 
 
-    // var containerEl1 = document.querySelector('[data-ref="top-products"]');
-    // var containerEl2 = document.querySelector('[data-ref="stocks"]');
- 
-    // var config = {
-    //     controls: {
-    //       scope: 'local'
-    //     }
-    // };
-     
-    // var mixer1 = mixitup(containerEl1, config);
-    // var mixer2 = mixitup(containerEl2, config);
+
 
     $('.usernav__item--search').on('click', function () {
         $('.search-form').toggleClass('search-form--active');
@@ -213,5 +203,52 @@ $(function(){
         $('.burger-menu').toggleClass('burger-menu--active');
         $('.wrapper').removeClass('wrapper--lock');
     }); 
+
+
+
+    $('.title--categories').on('click', function () {        
+        $('.filter--categories').toggleClass('filter--close'); 
+    }); 
+
+    $('.title--categories').on('click', function () {        
+        $('.catalogofgoods-categories__items').toggleClass('hidden'); 
+    }); 
+
+    $('.title--offers').on('click', function () {        
+        $('.filter--offers').toggleClass('filter--close'); 
+    }); 
+
+    $('.title--offers').on('click', function () {        
+        $('.catalogofgoods-offers__form').toggleClass('hidden'); 
+    }); 
+
+    $('.title--brend').on('click', function () {        
+        $('.filter--brend').toggleClass('filter--close'); 
+    }); 
+
+    $('.title--brend').on('click', function () {        
+        $('.catalogofgoods-brend__form').toggleClass('hidden'); 
+    });
+
+    $('.title--price').on('click', function () {        
+        $('.filter--price').toggleClass('filter--close'); 
+    }); 
+
+    $('.title--price').on('click', function () {        
+        $('.catalogofgoods-price__item').toggleClass('hidden'); 
+    }); 
+
+
+    var containerEl1 = document.querySelector('[data-ref="top-products"]');
+    var containerEl2 = document.querySelector('[data-ref="stocks"]');
+ 
+    var config = {
+        controls: {
+          scope: 'local'
+        }
+    };
+     
+    var mixer1 = mixitup(containerEl1, config);
+    var mixer2 = mixitup(containerEl2, config);
 
 });

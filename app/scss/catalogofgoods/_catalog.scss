@@ -19,8 +19,17 @@
 
 }
 
-.catalogofgoods-offers__item  {
+.catalogofgoods-offers__item,
+.catalogofgoods-brend__item {    
     padding-bottom: 12px;
+    display: flex; 
+}
+
+.catalogofgoods-categories__item {
+
+    &:hover {
+        background-color: $green-200;
+    }
 }
 
 .filter {
@@ -63,7 +72,7 @@
         background-color: $silver-100;
         border: 1px solid $silver-600;
         border-radius: 3px;
-        margin: 0 10px 0 0;  
+        margin: 0 8px 0 0;  
 
         &:checked {
             background-image: url('../images/icons/checkbox.svg');
@@ -76,9 +85,10 @@
     &__item--last {
         padding-bottom: 0;
     }
+
+    
+   
 }
-
-
 
 .filter-price {
     display: flex;
@@ -146,15 +156,10 @@
 }
 
 .irs--round .irs-handle {
-    background-color: $green-900;
-    // border-radius: 50%;
+    background-color: $green-900;  
     width: 18px;
     height: 18px;
-    // height: 18px;
     top: 17px;
-    // bottom: 10px;
-
-
 }
 
 .irs--round .irs-from,
@@ -196,6 +201,47 @@
         width: 18px;
         height: 10px;
         right: 18px;
-        top: 22px;
+        top: 24px;
+    }
+}
+
+.filter--categories.filter--close {
+    .title-3 {
+        border-bottom: none;
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+
+}
+
+.filter--offers.filter--close {
+    .title-3 {
+        border-bottom: none;
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.filter--brend.filter--close {
+    .title-3 {
+        border-bottom: none;
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.filter--price.filter--close {
+    .title-3 {
+        border-bottom: none;
+        
+        &::after {
+            transform: rotate(180deg);
+        }
     }
 }
