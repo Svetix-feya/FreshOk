@@ -238,6 +238,13 @@ $(function(){
         $('.catalogofgoods-price__item').toggleClass('hidden'); 
     }); 
 
+    $('.catalog-content__select').styler();
+
+    $('.catalog-content__filter-btn').on('click', function () {
+        $('.catalog-content__filter-btn').removeClass('catalog-content__filter-btn--active');
+        $(this).addClass('catalog-content__filter-btn--active');
+     
+    }); 
 
     var containerEl1 = document.querySelector('[data-ref="top-products"]');
     var containerEl2 = document.querySelector('[data-ref="stocks"]');

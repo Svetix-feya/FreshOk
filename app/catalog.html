@@ -621,42 +621,46 @@
                         </div>
                         <div class="catalog-content">
                             <div class="catalog-content__filter">
-                                <select class="catalog-content__select">
-                                    <option class="catalog-content__option" value="">
-                                        По названию
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        По популярности
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        Сначала дешевые
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        Сначала дорогие
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        По алфавиту
-                                    </option>
-                                </select>
-                                <select class="catalog-content__select">
-                                    <option class="catalog-content__option" value="">
-                                        по 12
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        по 18
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        по 24
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        по 30
-                                    </option>
-                                    <option class="catalog-content__option" value="">
-                                        по 36
-                                    </option>
-                                </select>
-                                <button class="catalog-content__filter-btn filter-btn--view"></button>
-                                <button class="catalog-content__filter-btn filter-btn--grid"></button>
+                                <form class="catalog-content__form" action="#">
+                                    <select class="catalog-content__select select--name">
+                                        <option class="catalog-content__option" value="">
+                                            По названию
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            По популярности
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            Сначала дешевые
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            Сначала дорогие
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            По алфавиту
+                                        </option>
+                                    </select>
+                                    <select class="catalog-content__select select--num">
+                                        <option class="catalog-content__option" value="">
+                                            по 12
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            по 18
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            по 24
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            по 30
+                                        </option>
+                                        <option class="catalog-content__option" value="">
+                                            по 36
+                                        </option>
+                                    </select>
+                                </form>
+                                <button class="catalog-content__filter-btn catalog-content__filter-btn--active filter-btn--view">
+                                </button>
+                                <button class="catalog-content__filter-btn filter-btn--grid">
+                                </button>
                             </div>
                             <div class="catalog-content__inner">
                                 <ul class="top-products__items">

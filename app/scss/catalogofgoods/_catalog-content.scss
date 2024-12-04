@@ -10,87 +10,108 @@
         margin-bottom: 48px;
         display: flex;
         justify-content: right;
+        
     }
 
     &__filter-btn {
         width: 47px;
         height: 47px;
+        background-color: $silver-100;
         
-
+        
     }
 
-
+    &__select,
+    .filter-btn--view {
+        margin-right: 15px;
+    }
 }
 
-.filter-btn {
+.select {
+    &--name {
+        width: 188px;
+    }
 
+    &--num {
+        width: 100px;
+    }
+}
+
+.jq-selectbox__select {
+    height: 47px;
+    background: none;
+    box-shadow: none;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+    font-family: $ruda;
+    font-weight: $fw-400;
+    font-size: 14px;
+    color: $dark-500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 47px 0 12px;
+    
+
+    &:hover {
+        background: none;
+    }
+}
+
+.jq-selectbox__trigger {
+    border-left: none;
+}
+
+.jq-selectbox__trigger-arrow {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    width: 10px;
+    height: 6px;
+    border: none;
+    background-image: url('../images/icons/select.svg');
+}
+
+.catalog-content__filter-btn.catalog-content__filter-btn--active.filter-btn--view {
+    background-image: url('../images/icons/group-11.svg');
+   
+}
+
+.catalog-content__filter-btn.catalog-content__filter-btn--active.filter-btn--grid {
+    background-image: url('../images/icons/group-10.svg');
+  
+}    
+
+.filter-btn {    
+    
     &--view,
     &--grid {
-
-        background-color: $silver-100;
-        position: relative;
-        background-size: 35px 35px;
-        transition: opacity 0.3s, box-shadow 0.3s, border-radius 0.3s;
-       
-
-       
-    }
-
-    &--view {
-
-        &::after {
-            position: absolute;
-            content: '';
-            background-image: url('../images/sprite.svg#Group-16');
-            width: 35px;
-            height: 35px;
-            background-position: center center;
-            background-repeat: no-repeat;   
-            top: 6px;
-            right: 6px;
-            @include recolor ($silver-600);
-
-          
-
-            
-        }
-
-        &:hover,
-        &:active {
-
-            .filter-btn--view::after {
-                @include recolor ($green-900);
-            }
      
-            
+        transition: opacity 0.3s, box-shadow 0.3s, border-radius 0.3s;   
+        background-size: 35px 35px ;
+        background-position: center center;
+        background-repeat: no-repeat; 
+
+    }     
   
-            
-        }
-    
-    }
+}
 
-    &--grid {
+.catalog-content__filter .filter-btn--view {
+    background-image: url('../images/icons/Group-16.svg');
 
-        background-color: $silver-100;
-        position: relative;
+            &:hover,
+            &:active {  
+                background-image: url('../images/icons/group-11.svg');
+             
+            }  
+}
 
-        &::after {
-            position: absolute;
-            content: '';
-            background-image: url('../images/sprite.svg#Group-14');
-            width: 35px;
-            height: 35px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            top: 6px;
-            right: 6px;
-            @include recolor ($silver-600);
-        }
-    }  
+.catalog-content__filter .filter-btn--grid {
+    background-image: url('../images/icons/Group-14.svg');
 
-    
-
-    
-  
-
+            &:hover,
+            &:active {  
+                background-image: url('../images/icons/group-10.svg');
+              
+            }
 }
