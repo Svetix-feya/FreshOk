@@ -67,7 +67,18 @@ $(function(){
     });
     
 
-    
+    $(".product-card__rating").rateYo({ 
+        rating: 4.5, 
+        spacing: "10px", 
+        numStars: 1, 
+        minValue: 0, 
+        maxValue: 5, 
+        normalFill: '#c1c1c1', 
+        ratedFill: '#FFB800', 
+        starWidth: '16px',
+        starHeight: '16px',
+
+    }) 
 
    
 

@@ -27,8 +27,31 @@
                 }
 
                 &__favorite::before {
-                    right: 30px;
-                    top: 45px;
+                    right: 16px;
+                    top: 40px;
+                }
+
+                &__cost {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;                    
+                }
+
+                &__link {
+
+            
+                    &::after {
+                        width: 20px;
+                        height: 20px;
+                        background-size: 10px 10px;                
+                    }
+
+                    &::before {                        
+                        top: -18px;
+                        left: -18px;
+                        height: 130%;
+                        width: 111%;
+                    }
                 }
 
             }   
@@ -56,6 +79,15 @@
         margin-right: 15px;
     }
 
+    .product-card__discription-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__inner-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
 
 }
 

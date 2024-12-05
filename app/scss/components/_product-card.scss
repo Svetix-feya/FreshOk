@@ -127,7 +127,8 @@
     &__cost {
         font-weight: $fw-400;
         line-height: 1;
-        letter-spacing: 0.03em;        
+        letter-spacing: 0.03em;   
+        font-size: 18px;     
     }
 
     &__price {
@@ -245,30 +246,7 @@
             transform: translate(-50%, -50%);
             @include recolor ($white);
         }
-    }
-
-    &__rating {
-        position: relative;
-        font-weight: $fw-700;
-        font-size: 14px;
-        line-height: 1;
-        letter-spacing: 0.03em;
-        color: $dark-500;
-        padding-right: 20px;
-
-        &::after {
-            position: absolute;
-            content: '';
-            width: 16px;
-            height: 16px;
-            background-image: url('../images/sprite.svg#star');
-            background-position: left center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            @include recolor($yellow-900);
-            right: 0;
-        }
-    }
+    }   
     
 
     &__status {
@@ -291,3 +269,4 @@
         }
     }
 }
+
