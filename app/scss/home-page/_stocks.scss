@@ -46,9 +46,23 @@
         border-bottom: 3px solid $green-200;
     }
 
-    .product-card {
-        max-height: 124px;        
+    .btn {
+        margin: 0 auto;
+    }
+
+    .product-card {        
+        max-height: 124px; 
         padding: 12px;
+    }
+
+}
+
+.stocks,
+.top-products__item.top-products__item--list {
+
+    .product-card {
+       
+       
 
         @include mq('xxl') {
             padding: 10px 0 10px;           
@@ -60,7 +74,9 @@
 
         &__top {
             height: 0;
-            padding: 0;
+            padding: 6px 0 0 0;
+            left: 7px;
+            
         }
 
         &__content {
@@ -135,18 +151,15 @@
                 margin-bottom: 0;
             }
         }
-    }    
 
-    .badge {
-        &__item {
-            top: 16px;
-            left: 6px;
-            z-index: 3;
-        }        
-    }
-
-    .btn {
-        margin: 0 auto;
-    }
-
+        .badge {
+            &__item {
+                top: 16px;
+                left: 6px;
+                z-index: 3;            
+            }   
+        }
+    }   
+    
+    
 }

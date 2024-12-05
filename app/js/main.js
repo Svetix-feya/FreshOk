@@ -246,6 +246,14 @@ $(function(){
      
     }); 
 
+    $('.filter-btn--list').on('click', function(){
+        $('.top-products__item').addClass('top-products__item--list')
+    })
+
+    $('.filter-btn--grid').on('click', function(){
+        $('.top-products__item').removeClass('top-products__item--list')
+    })
+
     var containerEl1 = document.querySelector('[data-ref="top-products"]');
     var containerEl2 = document.querySelector('[data-ref="stocks"]');
  
