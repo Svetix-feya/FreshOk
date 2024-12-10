@@ -35,4 +35,8 @@
 
 //Страница каталога
 @import 'catalogofgoods/filters';
-@import 'catalogofgoods/catalog-content'
+@import 'catalogofgoods/catalog-content';
+
+//Страница товара
+@import 'productpage/top-slider';
+@import 'productpage/tabs';

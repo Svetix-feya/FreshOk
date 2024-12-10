@@ -159,7 +159,7 @@
         right: 50%;        
         bottom: 0;
         display: none;        
-            //сделала так, потомучто если через js, то пропадает фоновое изображение// 
+    
         @include mq('xxl') {
             display: block;
         }

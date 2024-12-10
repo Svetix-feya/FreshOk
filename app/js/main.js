@@ -265,6 +265,50 @@ $(function(){
         $('.top-products__item').removeClass('top-products__item--list')
     })
 
+
+    $('.top-slider__inner').slick({
+        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
+        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
+        autoplay: false,
+        infinite: false,
+        dots: false, 
+        arrows: true,
+    });
+    
+
+    $(".top-slider__stars, .tabs__feedback-rating").rateYo({ 
+        rating: 4.5, 
+        spacing: "6px", 
+        numStars: 5, 
+        minValue: 0, 
+        maxValue: 5, 
+        normalFill: '#c1c1c1', 
+        ratedFill: '#FFB800', 
+        starWidth: '16px',
+        starHeight: '16px',
+
+    }) 
+
+    $('.top-slider__button').styler();
+
+    $('.tabs__title').on('click', function(e){
+        e.preventDefault();
+        $('.tabs__title').removeClass('tabs__title--active');
+        $(this).addClass('tabs__title--active');
+
+        $('.tabs__item').removeClass('tabs__item--active');       
+        $($(this).attr('href')).addClass('tabs__item--active');
+    
+
+    })
+
+
+    
+
+    
+
+
+
     var containerEl1 = document.querySelector('[data-ref="top-products"]');
     var containerEl2 = document.querySelector('[data-ref="stocks"]');
  
