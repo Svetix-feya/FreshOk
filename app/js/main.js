@@ -86,12 +86,13 @@ $(function(){
         prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
         nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
         autoplay: true,
-        infinite: false,
+        infinite: true,
         dots: true, 
     });
 
     $('.partners__items').slick({
         arrows: false,
+        infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
         autoplay: true,
@@ -303,6 +304,16 @@ $(function(){
     })
 
 
+        $('.slider-product__items').slick({
+        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
+        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
+        autoplay: false,
+        infinite: true,
+        dots: false, 
+        arrows: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+    });
     
 
     

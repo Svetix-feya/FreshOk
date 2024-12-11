@@ -97,51 +97,51 @@
         }      
     }  
 
-    .slick-dots {
-        position: absolute;
-        transform: rotate(270deg);        
-        right: 50%;        
-        bottom: 0;
-        display: none;        
+    // .slick-dots {
+    //     position: absolute;
+    //     transform: rotate(270deg);        
+    //     right: 50%;        
+    //     bottom: 0;
+    //     display: none;        
     
-        @include mq('xxl') {
-            display: block;
-        }
-        @include mq('lg') {
-            bottom: -15px;            
-        } 
+    //     @include mq('xxl') {
+    //         display: block;
+    //     }
+    //     @include mq('lg') {
+    //         bottom: -15px;            
+    //     } 
 
-        @include mq('md') {
-            bottom: -10px;            
-        }
+    //     @include mq('md') {
+    //         bottom: -10px;            
+    //     }
 
-        li:not(:last-child) {
-            margin-bottom: 10px;
+    //     li:not(:last-child) {
+    //         margin-bottom: 10px;
             
-            @include mq('md') {
-                margin-bottom: 0;            
-            } 
-        }
+    //         @include mq('md') {
+    //             margin-bottom: 0;            
+    //         } 
+    //     }
 
-        button {               
-            width: 15px;
-            height: 15px;    
-            font-size: 0;
-            border-radius: 50%;
-            background-color: $white;
-            border: 1px solid $silver-600;   
+    //     button {               
+    //         width: 15px;
+    //         height: 15px;    
+    //         font-size: 0;
+    //         border-radius: 50%;
+    //         background-color: $white;
+    //         border: 1px solid $silver-600;   
 
-            @include mq('md') {
-                width: 10px;
-                height: 10px;          
-                }          
-        }         
-    }
+    //         @include mq('md') {
+    //             width: 10px;
+    //             height: 10px;          
+    //             }          
+    //     }         
+    // }
 
-    .slick-active button{
-        background-color: $green-900;
-        border-color: $green-900;
-    }
+    // .slick-active button{
+    //     background-color: $green-900;
+    //     border-color: $green-900;
+    // }
     
     &__discription {
         flex-grow: 1;
