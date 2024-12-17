@@ -509,7 +509,7 @@
                                 <form class="catalogofgoods-offers__form filter__items" action="#">
                                     <ul class="catalogofgoods-offers__items">
                                         <label class="catalogofgoods-offers__lable filter__label">
-                                            <li class="catalogofgoods-offers__item">
+                                            <li class="catalogofgoods-offers__item" data-filter="badge__item--sale">
                                                 <input class="catalogofgoods-offers__input filter__checkbox"
                                                     type="checkbox">
                                                 <span name="catalogofgoods-offers__text">
@@ -518,7 +518,7 @@
                                             </li>
                                         </label>
                                         <label class="catalogofgoods-offers__lable filter__label">
-                                            <li class="catalogofgoods-offers__item">
+                                            <li class="catalogofgoods-offers__item" data-filter="badge__item--new">
                                                 <input class="catalogofgoods-offers__input filter__checkbox"
                                                     type="checkbox">
                                                 <span class="catalogofgoods-offers__text">
@@ -527,7 +527,8 @@
                                             </li>
                                         </label>
                                         <label class="catalogofgoods-offers__lable filter__label">
-                                            <li class="catalogofgoods-offers__item filter__item--last">
+                                            <li class="catalogofgoods-offers__item filter__item--last"
+                                                data-filter="badge__item--top">
                                                 <input class="catalogofgoods-offers__input filter__checkbox"
                                                     type="checkbox">
                                                 <span class="catalogofgoods-offers__text">
@@ -619,40 +620,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="catalog-content">
+                        <div class="catalog-content" data-ref="catalog-content">
                             <div class="catalog-content__filter">
                                 <form class="catalog-content__form" action="#">
                                     <select class="catalog-content__select select--name">
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="По названию" selected>
                                             По названию
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="По популярности">
                                             По популярности
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="Сначала дешевые">
                                             Сначала дешевые
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="Сначала дорогие">
                                             Сначала дорогие
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="По алфавиту">
                                             По алфавиту
                                         </option>
                                     </select>
                                     <select class="catalog-content__select select--num">
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="by-12" selected
+                                            data-filter=".by-12" active>
                                             по 12
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="by-18" data-filter=".by-18">
                                             по 18
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="by-24" data-filter=".by-24">
                                             по 24
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="by-30" data-filter=".by-30">
                                             по 30
                                         </option>
-                                        <option class="catalog-content__option" value="">
+                                        <option class="catalog-content__option" value="by-36" data-filter="all">
                                             по 36
                                         </option>
                                     </select>
@@ -664,8 +666,8 @@
                                 </button>
                             </div>
                             <div class="catalog-content__inner">
-                                <ul class="top-products__items">
-                                    <li class="top-products__item mix fruits">
+                                <ul class="top-products__items mix by-12 by-18 by-24 by-30 by-36">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -693,8 +695,13 @@
                                                             class="product-card__status product-card__status--instock">
                                                             в наличии
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="5">    
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -720,7 +727,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix fruits">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -742,8 +749,13 @@
                                                             class="product-card__status product-card__status--instock">
                                                             в наличии
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="4.6">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -766,7 +778,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix fruits">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -791,8 +803,13 @@
                                                             class="product-card__status product-card__status--instock">
                                                             в наличии
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="5">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -815,7 +832,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix grocery">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -837,8 +854,13 @@
                                                             class="product-card__status product-card__status--instock">
                                                             в наличии
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="5">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -862,7 +884,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix vegetables">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -887,8 +909,13 @@
                                                             class="product-card__status product-card__status--outofstock">
                                                             нет в наличии
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="4.6">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -911,7 +938,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix drinks">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -936,8 +963,13 @@
                                                             class="product-card__status product-card__status--instock">
                                                             в наличии
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="5">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -965,7 +997,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix grocery">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -989,8 +1021,13 @@
                                                         <span class="product-card__status product-card__status--close">
                                                             заканчивается
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="4.0">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.0">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -1013,7 +1050,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix vegetables">
+                                    <li class="top-products__item">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1037,8 +1074,13 @@
                                                         <span class="product-card__status product-card__status--close">
                                                             заканчивается
                                                         </span>
-                                                        <span class="product-card__rating" data-rateyo-rating="4.6">
-                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
                                                     </div>
                                                     <a class="product-card__title-link" href="#">
                                                         <h3 class="product-card__title">
@@ -1049,6 +1091,1537 @@
                                                         <div class="product-card__cost">
                                                             <span class="product-card__price">
                                                                 349 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <ul class="badge">
+                                                    <li class="badge__item badge__item--new">
+                                                        новинка
+                                                    </li>
+                                                    <li class="badge__item badge__item--sale">
+                                                        -50%
+                                                    </li>
+                                                </ul>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                                        alt="Ананас" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Ананас, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                1999 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                999 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/lemon.jpg"
+                                                        alt="Лимон" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Лимон, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                                        alt="Питахайя красная с белой мякотью" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Питахайя красная с белой мякотью, 1шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                1019 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/ketchup.jpg"
+                                                        alt="Кетчуп" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кетчуп томатный детский органический Bio-Zentrale 500мл,
+                                                            1 шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                600 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+                                <ul class="top-products__items mix by-18 by-24 by-30 by-36">
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <ul class="badge">
+                                                    <li class="badge__item badge__item--new">
+                                                        новинка
+                                                    </li>
+                                                    <li class="badge__item badge__item--sale">
+                                                        -50%
+                                                    </li>
+                                                </ul>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                                        alt="Ананас" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Ананас, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                1999 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                999 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/lemon.jpg"
+                                                        alt="Лимон" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Лимон, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                                        alt="Питахайя красная с белой мякотью" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Питахайя красная с белой мякотью, 1шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                1019 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/ketchup.jpg"
+                                                        alt="Кетчуп" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кетчуп томатный детский органический Bio-Zentrale 500мл,
+                                                            1 шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                600 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/carrot.jpg"
+                                                        alt="Морковь" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--outofstock">
+                                                            нет в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Морковь молодая с бабушкиной грядки, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                49 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--sale">
+                                                        -30%
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/juice.jpg"
+                                                        alt="Напиток сокосодержащий" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Напиток сокосодержащий Sanpellegrino Aranciata Orange
+                                                            Красный апельсин
+                                                            безалкогольн...
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                299 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+                                <ul class="top-products__items mix by-24 by-30 by-36">
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--new">
+                                                        новинка
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/coffee.jpg"
+                                                        alt="Кофе" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span class="product-card__status product-card__status--close">
+                                                            заканчивается
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кофе с коноплей органический Caffé Salomoni 250г
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                877 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--new">
+                                                        новинка
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/paprik.jpg"
+                                                        alt="Перец оранжевый" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span class="product-card__status product-card__status--close">
+                                                            заканчивается
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Перец оранжевый, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                349 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <ul class="badge">
+                                                    <li class="badge__item badge__item--new">
+                                                        новинка
+                                                    </li>
+                                                    <li class="badge__item badge__item--sale">
+                                                        -50%
+                                                    </li>
+                                                </ul>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                                        alt="Ананас" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Ананас, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                1999 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                999 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/lemon.jpg"
+                                                        alt="Лимон" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Лимон, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                                        alt="Питахайя красная с белой мякотью" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Питахайя красная с белой мякотью, 1шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                1019 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/ketchup.jpg"
+                                                        alt="Кетчуп" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кетчуп томатный детский органический Bio-Zentrale 500мл,
+                                                            1 шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                600 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+                                <ul class="top-products__items mix by-30 by-36">
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <ul class="badge">
+                                                    <li class="badge__item badge__item--new">
+                                                        новинка
+                                                    </li>
+                                                    <li class="badge__item badge__item--sale">
+                                                        -50%
+                                                    </li>
+                                                </ul>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                                        alt="Ананас" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Ананас, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                1999 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                999 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/lemon.jpg"
+                                                        alt="Лимон" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Лимон, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                                        alt="Питахайя красная с белой мякотью" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Питахайя красная с белой мякотью, 1шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                1019 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/ketchup.jpg"
+                                                        alt="Кетчуп" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кетчуп томатный детский органический Bio-Zentrale 500мл,
+                                                            1 шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                600 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/carrot.jpg"
+                                                        alt="Морковь" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--outofstock">
+                                                            нет в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Морковь молодая с бабушкиной грядки, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                49 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--sale">
+                                                        -30%
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/juice.jpg"
+                                                        alt="Напиток сокосодержащий" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Напиток сокосодержащий Sanpellegrino Aranciata Orange
+                                                            Красный апельсин
+                                                            безалкогольн...
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                299 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+                                <ul class="top-products__items mix by-36">
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--new">
+                                                        новинка
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/coffee.jpg"
+                                                        alt="Кофе" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span class="product-card__status product-card__status--close">
+                                                            заканчивается
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кофе с коноплей органический Caffé Salomoni 250г
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                877 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--new">
+                                                        новинка
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/paprik.jpg"
+                                                        alt="Перец оранжевый" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span class="product-card__status product-card__status--close">
+                                                            заканчивается
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Перец оранжевый, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                349 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <ul class="badge">
+                                                    <li class="badge__item badge__item--new">
+                                                        новинка
+                                                    </li>
+                                                    <li class="badge__item badge__item--sale">
+                                                        -50%
+                                                    </li>
+                                                </ul>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/pineapple.jpg"
+                                                        alt="Ананас" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Ананас, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price product-card__price--old">
+                                                                1999 <span>₽</span>
+                                                            </span>
+                                                            <span class="product-card__price">
+                                                                999 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/lemon.jpg"
+                                                        alt="Лимон" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                4.6
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="4.6">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Лимон, 1кг
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                199 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                    <span class="badge__item badge__item--top">
+                                                        хит
+                                                    </span>
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
+                                                        alt="Питахайя красная с белой мякотью" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Питахайя красная с белой мякотью, 1шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                1019 <span>₽</span>
+                                                            </span>
+                                                        </div>
+                                                        <button class="product-card__btn" type="button">
+                                                            <span class="sr-only">
+                                                                Добавить в корзину
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="top-products__item">
+                                        <article class="product-card">
+                                            <div class="product-card__top">
+                                                <div class="badge">
+                                                </div>
+                                                <button class="product-card__favorite">
+                                                    <span class="sr-only">
+                                                        В Избранное
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="product-card__content">
+                                                <a class="product-card__link" href="#">
+                                                    <img class="product-card__img" src="images/catalog/ketchup.jpg"
+                                                        alt="Кетчуп" width="298" height="225">
+                                                </a>
+                                                <div class="product-card__discription">
+                                                    <div class="product-card__discription-top">
+                                                        <span
+                                                            class="product-card__status product-card__status--instock">
+                                                            в наличии
+                                                        </span>
+                                                        <form class="product-card__rating-form" action="#">
+                                                            <label class="product-card__rating-label" for="rating">
+                                                                5.0
+                                                            </label>
+                                                            <span class="product-card__rating" data-rateyo-rating="5.0">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                    <a class="product-card__title-link" href="#">
+                                                        <h3 class="product-card__title">
+                                                            Кетчуп томатный детский органический Bio-Zentrale 500мл,
+                                                            1 шт
+                                                        </h3>
+                                                    </a>
+                                                    <div class="product-card__bottom">
+                                                        <div class="product-card__cost">
+                                                            <span class="product-card__price">
+                                                                600 <span>₽</span>
                                                             </span>
                                                         </div>
                                                         <button class="product-card__btn" type="button">
@@ -1072,7 +2645,7 @@
                                         <ul class="pagination__list">
                                             <li class="pagination__item pagination__item--active">
                                                 <a class="pagination__link" href="#">
-                                                    1        
+                                                    1
                                                 </a>
                                             </li>
                                             <li class="pagination__item">
@@ -1287,6 +2860,7 @@
 
 
     <script src="js/main.min.js"></script>
+
 </body>
 
 </html>

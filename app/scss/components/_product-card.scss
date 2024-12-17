@@ -268,5 +268,15 @@
             color: $silver-600;
         }
     }
+
+    &__rating-form {
+        display: flex;
+        font-weight: $fw-700;     
+      
+    }
+
+    &__rating-label {
+        margin-right: 3px;
+    }
 }
 

@@ -69,6 +69,7 @@ $(function(){
 
     $(".product-card__rating").rateYo({ 
         rating: 4.5, 
+        readOnly: true, 
         spacing: "10px", 
         numStars: 1, 
         minValue: 0, 
@@ -77,6 +78,9 @@ $(function(){
         ratedFill: '#FFB800', 
         starWidth: '16px',
         starHeight: '16px',
+        onChange: function (rating, rateYoInstance) {
+            $(this).next().text(rating);
+          }
 
     }) 
 
@@ -252,6 +256,7 @@ $(function(){
 
     $('.catalog-content__select').styler();
 
+
     $('.catalog-content__filter-btn').on('click', function () {
         $('.catalog-content__filter-btn').removeClass('catalog-content__filter-btn--active');
         $(this).addClass('catalog-content__filter-btn--active');
@@ -313,23 +318,30 @@ $(function(){
         arrows: true,
         slidesToShow: 4,
         slidesToScroll: 1,
-    });
-    
-
-    
+    });  
 
 
+});
+
+$(function(){
+    var mixer = mixitup(".catalog-content");
+
+});
+
+$(function(){
 
     var containerEl1 = document.querySelector('[data-ref="top-products"]');
     var containerEl2 = document.querySelector('[data-ref="stocks"]');
- 
+    
+
     var config = {
         controls: {
-          scope: 'local'
+        scope: 'local'
         }
     };
-     
+
+ 
     var mixer1 = mixitup(containerEl1, config);
-    var mixer2 = mixitup(containerEl2, config);
+    var mixer1 = mixitup(containerEl2, config);
 
 });
