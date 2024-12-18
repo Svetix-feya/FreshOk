@@ -441,63 +441,63 @@
                                 </h3>
                                 <ul class="catalogofgoods-categories__items filter__items">
                                     <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Овощи и фрукты
+                                        <a class="filter__link" href="#" data-filter=".fruits">
+                                            Фрукты
                                         </a>
                                     </li>
                                     <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
+                                        <a class="filter__link" href="#" data-filter=".vegetables">
+                                            Овощи
+                                        </a>
+                                    </li>
+                                    <li class="catalogofgoods-categories__item filter__item-li">
+                                        <a class="filter__link" href="#" data-filter=".grocery">
                                             Бакалея
                                         </a>
                                     </li>
                                     <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Молочные продукты
-                                        </a>
-                                    </li>
-                                    <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Хлеб
-                                        </a>
-                                    </li>
-                                    <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Мясо
-                                        </a>
-                                    </li>
-                                    <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Колбаса
-                                        </a>
-                                    </li>
-                                    <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Рыба
-                                        </a>
-                                    </li>
-                                    <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Алкоголь
-                                        </a>
-                                    </li>
-                                    <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
+                                        <a class="filter__link" href="#" data-filter=".drinks">
                                             Напитки
                                         </a>
                                     </li>
                                     <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Торты
+                                        <a class="filter__link" href="#" data-filter=".teacoffee">
+                                            Чай, кофе
                                         </a>
                                     </li>
                                     <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
+                                        <a class="filter__link" href="#" data-filter=".milk">
+                                            Молочные продукты
+                                        </a>
+                                    </li>
+                                    <li class="catalogofgoods-categories__item filter__item-li">
+                                        <a class="filter__link" href="#" data-filter=".bread">
+                                            Хлеб
+                                        </a>
+                                    </li>
+                                    <li class="catalogofgoods-categories__item filter__item-li">
+                                        <a class="filter__link" href="#" data-filter=".meat">
                                             Мясо
                                         </a>
                                     </li>
                                     <li class="catalogofgoods-categories__item filter__item-li">
-                                        <a class="filter__link" href="#">
-                                            Чай, кофе
+                                        <a class="filter__link" href="#" data-filter=".sausage">
+                                            Колбаса
+                                        </a>
+                                    </li>
+                                    <li class="catalogofgoods-categories__item filter__item-li">
+                                        <a class="filter__link" href="#" data-filter=".fish">
+                                            Рыба
+                                        </a>
+                                    </li>
+                                    <li class="catalogofgoods-categories__item filter__item-li">
+                                        <a class="filter__link" href="#" data-filter=".alcohol">
+                                            Алкоголь
+                                        </a>
+                                    </li>
+                                    <li class="catalogofgoods-categories__item filter__item-li">
+                                        <a class="filter__link" href="#" data-filter=".cake">
+                                            Торты
                                         </a>
                                     </li>
                                 </ul>
@@ -508,34 +508,42 @@
                                 </h3>
                                 <form class="catalogofgoods-offers__form filter__items" action="#">
                                     <ul class="catalogofgoods-offers__items">
-                                        <label class="catalogofgoods-offers__lable filter__label">
-                                            <li class="catalogofgoods-offers__item" data-filter="badge__item--sale">
-                                                <input class="catalogofgoods-offers__input filter__checkbox"
-                                                    type="checkbox">
+                                        <li class="catalogofgoods-offers__item">
+                                            <label
+                                                class="catalogofgoods-offers__lable filter__label catalogofgoods-offers__lable--sale"
+                                                data-filter=".sale">
+                                                <input
+                                                    class="catalogofgoods-offers__input filter__checkbox catalogofgoods-offers__input--sale"
+                                                    type="checkbox" value=".sale">
                                                 <span name="catalogofgoods-offers__text">
                                                     Со скидкой
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-offers__lable filter__label">
-                                            <li class="catalogofgoods-offers__item" data-filter="badge__item--new">
-                                                <input class="catalogofgoods-offers__input filter__checkbox"
-                                                    type="checkbox">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-offers__item">
+                                            <label
+                                                class="catalogofgoods-offers__lable filter__label catalogofgoods-offers__lable--new"
+                                                data-filter=".new">
+                                                <input
+                                                    class="catalogofgoods-offers__input filter__checkbox catalogofgoods-offers__input--new"
+                                                    type="checkbox" value=".new">
                                                 <span class="catalogofgoods-offers__text">
                                                     Новинка
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-offers__lable filter__label">
-                                            <li class="catalogofgoods-offers__item filter__item--last"
-                                                data-filter="badge__item--top">
-                                                <input class="catalogofgoods-offers__input filter__checkbox"
-                                                    type="checkbox">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-offers__item">
+                                            <label
+                                                class="catalogofgoods-offers__lable filter__label catalogofgoods-offers__lable--top"
+                                                data-filter=".top">
+                                                <input
+                                                    class="catalogofgoods-offers__input filter__checkbox catalogofgoods-offers__input--top"
+                                                    type="checkbox" value=".top">
                                                 <span class="catalogofgoods-offers__text">
                                                     Хит
                                                 </span>
-                                            </li>
-                                        </label>
+                                            </label>
+                                        </li>
                                     </ul>
                                 </form>
                             </div>
@@ -545,60 +553,63 @@
                                 </h3>
                                 <form class="catalogofgoods-brend__form filter__items" action="#">
                                     <ul class="catalogofgoods-brend__items">
-                                        <label class="catalogofgoods-brend__lable filter__label">
-                                            <li class="catalogofgoods-brend__item">
+                                        <li class="catalogofgoods-brend__item">
+                                            <label class="catalogofgoods-brend__lable filter__label">
                                                 <input class="catalogofgoods-brend__input filter__checkbox"
                                                     type="checkbox">
                                                 <span name="catalogofgoods-brend__text">
                                                     CocaCola
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-brend__lable filter__label">
-                                            <li class="catalogofgoods-brend__item">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-brend__item">
+                                            <label class="catalogofgoods-brend__lable filter__label">
                                                 <input class="catalogofgoods-brend__input filter__checkbox"
                                                     type="checkbox">
                                                 <span class="catalogofgoods-brend__text">
                                                     Pepsi
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-brend__lable filter__label">
-                                            <li class="catalogofgoods-brend__item">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-brend__item">
+                                            <label class="catalogofgoods-brend__lable filter__label">
+
                                                 <input class="catalogofgoods-brend__input filter__checkbox"
                                                     type="checkbox">
                                                 <span name="catalogofgoods-brend__text">
                                                     Sprite
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-brend__lable filter__label">
-                                            <li class="catalogofgoods-brend__item">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-brend__item">
+                                            <label class="catalogofgoods-brend__lable filter__label">
                                                 <input class="catalogofgoods-brend__input filter__checkbox"
                                                     type="checkbox">
                                                 <span class="catalogofgoods-brend__text">
                                                     Fanta
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-brend__lable filter__label">
-                                            <li class="catalogofgoods-brend__item">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-brend__item">
+                                            <label class="catalogofgoods-brend__lable filter__label">
+
                                                 <input class="catalogofgoods-brend__input filter__checkbox"
                                                     type="checkbox">
                                                 <span class="catalogofgoods-brend__text">
                                                     RedBull
                                                 </span>
-                                            </li>
-                                        </label>
-                                        <label class="catalogofgoods-brend__lable filter__label">
-                                            <li class="catalogofgoods-brend__item filter__item--last">
+                                            </label>
+                                        </li>
+                                        <li class="catalogofgoods-brend__item filter__item--last">
+                                            <label class="catalogofgoods-brend__lable filter__label">
+
                                                 <input class="catalogofgoods-brend__input filter__checkbox"
                                                     type="checkbox">
                                                 <span class="catalogofgoods-brend__text">
                                                     Dr Pepper
                                                 </span>
-                                            </li>
-                                        </label>
+                                            </label>
+                                        </li>
                                     </ul>
                                 </form>
                             </div>
@@ -654,7 +665,7 @@
                                         <option class="catalog-content__option" value="by-30" data-filter=".by-30">
                                             по 30
                                         </option>
-                                        <option class="catalog-content__option" value="by-36" data-filter="all">
+                                        <option class="catalog-content__option" value="by-36" data-filter=".by-36">
                                             по 36
                                         </option>
                                     </select>
@@ -666,8 +677,8 @@
                                 </button>
                             </div>
                             <div class="catalog-content__inner">
-                                <ul class="top-products__items mix by-12 by-18 by-24 by-30 by-36">
-                                    <li class="top-products__item">
+                                <ul class="top-products__items">
+                                    <li class="top-products__item mix new sale by-12 by-18 by-24 by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -727,7 +738,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -778,7 +789,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -832,7 +843,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 grocery">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -884,7 +895,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top vegetables">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -938,7 +949,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 sale drinks">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -997,7 +1008,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new teacoffee">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1050,7 +1061,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new vegetables">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1103,7 +1114,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new sale fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -1163,7 +1174,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1214,7 +1225,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1268,7 +1279,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 grocery">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1320,9 +1331,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                </ul>
-                                <ul class="top-products__items mix by-18 by-24 by-30 by-36">
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -1382,7 +1391,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1433,7 +1442,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 top fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1487,7 +1496,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 grocery">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1539,7 +1548,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 top vegetables">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1593,7 +1602,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 sale drinks">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1652,9 +1661,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                </ul>
-                                <ul class="top-products__items mix by-24 by-30 by-36">
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-24 by-30 by-36 teacoffee">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1707,7 +1714,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-24 by-30 by-36 new vegetables">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1760,7 +1767,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-24 by-30 by-36 new sale fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -1820,7 +1827,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-24 by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1871,7 +1878,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-24 by-30 by-36 top fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1925,7 +1932,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-24 by-30 by-36 grocery">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1977,9 +1984,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                </ul>
-                                <ul class="top-products__items mix by-30 by-36">
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -2039,7 +2044,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-30 by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2090,7 +2095,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-30 by-36 top fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2144,7 +2149,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-30 by-36 grocery">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2196,7 +2201,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-30 by-36 top vegetables">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2250,7 +2255,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-30 by-36 sale drinks">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2309,9 +2314,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                </ul>
-                                <ul class="top-products__items mix by-36">
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-36 teacoffee">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2364,7 +2367,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-36 new vegetables">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2417,7 +2420,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-36 new sale fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -2477,7 +2480,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-36 fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2528,7 +2531,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-36 top fruits">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2582,7 +2585,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item">
+                                    <li class="top-products__item mix by-36 grocery">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">

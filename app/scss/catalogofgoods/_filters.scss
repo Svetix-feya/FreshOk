@@ -21,16 +21,21 @@
 }
 
 .catalogofgoods-offers__item,
-.catalogofgoods-brend__item {    
-    padding-bottom: 12px;
-    display: flex; 
+.catalogofgoods-brend__item {
+    &:not(:last-child) {    
+        padding-bottom: 12px;   
+    }
 }
 
 .catalogofgoods-categories__item {
+    padding-left: 16px;
+    border-left: 2px solid transparent;
 
     &:hover {
-        background-color: $green-200;
+        border-left: 2px solid $green-900;
+        color: $green-900;
     }
+   
 }
 
 .filter {
@@ -41,7 +46,7 @@
     margin-bottom: 30px;
 
     &__items {
-        padding: 18px;
+        padding: 18px 18px 18px 0;
         font-size: 18px;
         overflow-y: scroll;
 
@@ -60,7 +65,7 @@
     }
 
     &__item-li {
-        padding-bottom: 12px;
+        padding-bottom: 12px;       
 
         &:last-child {
             padding-bottom: 0;
@@ -83,12 +88,11 @@
         }
     }
 
-    &__item--last {
-        padding-bottom: 0;
+    &__label {
+        padding-left: 18px;
+        display: flex;
     }
 
-    
-   
 }
 
 .filter-price {

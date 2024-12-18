@@ -324,7 +324,31 @@ $(function(){
 });
 
 $(function(){
-    var mixer = mixitup(".catalog-content");
+ 
+
+    var containerE3 = document.querySelector('.catalog-content');
+    var checkboxGroup = document.querySelector('.catalogofgoods-offers__items');
+    var checkboxes = checkboxGroup.querySelectorAll('input[type="checkbox"]');
+
+    var mixer = mixitup(containerE3);
+
+    checkboxGroup.addEventListener('change', function() {
+        var selectors = [];
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                var checkbox = checkboxes[i];
+
+                if (checkbox.checked) selectors.push(checkbox.value);
+            }
+
+        var selectorString = selectors.length > 0 ?
+            selectors.join(',') : 
+                'all';
+
+        mixer.filter(selectorString);
+    });
+        
+
 
 });
 
@@ -345,3 +369,4 @@ $(function(){
     var mixer1 = mixitup(containerEl2, config);
 
 });
+
