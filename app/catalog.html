@@ -347,7 +347,7 @@
                                     Поиск по каталогу
                                 </label>
                                 <input class="search-form__input" id="search" type="search"
-                                    placeholder="Найти в магазине ..." name="search" required>
+                                    placeholder="Найти в магазине ..." name="search" required data-ref="input-search">
                                 <button class="button button--search" type="submit">поиск</button>
                             </form>
                             <div class="usernav">
@@ -635,19 +635,19 @@
                             <div class="catalog-content__filter">
                                 <form class="catalog-content__form" action="#">
                                     <select class="catalog-content__select select--name">
-                                        <option class="catalog-content__option" value="По названию" selected>
+                                        <option class="catalog-content__option" value="По названию" selected data-sort="default:asc">
                                             По названию
                                         </option>
-                                        <option class="catalog-content__option" value="По популярности">
+                                        <option class="catalog-content__option" value="По популярности" data-sort="rating:desc">
                                             По популярности
                                         </option>
-                                        <option class="catalog-content__option" value="Сначала дешевые">
+                                        <option class="catalog-content__option" value="Сначала дешевые" data-sort="price:asc">
                                             Сначала дешевые
                                         </option>
-                                        <option class="catalog-content__option" value="Сначала дорогие">
+                                        <option class="catalog-content__option" value="Сначала дорогие" data-sort="price:desc">
                                             Сначала дорогие
                                         </option>
-                                        <option class="catalog-content__option" value="По алфавиту">
+                                        <option class="catalog-content__option" value="По алфавиту" data-sort="name:asc">
                                             По алфавиту
                                         </option>
                                     </select>
@@ -678,7 +678,7 @@
                             </div>
                             <div class="catalog-content__inner">
                                 <ul class="top-products__items">
-                                    <li class="top-products__item mix new sale by-12 by-18 by-24 by-30 by-36 fruits">
+                                    <li class="top-products__item mix new sale by-18 by-24 by-30 by-36 fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -738,7 +738,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 fruits">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 fruits лимон" data-price="199" data-name="лим" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -789,7 +789,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top fruits">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top fruits питахайя" data-price="1019" data-name="пит" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -843,7 +843,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 grocery">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 grocery кетчуп" data-price="600" data-name="кет" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -895,7 +895,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top vegetables">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top vegetables морковь" data-price="49" data-name="мор" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -949,7 +949,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 sale drinks">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 sale drinks напиток сокосодержащий" data-price="199" data-name="нап" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1008,7 +1008,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new teacoffee">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new teacoffee кофе" data-price="877" data-name="коф" data-rating="4.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1061,7 +1061,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new vegetables">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new vegetables перец оранжевый" data-price="349" data-name="пер" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1114,7 +1114,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new sale fruits">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 new sale fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -1174,7 +1174,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 fruits">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 fruits лимон" data-price="199" data-name="лим" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1225,7 +1225,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top fruits">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 top fruits питахайя красная с белой мякотью" data-price="1019" data-name="пит" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1279,7 +1279,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 grocery">
+                                    <li class="top-products__item mix by-12 by-18 by-24 by-30 by-36 grocery кетчуп" data-price="600" data-name="кет" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1331,7 +1331,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 fruits">
+                                    <li class="top-products__item mix new sale by-18 by-24 by-30 by-36 fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -1391,7 +1391,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 fruits">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 fruits лимон" data-price="199" data-name="лим" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1442,7 +1442,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 top fruits">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 top fruits питахайя" data-price="1019" data-name="пит" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1496,7 +1496,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 grocery">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 grocery кетчуп" data-price="600" data-name="кет" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1548,7 +1548,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 top vegetables">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 top vegetables морковь" data-price="49" data-name="мор" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1602,7 +1602,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 sale drinks">
+                                    <li class="top-products__item mix by-18 by-24 by-30 by-36 sale drinks напиток сокосодержащий" data-price="199" data-name="нап" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1661,7 +1661,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-24 by-30 by-36 teacoffee">
+                                    <li class="top-products__item mix by-24 by-30 by-36 teacoffee кофе" data-price="877" data-name="коф" data-rating="4.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1714,7 +1714,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-24 by-30 by-36 new vegetables">
+                                    <li class="top-products__item mix by-24 by-30 by-36 new vegetables перец оранжевый" data-price="349" data-name="пер" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1767,7 +1767,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-24 by-30 by-36 new sale fruits">
+                                    <li class="top-products__item mix new sale by-24 by-30 by-36 new sale fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -1827,7 +1827,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-24 by-30 by-36 fruits">
+                                    <li class="top-products__item mix by-24 by-30 by-36 fruits лимон" data-price="199" data-name="лим" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1878,7 +1878,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-24 by-30 by-36 top fruits">
+                                    <li class="top-products__item mix by-24 by-30 by-36 top fruits питахайя" data-price="1019" data-name="пит" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1932,7 +1932,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-24 by-30 by-36 grocery">
+                                    <li class="top-products__item mix by-24 by-30 by-36 grocery кетчуп" data-price="600" data-name="кет" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -1984,7 +1984,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-30 by-36 fruits">
+                                    <li class="top-products__item mix new sale by-30 by-36 fruits ананас" data-name="ана" data-price="999" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -2044,7 +2044,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-30 by-36 fruits">
+                                    <li class="top-products__item mix by-30 by-36 fruits лимон" data-price="199" data-name="лим" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2095,7 +2095,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-30 by-36 top fruits">
+                                    <li class="top-products__item mix by-30 by-36 top fruits питахайя красная с белой мякотью" data-price="1019" data-name="пит" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2149,7 +2149,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-30 by-36 grocery">
+                                    <li class="top-products__item mix by-30 by-36 grocery кетчуп" data-price="600" data-name="кет" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2201,7 +2201,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-30 by-36 top vegetables">
+                                    <li class="top-products__item mix by-30 by-36 top vegetables морковь" data-price="49" data-name="мор" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2255,7 +2255,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-30 by-36 sale drinks">
+                                    <li class="top-products__item mix by-30 by-36 sale drinks напиток сокосодержащий sanpellegrino aranciata orange Красный апельсин        безалкогольн..." data-price="199" data-name="нап" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2314,7 +2314,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-36 teacoffee">
+                                    <li class="top-products__item mix by-36 teacoffee кофе" data-price="877" data-name="коф" data-rating="4.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2367,7 +2367,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-36 new vegetables">
+                                    <li class="top-products__item mix by-36 new vegetables перец" data-price="349" data-name="пер" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2420,7 +2420,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-36 new sale fruits">
+                                    <li class="top-products__item mix by-36 new sale fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">
@@ -2480,7 +2480,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-36 fruits">
+                                    <li class="top-products__item mix by-36 fruits лимон" data-price="199" data-name="лим" data-rating="4.6">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2531,7 +2531,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-36 top fruits">
+                                    <li class="top-products__item mix by-36 top fruits питахайя" data-price="1019" data-name="пит" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
@@ -2585,7 +2585,7 @@
                                             </div>
                                         </article>
                                     </li>
-                                    <li class="top-products__item mix by-36 grocery">
+                                    <li class="top-products__item mix by-36 grocery кетчуп" data-price="600" data-name="кет" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <div class="badge">
