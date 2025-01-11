@@ -1,3 +1,5 @@
+// const { listeners } = require("gulp");
+
 $(function(){ 
 
 
@@ -15,8 +17,8 @@ $(function(){
         type: "double",
         min: min,
         max: max,
-        from: 100,
-        to: 1000,
+        from: 20,
+        to: 1100,
         onStart: updateInputs,
         onChange: updateInputs,
         onFinish: updateInputs
@@ -159,8 +161,7 @@ $(function(){
     });
 
 
-    $('.product-card__button').styler();
-
+    // $('.product-card__button').styler();
 
 
 
@@ -323,6 +324,118 @@ $(function(){
 
 });
 
+
+
+
+
+$(function(){ 
+
+    //добавляем прослушку на всем окне
+
+    window.addEventListener('click', function (event) {
+
+        //добавляем переменную для счетчика
+        let counter;
+
+        //проверяем клик строго по кнопкам Плюс либо Минус        
+        if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
+            const counterWrapper = event.target.closest('.product-card__form'); 
+            counter =  counterWrapper.querySelector('[data-counter]');  
+        }
+        
+        // проверяем является ли элемент по которому совершен клик кнопкой Плюс
+        if (event.target.dataset.action === 'plus') {   
+            counter.innerText = ++counter.innerText;
+        }       
+
+        // проверяем является ли элемент по которому совершен клик кнопкой Минус
+        if (event.target.dataset.action === 'minus') {         
+      
+            //проверяем чтобы счетчик был больше 1
+            if (parseInt(counter.innerText) > 1 ){
+                counter.innerText = --counter.innerText;
+                }
+
+        }
+    });
+
+
+}); 
+
+
+
+$(function(){    
+
+    const cartWrapper = document.querySelector('.cart__content');
+
+        //отслеживаем клик на странице
+
+    window.addEventListener('click', function (event) {
+
+            //проверяем что клик был совершен по кнопке "добавить в корзину"
+            if (event.target.hasAttribute('data-cart')) {
+                //находим карточку с товаром внутри которой был совершен клик
+                const card = event.target.closest('.product-card');
+                //собираем данные с этого товара и записываем их в единый объект productInfo
+                const productInfo = {
+                id: card.dataset.id,
+                imgSrc: card.querySelector('.product-card__img').getAttribute('src'),
+                title: card.querySelector('.product-card__title').innerText,
+                price: card.querySelector('.product-card__price').innerText,
+                counter: card.querySelector('.product-card__counter').innerText,
+                };
+               console.log(productInfo);
+
+                //собранные данные подставим в шаблон для товара в корзине
+
+                const cartItemHTML = `<li class="cart__card">
+                            <button class="cart__close-item" type="button">
+                                <span class="cart__line-item"></span>
+                                <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
+                            </button>
+                            <article class="product-card">
+                                <div class="product-card__content">
+                                    <a class="product-card__link" href="#">
+                                        <img class="product-card__img" src="${productInfo.imgSrc}"
+                                            alt="Питахайя" width="80" height="60">
+                                    </a>
+                                    <div class="product-card__discription">
+                                        <a class="product-card__title-link" href="#">
+                                            <h3 class="product-card__title">
+                                                ${productInfo.title}
+                                            </h3>
+                                        </a>
+                                        <span class="product-card__price">
+                                            ${productInfo.price} <span>₽</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <form class="product-card__form">
+                                    <button class="product-card__minus" type="button">
+                                    </button>
+                                    <span class="product-card__counter" data-counter>
+                                    ${productInfo.counter}
+                                    </span>
+                                    <button class="product-card__plus" type="button">
+                                    </button>                              
+                                    <span class="product-card__sum">
+                                        2038 <span>₽</span>
+                                    </span>
+                                </form>
+                            </article>
+                                </li>`;
+
+                        //отобразим товар в корзине
+                cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);        
+            }
+
+    });
+
+
+});    
+
+
+
 $(function(){
  
 
@@ -412,6 +525,83 @@ $(function(){
         }
     }   
 
+    
+    // var container = document.querySelector('[data-ref="container"]');
+    var minSizeRangeInput = document.querySelector('[name="minSize"]');
+    var maxSizeRangeInput = document.querySelector('[name="maxSize"]');
+
+    var mixer = mixitup(containerE3, {
+        animation: {
+            duration: 350
+        }
+    });
+
+    /**
+     * Reads the values from our two native range inputs, returning an object
+     * with `min` and `max` numeric values.
+     *
+     * @return {object}
+     */
+
+    function getRange() {
+        var min = Number(minSizeRangeInput.value);
+        var max = Number(maxSizeRangeInput.value);
+
+        return {
+            min: min,
+            max: max
+        };
+    }
+
+    /**
+     * Ensures that the mixer is re-filtered whenever the value of a range
+     * input changes.
+     *
+     * @return {void}
+     */
+
+    function handleRangeInputChange() {
+        mixer.filter(mixer.getState().activeFilter);
+    }
+
+    /**
+     * Allows us to manipulate the test result (`true` or `false`) of a
+     * target against the current filter selector(s) (e.g. `.blue`).
+     *
+     * In this case we want to apply an additional constraint of whether or not the
+     * target is within an arbitrary range, and override the test result to `false`
+     * if not. The function must always return the test result.
+     *
+     * @param {boolean} testResult
+     *     A boolean indicating whether or not the target is passing the current filtering criteria.
+     * @param {mixitup.Target} target
+     *     A reference to the target being tested
+     * @return {boolean}
+     */
+
+    function filterTestResult(testResult, target) {
+        var size = Number(target.dom.el.getAttribute('data-price'));
+        var range = getRange();
+
+        if (size < range.min || size > range.max) {
+            testResult = false;
+        }
+
+        return testResult;
+    }
+
+    // Using the static method `registerFilter` from the MixItUp plugins API, we can
+    // register the above function as a filter, to manipulate the value returned from the
+    // `testResultEvaluateHideShow` hook.
+
+    mixitup.Mixer.registerFilter('testResultEvaluateHideShow', 'range', filterTestResult);
+
+    // Listen for change events from the two range inputs
+
+    minSizeRangeInput.addEventListener('change', handleRangeInputChange);
+    maxSizeRangeInput.addEventListener('change', handleRangeInputChange);
+
+
 });
 
 $(function(){
@@ -430,5 +620,89 @@ $(function(){
     var mixer1 = mixitup(containerEl1, config);
     var mixer1 = mixitup(containerEl2, config);
 
+    var inputSearch = document.querySelector('[data-ref="input-search"]');
+    var keyupTimeout;
+
+    var mixer = mixitup(containerEl1, {
+        animation: {
+            duration: 350
+        },
+        callbacks: {
+            onMixClick: function() {
+                // Reset the search if a filter is clicked
+
+                if (this.matches('[data-filter]')) {
+                    inputSearch.value = '';
+                }
+            }
+        }       
+    });
+
+    // Set up a handler to listen for "keyup" events from the search input
+
+    inputSearch.addEventListener('keyup', function() {
+        var searchValue;
+
+        if (inputSearch.value.length < 3) {
+            // If the input value is less than 3 characters, don't send
+
+            searchValue = '';
+        } else {
+            searchValue = inputSearch.value.toLowerCase().trim();
+        }
+
+        // Very basic throttling to prevent mixer thrashing. Only search
+        // once 350ms has passed since the last keyup event
+
+        clearTimeout(keyupTimeout);
+
+        keyupTimeout = setTimeout(function() {
+            filterByString(searchValue);
+        }, 350);
+    });
+
+    /**
+     * Filters the mixer using a provided search string, which is matched against
+     * the contents of each target's "class" attribute. Any custom data-attribute(s)
+     * could also be used.
+     *
+     * @param  {string} searchValue
+     * @return {void}
+     */
+
+    function filterByString(searchValue) {
+        if (searchValue) {
+            // Use an attribute wildcard selector to check for matches
+
+            mixer.filter('[class*="' + searchValue + '"]');
+        } else {
+            // If no searchValue, treat as filter('all')
+
+            mixer.filter('all');
+        }
+    }   
+
 });
+
+// $(function () {
+//     $('.cart').smbasket({
+//         productElement: 'product-card',
+//         buttonAddToBasket: 'product-card__btn',
+//         productPrice: 'product-card__price',
+//         productSize: 'product__size-element',
+        
+//         productQuantityWrapper: 'product__quantity',
+//         smartBasketMinArea: 'usernav__link--cart',
+//         countryCode: '+7',
+//         smartBasketCurrency: '₽',
+//         smartBasketMinIconPath: '../smartbasket/img/shopping-basket-wight.svg',
+
+//         agreement: {
+//             isRequired: true,
+//             isChecked: true,
+//             isLink: 'https://artstranger.ru/privacy.html',
+//         },
+//         nameIsRequired: false,
+//     });
+// });
 

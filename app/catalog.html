@@ -620,13 +620,15 @@
                                 <div class="catalogofgoods-price__item filter-price">
                                     <form class="filter-price__form" action="#">
                                         <span class="filter-price__span">от</span>
-                                        <input class="filter-price__input filter-price__from" type="text">
+                                        <input class="filter-price__input filter-price__from" type="text" name="minSize" data-sort="price:asc">
                                         <span class="filter-price__span">до</span>
-                                        <input class="filter-price__input filter-price__to" type="text">
+                                        <input class="filter-price__input filter-price__to" type="text" name="maxSize" data-sort="price:asc">                                        
                                     </form>
                                     <form class="filer-price__form-item" action="#">
-                                        <input class="filter-price__item" type="text" data-min="0" data-max="1200"
-                                            data-from="100" data-to="1000">
+                                        <input class="filter-price__item" type="range" data-min="0" data-max="1200" data-from="20" data-to="1100" name="minSize" name="maxSize">
+                                        <button class="filter-price__btn button button--green" type="button" data-sort="price:asc">
+                                            Применить
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -678,7 +680,7 @@
                             </div>
                             <div class="catalog-content__inner">
                                 <ul class="top-products__items">
-                                    <li class="top-products__item mix new sale by-18 by-24 by-30 by-36 fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
+                                    <li class="top-products__item mix new sale by-12 by-18 by-24 by-30 by-36 fruits ананас" data-price="999" data-name="ана" data-rating="5.0">
                                         <article class="product-card">
                                             <div class="product-card__top">
                                                 <ul class="badge">

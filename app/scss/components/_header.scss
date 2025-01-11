@@ -1,7 +1,7 @@
 .header {
     
     z-index: 10;
-    width: 100%;
+    width: 100%;   
 
     &__top {
         padding: 17px 0 15px;
@@ -171,7 +171,7 @@
         background-color: $green-900;
         padding: 25px 0;          
         width: 100%;   
-        transition: padding 0.5s, top 0.5s;        
+        transition: padding 0.5s, top 0.5s;       
 
         @include mq('lg') {
             padding: 5px 0;
@@ -183,13 +183,16 @@
             position: fixed;  
             padding: 10px 0;
             top: 0;
+            // z-index: 1000;
 
             @include mq('lg') {
                 padding: 5px 0;
                 top: 50px;
             }
         }
-    }
+    }   
+
+
 }
 
 

@@ -271,12 +271,153 @@
 
     &__rating-form {
         display: flex;
-        font-weight: $fw-700;     
+        font-weight: $fw-700;   
+        z-index: 1;  
       
     }
 
     &__rating-label {
         margin-right: 3px;
     }
+
+    &__button,
+    &__form {
+        display: flex;
+      
+    }
+
+    &__form {
+        align-items: center;
+        position: relative;
+    }
+
+    &__counter {
+        width: 36px;
+        background-color: rgba($green-900, 0.1);
+        height: 24px;
+        display: block;            
+        font-weight: $fw-400;
+        font-size: 16px;
+        line-height: 1;           
+        font-family: $opensans; 
+        margin-right: 48px; 
+        text-align: center;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__minus,
+    &__plus {
+        position: absolute;            
+        background: $green-900;
+        width: 24px;
+        height: 24px;  
+
+        &::after {
+            position: absolute;
+            content: '';
+            background-color: $white;
+            width: 16px;
+            height: 1px;
+            top: 12px;
+            left: 4px;
+        }
+
+    }
+
+    &__plus {
+        right: 55px;
+        cursor: pointer;
+        border-radius: 0 3px 3px 0;
+
+        &::before {
+            transform: rotate(90deg);
+            left: 4px;
+            bottom: 11px;
+            right: 0;
+            position: absolute;
+            content: '';
+            background-color: $white;
+            width: 16px;
+            height: 1px;
+            top: 12px;
+            left: 4px;
+        }
+
+        @include mq('sm') {
+            left: 78px;
+        }
+    }
+
+    &__minus {
+        right: 117px;
+        cursor: pointer;
+        border-radius: 3px 0 0 3px;
+
+        @include mq('sm') {
+            left: 16px;
+        }
+    }
 }
 
+
+.jq-number {
+    &__spin {
+        // position: absolute;            
+        // background: $green-900;
+        // width: 24px;
+        // height: 24px;    
+        
+        // &.plus {
+        //     right: 73px;
+        //     cursor: pointer;
+        //     border-radius: 0 3px 3px 0;
+
+        //     @include mq('sm') {
+        //         left: 78px;
+        //     }
+        // }
+
+        // &.minus {
+        //     right: 135px;
+        //     cursor: pointer;
+        //     border-radius: 3px 0 0 3px;
+
+        //     @include mq('sm') {
+        //         left: 16px;
+        //     }
+        // }
+
+        // &::after,
+        // &.plus::before {
+        //     position: absolute;
+        //     content: '';
+        //     background-color: $white;
+        //     width: 16px;
+        //     height: 1px;
+        //     top: 12px;
+        //     left: 4px;
+        // }
+
+        &.plus::before {
+            transform: rotate(90deg);
+            left: 4px;
+            bottom: 11px;
+            right: 0;
+        }
+    }  
+    
+    // &__field input {
+    //     width: 36px;
+    //     background-color: rgba($green-900, 0.1);
+    //     height: 24px;
+    //     display: block;            
+    //     font-weight: $fw-400;
+    //     font-size: 16px;
+    //     line-height: 1;           
+    //     font-family: $opensans; 
+    //     margin-right: 48px; 
+    //     text-align: center;  
+    // }            
+}  

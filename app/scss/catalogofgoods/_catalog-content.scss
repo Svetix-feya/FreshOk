@@ -7,11 +7,7 @@
             flex-wrap: wrap;  
             margin-bottom: 30px;
         
-        }  
-        
-        .top-products__item {
-            padding-bottom: 30px;
-        }
+        } 
 
         .top-products__item.top-products__item--list {
 
@@ -116,7 +112,7 @@
     &__inner-bottom {
         display: flex;
         justify-content: space-between;
-        padding-top: 18px;
+        padding-top: 48px;
     }
 
 }
