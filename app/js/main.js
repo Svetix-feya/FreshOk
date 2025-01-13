@@ -154,14 +154,10 @@ $(function(){
         
     }); 
 
-
     $('.cart__close-item').on('click', function () {
-        $(this).parent().toggleClass('hidden'); 
-        
+        $(this).parent().addClass('hidden');      
+        // $('.cart__card').addClass('hidden');    
     });
-
-
-    // $('.product-card__button').styler();
 
 
 
@@ -336,6 +332,7 @@ $(function(){
 
         //добавляем переменную для счетчика
         let counter;
+        
 
         //проверяем клик строго по кнопкам Плюс либо Минус        
         if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
@@ -357,16 +354,26 @@ $(function(){
                 }
 
         }
+
+        // проверяем клик на + или - внутри корзины
+        if (event.target.hasAttribute('data-action') && event.target.closest('.cart__content')) {        
+
+            //пересчет общей стоимости товаров в корзине
+        calcCartPrice ();
+        //пересчет общей количества товаров в корзине        
+        calcCartCount ();
+
+        
+        };
+
     });
 
-
-}); 
-
-
-
-$(function(){    
+  
 
     const cartWrapper = document.querySelector('.cart__content');
+
+ 
+
 
         //отслеживаем клик на странице
 
@@ -376,6 +383,7 @@ $(function(){
             if (event.target.hasAttribute('data-cart')) {
                 //находим карточку с товаром внутри которой был совершен клик
                 const card = event.target.closest('.product-card');
+
                 //собираем данные с этого товара и записываем их в единый объект productInfo
                 const productInfo = {
                 id: card.dataset.id,
@@ -383,12 +391,27 @@ $(function(){
                 title: card.querySelector('.product-card__title').innerText,
                 price: card.querySelector('.product-card__price').innerText,
                 counter: card.querySelector('.product-card__counter').innerText,
-                };
-               console.log(productInfo);
+                };                
+
+               //проверять есть ли уже такой товар в корзине
+
+               const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);        
+
+               //если товар есть в корзине
+
+               if (itemInCart) {
+                    const counterElement = itemInCart.querySelector('[data-counter]');
+                    counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter); 
+
+               }   
+               
+               else {
+                //если товара нет  в корзине
+               
 
                 //собранные данные подставим в шаблон для товара в корзине
 
-                const cartItemHTML = `<li class="cart__card">
+                const cartItemHTML = `<li class="cart__card" data-id="${productInfo.id}">
                             <button class="cart__close-item" type="button">
                                 <span class="cart__line-item"></span>
                                 <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
@@ -411,29 +434,93 @@ $(function(){
                                     </div>
                                 </div>
                                 <form class="product-card__form">
-                                    <button class="product-card__minus" type="button">
+                                    <button class="product-card__minus" type="button" data-action="minus">
                                     </button>
                                     <span class="product-card__counter" data-counter>
                                     ${productInfo.counter}
                                     </span>
-                                    <button class="product-card__plus" type="button">
-                                    </button>                              
+                                    <button class="product-card__plus" type="button" data-action="plus">
+                                    </button> 
                                     <span class="product-card__sum">
-                                        2038 <span>₽</span>
+                                        ${productInfo.price} <span>₽</span>
                                     </span>
-                                </form>
+                                </form>                                                                 
                             </article>
                                 </li>`;
+               
 
                         //отобразим товар в корзине
-                cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);        
-            }
+                cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML); 
+                
+           
+                
+                };
 
+                //сбрасываем счетчик добавленного товара на "1"
+                card.querySelector('[data-counter]').innerText = '1';
+
+                
+            //пересчет общей стоимости товаров в корзине
+            calcCartPrice ();
+            //пересчет общей количества товаров в корзине        
+            calcCartCount ();   
+      
+           
+        };
     });
 
 
-});    
+}); 
 
+
+
+function calcCartPrice () {  
+
+    const cartItems = document.querySelectorAll('.cart__card');   
+    const totalSum = document.querySelector('.cart__total-sum'); 
+    
+
+    let totalPrice = 0;
+  
+
+    cartItems.forEach(function (item) {  
+        const amountEl = item.querySelector('[data-counter]');
+        const priceEl = item.querySelector('.product-card__price');
+
+        let currentPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
+        totalPrice += currentPrice;  
+
+        const priceSum = item.querySelector('.product-card__sum');
+        priceSum.innerText = currentPrice;
+    });
+
+
+    //отображаем цену на странице
+    totalSum.innerText = totalPrice;
+    
+      
+   
+};
+
+
+
+function calcCartCount () {
+
+    const counterInCart = document.querySelectorAll('.cart__card');
+    const Count = document.querySelector('.usernav__num--cart');
+
+    let totalCount = 0;
+
+    counterInCart.forEach(function (item) {
+        const Element = item.querySelector('[data-counter]');
+
+    const currentCount = parseInt(Element.innerText);
+    totalCount += currentCount;
+    });
+
+    Count.innerText = totalCount;
+
+};
 
 
 $(function(){

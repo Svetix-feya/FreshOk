@@ -191,7 +191,7 @@
         }
 
         &__counter {
-            margin-right: 12px;
+            margin-right: 44px;
         }
 
         &__footer {
@@ -202,65 +202,17 @@
                 justify-content: space-between;
                 padding-left: 35px;
             }
-        }  
-
-        // .jq-number {
-        //     &__spin {
-        //         position: absolute;            
-        //         background: $green-900;
-        //         width: 24px;
-        //         height: 24px;    
-                
-        //         &.plus {
-        //             right: 100px;
-        //             cursor: pointer;
+        } 
         
-        //             @include mq('sm') {
-        //                 left: 78px;
-        //             }
-        //         }
+        &__minus,
+        &__plus {
+            margin-right: 24px;
+        }
 
-        //         &.minus {
-        //             right: 157px;
-        //             cursor: pointer;
-        
-        //             @include mq('sm') {
-        //                 left: 16px;
-        //             }
-        //         }
+        &__form {
+            align-items: flex-end;
+        }
 
-        //         &::after,
-        //         &.plus::before {
-        //             position: absolute;
-        //             content: '';
-        //             background-color: $white;
-        //             width: 16px;
-        //             height: 1px;
-        //             top: 12px;
-        //             left: 4px;
-        //         }
-
-        //         &.plus::before {
-        //             transform: rotate(90deg);
-        //             left: 4px;
-        //             bottom: 11px;
-        //             right: 0;
-        //         }
-        //     }  
-            
-        //     &__field input {
-        //         width: 36px;
-        //         background-color: rgba($green-900, 0.1);
-        //         height: 24px;
-        //         display: block;            
-        //         font-weight: $fw-400;
-        //         font-size: 16px;
-        //         line-height: 1;           
-        //         font-family: $opensans; 
-        //         margin-right: 36px; 
-        //         text-align: center;  
-        //     }            
-        // }  
     }
 
     &__total {
