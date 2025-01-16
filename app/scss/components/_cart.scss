@@ -96,8 +96,10 @@
         right: 12px;
         width: 22px;
         height: 22px;
-        top: 12px;
-        z-index: 1;
+        top: 12px;    
+        z-index: 99; 
+
+        
     }
 
     &__line-item {
@@ -154,15 +156,23 @@
         }
 
         &__price,
-        &__sum {
+        &__sum,
+        .product-card__form span:last-child {
             font-weight: $fw-600;
             font-size: 20px;
             line-height: 1;            
         }
 
-        &__sum {
+        &__sum,
+        .product-card__form span:last-child {
             color: $dark-500;
             display: flex;            
+        }
+
+        &__sum {
+            width: 60px;
+            display: flex;
+            justify-content: end;
         }
 
         &__link {
@@ -191,7 +201,8 @@
         }
 
         &__counter {
-            margin-right: 44px;
+            margin-right: 27px;
+            align-items: stretch;
         }
 
         &__footer {
@@ -204,9 +215,11 @@
             }
         } 
         
-        &__minus,
+        &__minus {
+            right: 135px;
+        }
         &__plus {
-            margin-right: 24px;
+            right: 80px;
         }
 
         &__form {
@@ -233,7 +246,8 @@
         }
     }    
 
-    &__total-sum {
+    &__total-sum,
+    .cart__total-sum-wrapper span:last-child {
         font-size: 24px;
         line-height: 1;
         color: $dark-500;

@@ -1,4 +1,3 @@
-// const { listeners } = require("gulp");
 
 $(function(){ 
 
@@ -149,15 +148,10 @@ $(function(){
     }); 
 
 
-    $('.cart__clean-cart').on('click', function () {
-        $('.cart__card').toggleClass('hidden');
-        
-    }); 
 
-    $('.cart__close-item').on('click', function () {
-        $(this).parent().addClass('hidden');      
-        // $('.cart__card').addClass('hidden');    
-    });
+    // $('.cart__close-item').on('click', function () {
+    //     $(this).parent().addClass('hidden'); 
+    // });
 
 
 
@@ -358,10 +352,11 @@ $(function(){
         // проверяем клик на + или - внутри корзины
         if (event.target.hasAttribute('data-action') && event.target.closest('.cart__content')) {        
 
+            //пересчет общей количества товаров в корзине        
+        calcCartCount ();    
             //пересчет общей стоимости товаров в корзине
         calcCartPrice ();
-        //пересчет общей количества товаров в корзине        
-        calcCartCount ();
+    
 
         
         };
@@ -412,7 +407,7 @@ $(function(){
                 //собранные данные подставим в шаблон для товара в корзине
 
                 const cartItemHTML = `<li class="cart__card" data-id="${productInfo.id}">
-                            <button class="cart__close-item" type="button">
+                            <button class="cart__close-item" type="button" data-action="close">
                                 <span class="cart__line-item"></span>
                                 <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
                             </button>
@@ -429,7 +424,7 @@ $(function(){
                                             </h3>
                                         </a>
                                         <span class="product-card__price">
-                                            ${productInfo.price} <span>₽</span>
+                                            ${productInfo.price}
                                         </span>
                                     </div>
                                 </div>
@@ -442,9 +437,10 @@ $(function(){
                                     <button class="product-card__plus" type="button" data-action="plus">
                                     </button> 
                                     <span class="product-card__sum">
-                                        ${productInfo.price} <span>₽</span>
+                                        ${productInfo.price} 
                                     </span>
-                                </form>                                                                 
+                                    <span>₽</span>
+                                <form>
                             </article>
                                 </li>`;
                
@@ -459,16 +455,18 @@ $(function(){
                 //сбрасываем счетчик добавленного товара на "1"
                 card.querySelector('[data-counter]').innerText = '1';
 
-                
+            
+             //пересчет общей количества товаров в корзине        
+            calcCartCount ();   
+          
             //пересчет общей стоимости товаров в корзине
             calcCartPrice ();
-            //пересчет общей количества товаров в корзине        
-            calcCartCount ();   
-      
+           
+         
+            
            
         };
     });
-
 
 }); 
 
@@ -477,28 +475,57 @@ $(function(){
 function calcCartPrice () {  
 
     const cartItems = document.querySelectorAll('.cart__card');   
-    const totalSum = document.querySelector('.cart__total-sum'); 
-    
+    const totalSum = document.querySelector('.cart__total-sum');
 
-    let totalPrice = 0;
-  
+    let totalPrice = 0;    
+
 
     cartItems.forEach(function (item) {  
         const amountEl = item.querySelector('[data-counter]');
-        const priceEl = item.querySelector('.product-card__price');
+        const priceEl = item.querySelector('.product-card__price');  
+        
+        
 
-        let currentPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
+        const currentPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
         totalPrice += currentPrice;  
 
-        const priceSum = item.querySelector('.product-card__sum');
-        priceSum.innerText = currentPrice;
-    });
+        var priceSum = item.querySelector('.product-card__sum');
+        priceSum.innerText = currentPrice; 
 
+        //удаляем каждый товар по отдельности
+        const btnclose = item.querySelector('.cart__close-item');
+        btnclose.addEventListener('click', function () {      
+            if (item) {  
+                item.remove();
+            }; 
+            totalSum.innerText = totalPrice - currentPrice;
+
+        });  
+       
+
+    });
 
     //отображаем цену на странице
     totalSum.innerText = totalPrice;
     
-      
+        //очищаем корзину  
+    const cartClean = document.querySelector('.cart__clean-cart');
+    cartClean.addEventListener('click', function () {     
+
+        var element = document.querySelectorAll('.cart__card');
+        element.forEach(function(item){
+             if (item) {
+                item.remove(); // удаляем элемент, если он действительно присутствует
+                totalSum.innerText = 0;
+                
+                
+            };
+
+        });
+       
+           
+    });
+  
    
 };
 
@@ -514,11 +541,38 @@ function calcCartCount () {
     counterInCart.forEach(function (item) {
         const Element = item.querySelector('[data-counter]');
 
+
     const currentCount = parseInt(Element.innerText);
     totalCount += currentCount;
+
+        //удаляем каждый товар по отдельности для счетчика
+    const btncloseCount = item.querySelector('.cart__close-item');
+    btncloseCount.addEventListener('click', function () {     
+  
+        
+        Count.innerText = totalCount - currentCount;
+    });  
+
     });
 
     Count.innerText = totalCount;
+
+    //обнуляем счетчик
+    const cartCleanCount = document.querySelector('.cart__clean-cart');
+    cartCleanCount.addEventListener('click', function () {     
+
+        var element = document.querySelectorAll('.cart__card');
+        element.forEach(function(item){
+             if (item) {
+                Count.innerText = 0; 
+            };
+
+        });
+
+           
+    });
+
+    
 
 };
 
@@ -771,25 +825,5 @@ $(function(){
 
 });
 
-// $(function () {
-//     $('.cart').smbasket({
-//         productElement: 'product-card',
-//         buttonAddToBasket: 'product-card__btn',
-//         productPrice: 'product-card__price',
-//         productSize: 'product__size-element',
-        
-//         productQuantityWrapper: 'product__quantity',
-//         smartBasketMinArea: 'usernav__link--cart',
-//         countryCode: '+7',
-//         smartBasketCurrency: '₽',
-//         smartBasketMinIconPath: '../smartbasket/img/shopping-basket-wight.svg',
 
-//         agreement: {
-//             isRequired: true,
-//             isChecked: true,
-//             isLink: 'https://artstranger.ru/privacy.html',
-//         },
-//         nameIsRequired: false,
-//     });
-// });
 
