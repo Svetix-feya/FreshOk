@@ -142,17 +142,34 @@ $(function(){
         $('.wrapper').addClass('wrapper--lock'); 
     }); 
 
+    $('.filter-btn--check, .catalogofgoods__close').on('click', function () {
+        $('.catalogofgoods__filters').toggleClass('catalogofgoods__filters--active');  
+        $('.wrapper').addClass('wrapper--lock'); 
+    }); 
 
- $('.cart__close').on('click', function () {        
+    $('.catalogofgoods__close').on('click', function () {        
         $('.wrapper').removeClass('wrapper--lock'); 
     }); 
 
+    $(document).on('mouseup', function (e) {
+        var filter = $('.catalogofgoods__filters--active')       
+        if (!filter.is(e.target) && filter.has(e.target).length === 0) {
+            filter.removeClass('catalogofgoods__filters--active');
+            
+        }
+    });
 
-
-    // $('.cart__close-item').on('click', function () {
-    //     $(this).parent().addClass('hidden'); 
+    // $(document).on('mouseup', function (e) {
+    //     var filter = $('.catalogofgoods__filters')
+    //     if (!filter.is(e.target) && filter.has(e.target).length === 0) {
+    //         filter.removeClass('catalogofgoods__filters--active');
+    //         $('.wrapper').removeClass('wrapper--lock');
+    //     }
     // });
 
+ $('.cart__close').on('click', function () {        
+        $('.wrapper').removeClass('wrapper--lock'); 
+    });   
 
 
     $('.usernav__item--search').on('click', function () {
@@ -309,6 +326,32 @@ $(function(){
         arrows: true,
         slidesToShow: 4,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1340,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+        ]
     });  
 
 
@@ -325,12 +368,12 @@ $(function(){
     window.addEventListener('click', function (event) {
 
         //добавляем переменную для счетчика
-        let counter;
+        var counter;
         
 
         //проверяем клик строго по кнопкам Плюс либо Минус        
         if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
-            const counterWrapper = event.target.closest('.product-card__form'); 
+            const counterWrapper = event.target.closest('.product-card__form, .top-slider__form'); 
             counter =  counterWrapper.querySelector('[data-counter]');  
         }
         
@@ -377,26 +420,32 @@ $(function(){
             //проверяем что клик был совершен по кнопке "добавить в корзину"
             if (event.target.hasAttribute('data-cart')) {
                 //находим карточку с товаром внутри которой был совершен клик
-                const card = event.target.closest('.product-card');
+                const card = event.target.closest('.product-card, .top-slider');
 
                 //собираем данные с этого товара и записываем их в единый объект productInfo
                 const productInfo = {
                 id: card.dataset.id,
-                imgSrc: card.querySelector('.product-card__img').getAttribute('src'),
-                title: card.querySelector('.product-card__title').innerText,
-                price: card.querySelector('.product-card__price').innerText,
-                counter: card.querySelector('.product-card__counter').innerText,
-                };                
+                imgSrc: card.querySelector('.product-card__img, .top-slider__img').getAttribute('src'),
+                title: card.querySelector('.product-card__title, .top-slider__title').innerText,
+                price: card.querySelector('.product-card__price, .top-slider__price').innerText,
+                counter: card.querySelector('.product-card__counter, .top-slider__counter').innerText,
+                };   
+                
+                this.localStorage.setItem('productInfo', JSON.stringify(productInfo));
+                const local = JSON.parse(this.localStorage.getItem('productInfo'));  
+                console.log(local.title);
+                
 
                //проверять есть ли уже такой товар в корзине
 
-               const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);        
+               const itemInCart = cartWrapper.querySelector(`[data-id="${local.id}"]`);        
 
                //если товар есть в корзине
 
                if (itemInCart) {
                     const counterElement = itemInCart.querySelector('[data-counter]');
                     counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter); 
+                  
 
                }   
                
@@ -406,7 +455,7 @@ $(function(){
 
                 //собранные данные подставим в шаблон для товара в корзине
 
-                const cartItemHTML = `<li class="cart__card" data-id="${productInfo.id}">
+                const cartItemHTML = `<li class="cart__card" data-id="${local.id}">
                             <button class="cart__close-item" type="button" data-action="close">
                                 <span class="cart__line-item"></span>
                                 <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
@@ -414,17 +463,17 @@ $(function(){
                             <article class="product-card">
                                 <div class="product-card__content">
                                     <a class="product-card__link" href="#">
-                                        <img class="product-card__img" src="${productInfo.imgSrc}"
+                                        <img class="product-card__img" src="${local.imgSrc}"
                                             alt="Питахайя" width="80" height="60">
                                     </a>
                                     <div class="product-card__discription">
                                         <a class="product-card__title-link" href="#">
                                             <h3 class="product-card__title">
-                                                ${productInfo.title}
+                                                ${local.title}
                                             </h3>
                                         </a>
                                         <span class="product-card__price">
-                                            ${productInfo.price}
+                                            ${local.price}
                                         </span>
                                     </div>
                                 </div>
@@ -432,12 +481,12 @@ $(function(){
                                     <button class="product-card__minus" type="button" data-action="minus">
                                     </button>
                                     <span class="product-card__counter" data-counter>
-                                    ${productInfo.counter}
+                                    ${local.counter}
                                     </span>
                                     <button class="product-card__plus" type="button" data-action="plus">
                                     </button> 
                                     <span class="product-card__sum">
-                                        ${productInfo.price} 
+                                        ${local.price} 
                                     </span>
                                     <span>₽</span>
                                 <form>
@@ -477,7 +526,7 @@ function calcCartPrice () {
     const cartItems = document.querySelectorAll('.cart__card');   
     const totalSum = document.querySelector('.cart__total-sum');
 
-    let totalPrice = 0;    
+    var totalPrice = 0;    
 
 
     cartItems.forEach(function (item) {  
@@ -536,7 +585,7 @@ function calcCartCount () {
     const counterInCart = document.querySelectorAll('.cart__card');
     const Count = document.querySelector('.usernav__num--cart');
 
-    let totalCount = 0;
+    var totalCount = 0;
 
     counterInCart.forEach(function (item) {
         const Element = item.querySelector('[data-counter]');

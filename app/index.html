@@ -14,7 +14,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="cart hidden">
+        <div class="cart hidden" id="cart">
             <div class="cart__top">
                 <span class="cart__title">
                     Корзина
@@ -45,7 +45,7 @@
             </a>
         </div>
         <div class="burger-menu">
-            <a class="logo logo--menu" href="#">
+            <a class="logo logo--menu" href="index.html">
                 <img class="logo__img" src="images/logo/logo-green.svg" alt="Логотип" width="200" height="60">
             </a>
             <div class="usernav">
@@ -73,7 +73,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="catalog catalog--menu" href="#">
+            <a class="catalog catalog--menu" href="catalog.html">
                 <span class="catalog__burger"></span>
                 <span class="catalog__menu">Каталог продуктов</span>
             </a>
@@ -213,10 +213,10 @@
         <div class="header__bottom">
             <div class="container">
                 <div class="header__wrapper">
-                    <a class="logo" href="#">
+                    <a class="logo" href="index.html">
                         <picture>
                             <source srcset="images/logo/logo-short.svg" media="(max-width: 992px)" >
-                        <img class="logo__img" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
+                        <img class="logo__img logo__img--short" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
                         </picture>
                     </a>
                     <div class="catalog">
@@ -224,62 +224,62 @@
                         <button class="catalog__menu" type="button">Каталог продуктов</button>
                         <ul class="catalog__items" >
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Овощи и фрукты
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Бакалея
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Молочные продукты
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Хлеб
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Мясо
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Колбаса
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Рыба
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Алкоголь
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Напитки
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Торты
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Мясо
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Чай, кофе
                                 </a>
                             </li>
@@ -498,19 +498,19 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/pineapple.jpg" alt="Ананас" width="298"
                                 height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Ананас, 1кг
                                 </h3>
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
-                                    <span class="product-card__price product-card__price--old">
+                                    <span class="product-card__price--old">
                                         1999 <span>₽</span>
                                     </span>
                                     <span class="product-card__price">
@@ -549,12 +549,12 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/lemon.jpg" alt="Лимон" width="298"
                                 height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Лимон, 1кг
                                 </h3>
@@ -599,12 +599,12 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
                                 alt="Питахайя красная с белой мякотью" width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Питахайя красная с белой мякотью, 1шт
                                 </h3>
@@ -647,12 +647,12 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/ketchup.jpg" alt="Кетчуп" width="298"
                                 height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
                                 </h3>
@@ -697,12 +697,12 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/carrot.jpg" alt="Морковь" width="298"
                                 height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Морковь молодая с бабушкиной грядки, 1кг
                                 </h3>
@@ -747,12 +747,12 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/juice.jpg" alt="Напиток сокосодержащий"
                                 width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
                                     безалкогольн...
@@ -760,7 +760,7 @@
                             </a>
                             <div class="product-card__bottom">
                                 <div class="product-card__cost">
-                                    <span class="product-card__price product-card__price--old">
+                                    <span class="product-card__price--old">
                                         299 <span>₽</span>
                                     </span>
                                     <span class="product-card__price">
@@ -801,14 +801,14 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/coffee.jpg" alt="Кофе" width="298"
                                 height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
-                                    Кофе с коноплей органический Caffé Salomoni 250г
+                                    Кофе органический Caffé Salomoni 250г
                                 </h3>
                             </a>
                             <div class="product-card__bottom">
@@ -851,12 +851,12 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/paprik.jpg" alt="Перец оранжевый"
                                 width="298" height="225">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title">
                                     Перец оранжевый, 1кг
                                 </h3>
@@ -984,11 +984,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img product-card__img--pineapple" src="images/catalog/pineapple.jpg" alt="Ананас" width="100" height="75">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Ананас, 1кг
                                 </h3>                                
@@ -1039,13 +1039,13 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img product-card__img--coffee" src="images/catalog/coffee.jpg" alt="Кофе" width="100" height="75">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
-                                    Кофе с коноплей органический Caffé Salomoni 250г
+                                    Кофе органический Caffé Salomoni 250г
                                 </h3>                                
                             </a>
                             <div class="product-card__wrapper">
@@ -1094,11 +1094,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/strawberry.jpg" width="100" height="75" alt="Клубника">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Клубника, 1 кг
                                 </h3>                                
@@ -1149,11 +1149,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/mango.jpg" width="100" height="75" alt="Манго">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Манго, 1 шт
                                 </h3>                                
@@ -1204,11 +1204,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/salmon.jpg" width="100" height="75" alt="Лосось">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Лосось, 1 кг
                                 </h3>                                
@@ -1259,11 +1259,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/veg_juice.jpg" width="100" height="75" alt="Сок овощной">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Сок Granini овощной 100%, 0.5л
                                 </h3>                                
@@ -1314,11 +1314,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/basket.jpg" width="100" height="75" alt="Фруктовая корзина">                          
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Фруктовая корзина, 1 шт
                                 </h3>                                
@@ -1369,11 +1369,11 @@
                         </button>
                     </div>
                     <div class="product-card__content">
-                        <a class="product-card__link" href="#">
+                        <a class="product-card__link" href="Product.html">
                             <img class="product-card__img" src="images/catalog/pork.jpg" width="100" height="75" alt="Свинина мякоть">
                         </a>
                         <div class="product-card__discription">
-                            <a class="product-card__title-link" href="#">
+                            <a class="product-card__title-link" href="Product.html">
                                 <h3 class="product-card__title" >
                                     Свинина мякоть, 1 кг
                                 </h3>                                

@@ -5,6 +5,14 @@
         font-size: 30px;
         line-height: 1.2;
         margin-bottom: 60px;
+
+        @include mq('lg') {
+           margin-bottom: 30px;                   
+        }
+
+        @include mq('xl') {
+            font-size: 24px;                   
+         }
     }     
 
     &__items {
@@ -29,7 +37,8 @@
         }     
 
         @include mq('lg') {
-            max-width: 170px;                      
+            max-width: 205px; 
+            min-height: 332px;                     
         }
         
         @include mq('sm') {
@@ -37,7 +46,14 @@
         }  
     }
 
-    .product-card {       
+    .product-card {  
+        
+        &__discription {
+            @include mq('lg') {
+                max-height: 112px;                  
+            }
+            
+        }
 
         &__discription-top {
             display: flex;
@@ -48,6 +64,12 @@
             height: 80px;
         }
       
+        &__title {
+            @include mq('lg') {
+                margin-bottom: 0;                    
+            }
+            
+        }
        
     }
 
@@ -75,8 +97,7 @@
         }  
     }
 
-    .slick-prev {
-        // left: 1px;
+    .slick-prev {      
         right: 90px;
         z-index: 1;
     }
