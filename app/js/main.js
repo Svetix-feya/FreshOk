@@ -88,8 +88,8 @@ $(function(){
    
 
     $('.slider-top__items').slick({
-        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
-        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
+        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="http://sinitsynas.ru/wp-content/themes/portfolio/assets/app/images/sprite.svg#arrow-left" alt="arrow-left"></button>',
+        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="http://sinitsynas.ru/wp-content/themes/portfolio/assets/app/images/sprite.svg#arrow-right" alt="arrow-right"></button>',
         autoplay: true,
         infinite: true,
         dots: true, 
@@ -281,8 +281,8 @@ $(function(){
 
 
     $('.top-slider__inner').slick({
-        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
-        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
+        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="http://sinitsynas.ru/wp-content/themes/portfolio/assets/app/images/sprite.svg#arrow-left" alt="arrow-left"></button>',
+        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="http://sinitsynas.ru/wp-content/themes/portfolio/assets/app/images/sprite.svg#arrow-right" alt="arrow-right"></button>',
         autoplay: false,
         infinite: false,
         dots: false, 
@@ -318,8 +318,8 @@ $(function(){
 
 
         $('.slider-product__items').slick({
-        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="images/sprite.svg#arrow-left" alt="arrow-left"></button>',
-        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="images/sprite.svg#arrow-right" alt="arrow-right"></button>',
+        prevArrow : '<button type="button" class="slick-prev"><img class="slick-prev__img "src="http://sinitsynas.ru/wp-content/themes/portfolio/assets/app/images/sprite.svg#arrow-left" alt="arrow-left"></button>',
+        nextArrow : '<button type="button" class="slick-next"><img class="slick-next__img" src="http://sinitsynas.ru/wp-content/themes/portfolio/assets/app/images/sprite.svg#arrow-right" alt="arrow-right"></button>',
         autoplay: false,
         infinite: true,
         dots: false, 
@@ -392,6 +392,8 @@ $(function(){
 
         }
 
+       
+
         // проверяем клик на + или - внутри корзины
         if (event.target.hasAttribute('data-action') && event.target.closest('.cart__content')) {        
 
@@ -399,9 +401,11 @@ $(function(){
         calcCartCount ();    
             //пересчет общей стоимости товаров в корзине
         calcCartPrice ();
-    
 
-        
+        localStorage.setItem('cartItemHTML', cartWrapper.innerHTML);
+
+       
+
         };
 
     });
@@ -426,28 +430,31 @@ $(function(){
                 const productInfo = {
                 id: card.dataset.id,
                 imgSrc: card.querySelector('.product-card__img, .top-slider__img').getAttribute('src'),
+                imgAlt: card.querySelector('.product-card__img, .top-slider__img').getAttribute('alt'),
                 title: card.querySelector('.product-card__title, .top-slider__title').innerText,
                 price: card.querySelector('.product-card__price, .top-slider__price').innerText,
                 counter: card.querySelector('.product-card__counter, .top-slider__counter').innerText,
                 };   
                 
-                this.localStorage.setItem('productInfo', JSON.stringify(productInfo));
-                const local = JSON.parse(this.localStorage.getItem('productInfo'));  
-                console.log(local.title);
                 
 
                //проверять есть ли уже такой товар в корзине
 
-               const itemInCart = cartWrapper.querySelector(`[data-id="${local.id}"]`);        
-
+               const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);  
+              
                //если товар есть в корзине
 
                if (itemInCart) {
                     const counterElement = itemInCart.querySelector('[data-counter]');
                     counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter); 
-                  
+                    localStorage.setItem('cartItemHTML', cartWrapper.innerHTML);
+             
+            
+         
 
-               }   
+               } 
+         
+        
                
                else {
                 //если товара нет  в корзине
@@ -455,7 +462,7 @@ $(function(){
 
                 //собранные данные подставим в шаблон для товара в корзине
 
-                const cartItemHTML = `<li class="cart__card" data-id="${local.id}">
+                let cartItemHTML = `<li class="cart__card" data-id="${productInfo.id}">
                             <button class="cart__close-item" type="button" data-action="close">
                                 <span class="cart__line-item"></span>
                                 <span class="sr-only">Кнопка закрыть пункт меню корзины</span>
@@ -463,41 +470,58 @@ $(function(){
                             <article class="product-card">
                                 <div class="product-card__content">
                                     <a class="product-card__link" href="#">
-                                        <img class="product-card__img" src="${local.imgSrc}"
-                                            alt="Питахайя" width="80" height="60">
+                                        <img class="product-card__img" src="${productInfo.imgSrc}"
+                                            alt="${productInfo.imgAlt}" width="80" height="60">
                                     </a>
                                     <div class="product-card__discription">
                                         <a class="product-card__title-link" href="#">
                                             <h3 class="product-card__title">
-                                                ${local.title}
+                                                ${productInfo.title}
                                             </h3>
                                         </a>
                                         <span class="product-card__price">
-                                            ${local.price}
+                                            ${productInfo.price}
                                         </span>
                                     </div>
                                 </div>
-                                <form class="product-card__form">
+                                <div class="product-card__form">
                                     <button class="product-card__minus" type="button" data-action="minus">
                                     </button>
                                     <span class="product-card__counter" data-counter>
-                                    ${local.counter}
+                                    ${productInfo.counter}
                                     </span>
                                     <button class="product-card__plus" type="button" data-action="plus">
                                     </button> 
                                     <span class="product-card__sum">
-                                        ${local.price} 
+                                        ${productInfo.price} 
                                     </span>
                                     <span>₽</span>
-                                <form>
+                                <div>
                             </article>
                                 </li>`;
                
 
                         //отобразим товар в корзине
-                cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML); 
+                cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);                
+  
                 
+                //сохранем элемент в LocalStorage
+                const saveCart = () => {
+                if (cartItemHTML) {
+                    localStorage.setItem('cartItemHTML', (localStorage.getItem('cartItemHTML') || '') + cartItemHTML);
            
+                   
+                } 
+
+          
+                else {
+                    localStorage.removeItem('cartItemHTML');
+
+                 
+                }
+            };
+
+            saveCart ();
                 
                 };
 
@@ -510,21 +534,54 @@ $(function(){
           
             //пересчет общей стоимости товаров в корзине
             calcCartPrice ();
-           
-         
+
+
             
-           
+            const submitBtn = document.querySelector('[type="submit"]');
+            submitBtn.addEventListener('click', clearStorage);
+
+       
+
+            function clearStorage() {
+                localStorage.clear();
+            };
+
+
         };
+      
+                
+   
     });
+    
+    
 
 }); 
 
+
+const loadCart = () => {
+    if (localStorage.getItem('cartItemHTML'|| '') !== null) {
+        const cartWrapper = document.querySelector('.cart__content');
+        cartWrapper.innerHTML = localStorage.getItem('cartItemHTML');
+   
+   
+                 //пересчет общей количества товаров в корзине        
+                 calcCartCount ();   
+          
+                 //пересчет общей стоимости товаров в корзине
+                 calcCartPrice ();
+
+        }  
+       
+};
+ 
+loadCart ();  
 
 
 function calcCartPrice () {  
 
     const cartItems = document.querySelectorAll('.cart__card');   
     const totalSum = document.querySelector('.cart__total-sum');
+    const cartWrapper = document.querySelector('.cart__content');
 
     var totalPrice = 0;    
 
@@ -547,10 +604,17 @@ function calcCartPrice () {
             if (item) {  
                 item.remove();
             }; 
-            totalSum.innerText = totalPrice - currentPrice;
+            totalSum.innerText = totalPrice -= currentPrice;
 
-        });  
-       
+            
+            localStorage.setItem('cartItemHTML', cartWrapper.innerHTML);
+
+           
+            
+           
+        }); 
+
+      
 
     });
 
@@ -571,7 +635,7 @@ function calcCartPrice () {
             };
 
         });
-       
+        localStorage.clear();
            
     });
   
@@ -599,7 +663,7 @@ function calcCartCount () {
     btncloseCount.addEventListener('click', function () {     
   
         
-        Count.innerText = totalCount - currentCount;
+        Count.innerText = totalCount -= currentCount;
     });  
 
     });
