@@ -1,0 +1,393 @@
+.top-slider {      
+    
+    &__wrapper {     
+        padding: 48px 0 63px 0;
+        display: flex; 
+        
+        @include mq('md') {
+            display: block;
+            padding: 122px 0 30px 0;          
+        }
+    }
+    
+    &__inner {
+        max-width: 630px;
+        max-height: 558px;
+        margin-right: 30px; 
+        
+        @include mq('xl') {
+            max-width: 500px; 
+                  
+        }
+
+        @include mq('lg') {
+            max-width: 398px; 
+            max-height: 398px;    
+        }
+
+        @include mq('md') {
+            max-width: 100%; 
+            max-height: 100%; 
+            margin-right: 0;
+            padding-bottom: 30px;
+         }
+        
+    }
+
+    &__img {
+        object-fit: cover;    
+        width: 100%;
+        height: 100%;   
+    }
+
+    &__item {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;           
+        height: 558px;
+        border: 1px solid $silver-600;
+
+        @include mq('xl') {
+            height: 100%;      
+        }
+        
+    } 
+
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        background-color: rgba($white, 0.8);
+        border-radius: 6px;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        @include mq('xxl') {
+            display: none !important; 
+        }
+
+        &:focus {
+
+
+            box-shadow: 0 0 0 3px rgba($green-500, 0.5);
+        }
+
+        &:hover {
+            background-color: $green-200;
+        }  
+    }
+
+    .slick-prev {
+        left: 1px;
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: 1px;
+    }
+
+    .slick-prev__img,
+    .slick-next__img {
+        margin: 0 auto;
+        object-fit: cover;
+        transition: filter 0.3s;
+        width: 18px;
+        height: 32px;
+
+        @include recolor($dark-500);
+
+        &:hover,
+        &:active {
+            @include recolor($green-900);
+        }
+
+    }
+
+    .slick-disabled {        
+
+        .slick-prev__img,
+        .slick-next__img {
+            @include recolor($silver-600);
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:hover {
+            background-color: rgba($white, 0.8);
+            cursor: default;
+        }      
+    }  
+
+    .product-card {
+        padding-top: 0;
+    }
+    
+    &__discription {
+        flex-grow: 1;
+    }
+
+    .title {
+        text-transform: none;
+        margin-bottom: 18px;
+        text-align: start;
+
+        &--top {
+            @include mq('md') {
+                position: absolute;
+                top: 224px;
+                border-bottom: none;
+                font-size: 26px;
+            }
+        }
+
+        
+    }
+
+    .badge {
+        margin-bottom: 18px;
+    }
+
+    &__arcticle {
+        color: $silver-600;
+        background-color: $silver-100;
+        border-radius: 3px;
+        padding: 0 5px;
+        margin-right: 17px;
+    }
+
+    &__list {
+        margin-bottom: 30px;
+    }
+
+    &__list,
+    &__list-block,
+    &__form {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__status {
+        font-weight: $fw-600;
+        font-size: 16px;
+    }
+
+    &__favorite {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        transition: opacity 0.3s, box-shadow 0.3s, border-radius 0.3s;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 44px;
+            height: 44px;
+            background-image: url('../images/sprite.svg#favorite');
+            background-size: 32px 28px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            @include recolor ($silver-600);
+            right: -9px;
+            top: 0;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px $green-200;
+            border-radius: 3px;
+        }
+
+        &:hover,
+        &:active {
+            @include recolor ($orange-900);
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
+
+    &__form {
+        position: relative;   
+        padding-bottom: 32px;          
+    }
+
+   
+        &__minus,
+        &__plus {
+            position: absolute;            
+            background: $green-900;
+            width: 44px;
+            height: 44px;
+
+            &::after {
+                position: absolute;
+                content: '';
+                background-color: $white;
+                width: 16px;
+                height: 1px;
+                top: 50%;
+                left: 14px;
+            }
+
+           
+        
+        }  
+
+        &__plus {
+            left: 114px;
+            top: 0;
+            cursor: pointer;
+            border-radius: 0 3px 3px 0;
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-color: $white;
+                width: 16px;
+                height: 1px;
+                top: 50%;
+                left: 14px;
+
+                transform: rotate(90deg);               
+                bottom: 11px;
+                right: 0;
+            }
+
+            // @include mq('sm') {
+            //     left: 78px;
+            // }
+        }
+
+        
+        &__minus {
+            top: 0;               
+            cursor: pointer;
+            border-radius: 3px 0px 0px 3px;
+
+            // @include mq('sm') {
+            //     left: 16px;
+            // }
+        }    
+        
+        &__counter {           
+            background-color: rgba($green-900, 0.1);            
+            display: block;            
+            font-weight: $fw-400;
+            font-size: 16px;
+            line-height: 1;           
+            font-family: $opensans;             
+            text-align: center;  
+            width: 70px;
+            height: 44px;
+            margin-left: 44px;
+            font-size: 20px;  
+            margin-right: 62px;  
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+                  
+    
+    
+    &__price {
+        font-weight: $fw-700;
+        font-size: 30px;
+        color: $green-900;        
+
+        &--old {
+            position: relative;
+            display: block;
+            color: $silver-600;          
+            font-size: 20px;   
+            margin-right: 18px;         
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 1px;
+                transform: rotate(-12deg);
+                background-color: $silver-600;
+                right: 0;
+                bottom: 50%;
+            }
+        }     
+    }
+
+    &__price-inner {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 59px;
+
+    }
+
+    &__btn-cart {        
+        width: 100%;
+        height: 44px;
+        padding: 14px 12px 14px 49px;
+        text-transform: uppercase;
+        position: relative;
+        font-weight: $fw-600;
+        font-size: 16px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url('../images/sprite.svg#cart');
+            width: 24px;
+            height: 23px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @include recolor ($white);
+            top: 10px;
+            left: 12px;
+        }
+
+        @include mq('lg') {
+           color: transparent;
+           padding-right: 0;
+           width: 48px;
+        }
+    }
+
+    &__form-inner {
+        display: flex;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: $fw-600;
+        text-align: start;
+        padding-bottom: 18px;
+        border-bottom: 1px solid $silver-600;  
+
+        @include mq('xxl') {
+           font-size: 26px;      
+        }
+
+        @include mq('md') {
+            font-size: 18px;      
+        }
+
+     
+    }
+
+    &__excerpt-item {
+        line-height: 1.6;
+
+        &:last-child {
+            margin-bottom: 18px;
+        }
+    }   
+
+    &__excerpt-link {
+        color: $green-900;
+    }
+}
+

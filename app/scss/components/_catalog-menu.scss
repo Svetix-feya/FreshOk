@@ -1,0 +1,163 @@
+.catalog {
+    position: relative;
+    background-color: $white;
+    max-width: 240px;
+    height: 50px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 23px 0 18px;
+    transition: background-color 0.3s, border-radius 0.3s;
+    margin-right: 30px;
+
+    @include mq('lg') {
+        transform: translateY(-200px);
+    }
+
+    @include mq('md') {
+        width: 0;
+    }
+
+    &--active {
+        background-color: $green-200;
+        border-radius: 6px 6px 0 0;
+    }
+
+    &__items {
+        display: block;
+        background-color: $white;
+        max-width: 240px;        
+        width: 100%;
+        border-radius: 0px 0px 6px 6px;
+        font-weight: $fw-400;
+        font-size: 16px;
+        line-height: 1.2;
+        position: absolute;
+        left: 0;
+        top: -700px;
+        text-align: start;
+        overflow-y: hidden;
+        max-height: 70vh;
+        
+        &--active {
+            top: 50px;           
+        }
+    }
+
+    &__item {
+        padding: 15px 0 15px 21px;
+        border-left: 3px solid transparent;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($silver-600, 0.3);
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 0px 3px $green-200;
+        }
+
+        &:hover {
+            border-left: 3px solid $green-900;
+            color: $green-900;
+        }
+
+        &:active {
+            color: $silver-600;
+        }
+    }
+
+    &--menu {
+        max-width: 100%;
+        border-bottom: 1px solid rgba($silver-600, 0.3);
+        border-radius: 0;
+        width: 100%;
+        justify-content: left;
+    }    
+
+    &__icon {
+        background-color: $green-900;
+        width: 20px;
+        height: 1px;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 1px;
+            background-color: $green-900;
+            left: 0;
+        }
+
+        &::after {
+            bottom: -7px;
+        }
+
+        &::before {
+            top: -7px;
+        }
+    }
+
+    &__menu {
+        position: relative;
+        padding: 0 19px 0 16px;
+        color: $green-900;
+        letter-spacing: 0.03em;
+        transition: transform 0.3s;       
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../images/sprite.svg#catalog_arrow_down');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 4px;
+            width: 7px;
+            right: -7px;
+            top: 7px;
+            @include recolor($green-600);
+
+            @include mq('lg') {
+                display: none;
+            }
+        }
+
+        &:hover::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__burger {
+        background-color: $dark-800;
+        width: 20px;
+        height: 1px;
+        position: relative;
+        margin-right: 20px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 1px;
+            background-color: $dark-800;
+            left: 0;
+        }
+
+        &::after {
+            bottom: -7px;
+        }
+
+        &::before {
+            top: -7px;
+        }
+    }
+
+    &.catalog--menu {
+        transform: translateY(0);
+    }
+}
+

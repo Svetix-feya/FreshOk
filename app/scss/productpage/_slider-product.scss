@@ -1,0 +1,143 @@
+.slider-product {    
+
+    .title {
+        text-align: start;
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 60px;
+
+        @include mq('lg') {
+           margin-bottom: 30px;                   
+        }
+
+        @include mq('xl') {
+            font-size: 24px;                   
+         }
+    }     
+
+    &__items {
+        display: flex;
+        margin-bottom: 46px;
+        align-items: stretch;      
+    }
+
+    &__item {
+        
+        border: 1px solid $silver-200;
+        border-radius: 6px;        
+        max-width: 300px;
+        transition: border-color 0.3s; 
+        width: 100%;         
+        height: 100%; 
+        align-items: stretch;
+        min-height: 427px;
+
+        &:hover {            
+            border-color: $green-900;
+        }     
+
+        @include mq('lg') {
+            max-width: 205px; 
+            min-height: 332px;                     
+        }
+        
+        @include mq('sm') {
+            max-width: 160px;                      
+        }  
+    }
+
+    .product-card {  
+        
+        &__discription {
+            @include mq('lg') {
+                max-height: 112px;                  
+            }
+            
+        }
+
+        &__discription-top {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        &__bottom {            
+            height: 80px;
+        }
+      
+        &__title {
+            @include mq('lg') {
+                margin-bottom: 0;                    
+            }
+            
+        }
+       
+    }
+
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        background-color: rgba($white, 0.8);
+        border-radius: 6px;
+        width: 60px;
+        height: 60px;
+        top: -48px;
+        transform: translateY(-50%);
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        @include mq('xxl') {
+            display: none !important; 
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px rgba($green-500, 0.5);
+        }
+
+        &:hover {
+            background-color: $green-200;
+        }  
+    }
+
+    .slick-prev {      
+        right: 90px;
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: 0;
+    }
+
+    .slick-prev__img,
+    .slick-next__img {
+        margin: 0 auto;
+        object-fit: cover;
+        transition: filter 0.3s;
+        width: 18px;
+        height: 32px;
+
+        @include recolor($dark-500);
+
+        &:hover,
+        &:active {
+            @include recolor($green-900);
+        }
+
+    }
+
+    .slick-disabled {        
+
+        .slick-prev__img,
+        .slick-next__img {
+            @include recolor($silver-600);
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:hover {
+            background-color: rgba($white, 0.8);
+            cursor: default;
+        }      
+    }  
+
+}

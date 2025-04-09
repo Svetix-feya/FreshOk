@@ -1,0 +1,15 @@
+.email-form {
+    padding-top: 18px;
+
+    &__input {
+        background-color: $white;
+        padding: 12px;
+        border-radius: 6px 0 0 6px;
+        margin-right: -5px;
+        max-width: 180px;
+
+        &::placeholder {
+            color: $gray-600;
+        }
+    }
+}

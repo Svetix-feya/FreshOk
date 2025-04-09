@@ -42,73 +42,73 @@
         <div class="header__bottom">
             <div class="container">
                 <div class="header__wrapper">
-                    <a class="logo" href="#">
-                        <picture class="logo__pic" >
+                    <a class="logo" href="index.html">
+                        <picture>
                             <source srcset="images/logo/logo-short.svg" media="(max-width: 992px)" >
-                        <img class="logo__img" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
+                        <img class="logo__img logo__img--short" src="images/logo/logo.svg" alt="Логотип" width="200" height="60">
                         </picture>
                     </a>
                     <div class="catalog">
-                        <button class="catalog__icon" type="button"></button>
+                        <span class="catalog__icon"></span>
                         <button class="catalog__menu" type="button">Каталог продуктов</button>
                         <ul class="catalog__items" >
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Овощи и фрукты
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Бакалея
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Молочные продукты
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Хлеб
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Мясо
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Колбаса
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Рыба
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Алкоголь
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Напитки
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Торты
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Мясо
                                 </a>
                             </li>
                             <li class="catalog__item">
-                                <a class="catalog__link" href="#">
+                                <a class="catalog__link" href="catalog.html">
                                     Чай, кофе
                                 </a>
                             </li>
@@ -118,8 +118,7 @@
                         <label class="sr-only" for="search">
                             Поиск по каталогу
                         </label>
-                        <input class="search-form__input" id="search" type="search" placeholder="Найти в магазине ..."
-                            name="search" required>
+                        <input class="search-form__input" id="search" type="search" placeholder="Найти в магазине ..." name="search" required data-ref="input-search">
                         <button class="button button--search" type="submit">поиск</button>
                     </form>
                     <div class="usernav">
@@ -149,18 +148,18 @@
                                     <span class="sr-only">
                                         Избранное
                                     </span>
-                                    <span class="usernav__num">12</span>
+                                    <span class="usernav__num">0</span>
                                     <svg class="usernav__icon">
                                         <use xlink:href="images/sprite.svg#favorite"></use>
                                     </svg>
                                 </a>
                             </li>
                             <li class="usernav__item usernav__item-cart">
-                                <a class="usernav__link" href="#">
+                                <a class="usernav__link usernav__link--cart" href="#">
                                     <span class="sr-only">
                                         Корзина
                                     </span>
-                                    <span class="usernav__num">12</span>
+                                    <span class="usernav__num usernav__num--cart" data-counter>0</span>
                                     <svg class="usernav__icon">
                                         <use xlink:href="images/sprite.svg#cart"></use>
                                     </svg>

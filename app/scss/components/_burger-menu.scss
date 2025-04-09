@@ -11,6 +11,11 @@
     transition: transform 0.3s;
     opacity: 0;
 
+    &.burger-menu--active {
+        transform: translateY(0); 
+        z-index: 15;   
+    }
+
     @include mq('lg') {
             opacity: 1;
         }
@@ -46,34 +51,32 @@
 
     &__line {
         transform: rotate(135deg);      
+
+        &::after {
+            transform: rotate(-90deg);
+            left: 0;
+            content: '';
+        }
     }
 
-    &__line::after {
-        transform: rotate(-90deg);
-        left: 0;
-    }
+    .usernav {
+        &__link {
+            padding-top: 10px;
+        width: 100%; 
+        }
 
-    &__line::after {
-        content: '';
-    }      
+        &__menu {
+            justify-content: left;
+            padding-left: 55px;
+            background-color: $green-900;
+            color: $white;
+            line-height: 1;
+        }
 
-
-    .usernav__link {            
-        padding-top: 10px;
-        width: 100%;                
-    }
-
-    .usernav__menu {
-        justify-content: left;
-        padding-left: 55px;
-        background-color: $green-900;
-        color: $white;
-        line-height: 1;
-    }
-
-    .usernav__icon {
-        left: -54px;
-    }
+        &__icon {
+            left: -54px;
+        }
+    }   
 
     .catalog__menu {
         color: $dark-800;
@@ -87,24 +90,24 @@
         padding-left: 15px;
         padding-top: 26px;
         border-bottom: 1px solid rgba($silver-600, 0.3);
-    }
 
-    .contacts__address-item {
-        padding-left: 40px;
-        position: relative;            
+        &__address-item {
+            padding-left: 40px;
+            position: relative;            
 
-        &::before {
-            position: absolute;                
-            content: '';
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: left center;
-            width: 24px;
-            height: 32px;
-            left: 0;                
+            &::before {
+                position: absolute;                
+                content: '';
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left center;
+                width: 24px;
+                height: 32px;
+                left: 0;                
+            }
         }
     }
-
+   
     &__links {
     padding: 17px 15px;
     }    
@@ -129,7 +132,3 @@
 
 }
 
-.burger-menu.burger-menu--active {
-    transform: translateY(0); 
-    z-index: 15;   
-}

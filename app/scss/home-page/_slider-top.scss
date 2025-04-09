@@ -1,12 +1,14 @@
-.slider-top {
-    padding-top: 110px;
+.slider-top {    
     max-height: 600px;
-    height: 100%;  
-    margin-bottom: 110px;  
+    height: 100%;      
+    
+    &--active {
+        padding-top: 80px;
+        margin-bottom: 80px;       
+    }
 
     @include mq('lg') {
-        padding-top: 110px;
-        margin-bottom: 0;
+        padding-top: 50px;        
     }
 
     .container {
@@ -157,7 +159,7 @@
         right: 50%;        
         bottom: 0;
         display: none;        
-            //сделала так, потомучто если через js, то пропадает фоновое изображение// 
+    
         @include mq('xxl') {
             display: block;
         }

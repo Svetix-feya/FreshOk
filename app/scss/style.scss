@@ -13,7 +13,16 @@
 @import 'components/menu';
 @import 'components/cart';
 @import 'components/burger-menu';
+@import 'components/contacts';
+@import 'components/social';
+@import 'components/catalog-menu';
+@import 'components/usernav';
 
+
+
+//Компонетны-Формы
+@import 'components/forms/email';
+@import 'components/forms/serch';
 
 
 //Главная страница
@@ -23,3 +32,12 @@
 @import 'home-page/stocks';
 @import 'home-page/partners';
 @import 'home-page/news';
+
+//Страница каталога
+@import 'catalogofgoods/filters';
+@import 'catalogofgoods/catalog-content';
+
+//Страница товара
+@import 'productpage/top-slider';
+@import 'productpage/tabs';
+@import 'productpage/slider-product';

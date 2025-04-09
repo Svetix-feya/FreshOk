@@ -46,13 +46,60 @@
         border-bottom: 3px solid $green-200;
     }
 
-    .product-card {
-        height: 124px;        
+    .btn {
+        margin: 0 auto;
+    }
+
+    .product-card {        
+        max-height: 124px; 
         padding: 12px;
+
+        &__cost {            
+            
+            align-items: flex-end;
+        }
+
+        &__link {
+            padding-top: 37px;
+            
+            &::after {
+                width: 0;
+                height: 0;
+                background-size: 0 0;                
+            }
+
+            &::before {
+                background-color: transparent;
+            }
+        }
+
+        &__content {
+            padding-bottom: 0;
+        }
+    
+    }
+
+}
+
+.stocks,
+.top-products__item.top-products__item--list {
+
+    .product-card {    
+       
+
+        @include mq('xxl') {
+            padding: 10px 0 10px;           
+        }
+
+        @include mq('xl') {
+            padding: 12px;           
+        }
 
         &__top {
             height: 0;
-            padding: 0;
+            padding: 6px 0 0 0;
+            left: 7px;
+            
         }
 
         &__content {
@@ -64,14 +111,7 @@
             padding: 0;
             max-height: 100%;          
             width: 100%;
-        }
-
-        &__cost {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row-reverse;
-            align-items: flex-end;
-        }
+        }      
 
         &__price {
             font-size: 20px;
@@ -91,20 +131,23 @@
 
         &__img {
             padding: 0 10px;
+            width: max-content;
+
+            &--pineapple,
+            &--coffee {
+                padding: 0;
+            }
 
             @include mq('lg') {
                 width: 100px;
                 height: 75px;
             }
-        }  
+        } 
 
-        &__link {
-            
-            &::after {
-                width: 20px;
-                height: 20px;
-                background-size: 10px 10px;                
-            }
+        &__cost {
+            display: flex;
+            justify-content: space-between;            
+            flex-direction: row-reverse;
         }
 
         &__bottom {
@@ -116,18 +159,19 @@
                 margin-bottom: 0;
             }
         }
-    }    
 
-    .badge {
-        &__item {
-            top: 12px;
-            left: 12px;
-            z-index: 3;
-        }        
-    }
+        .badge {
+            &__item {
+                top: 16px;
+                left: 6px;
+                z-index: 3;            
+            }   
+        }
+    }   
+    
+    
+}
 
-    .btn {
-        margin: 0 auto;
-    }
-
+.jq-ry-container {
+    padding: 0;
 }

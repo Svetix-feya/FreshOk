@@ -1,0 +1,329 @@
+.title-2 {
+    color: $dark-900;
+    text-transform: none;
+    text-align: left;
+    margin-bottom: 48px;
+    font-size: 42px;
+}
+
+.catalogofgoods {
+    padding: 48px 0 72px;
+
+    &__inner {
+        display: flex;
+
+        .cart__close {
+            top: 29px;
+            right: 25px;
+        }
+      
+    }
+    
+    &__filters {
+        background-color: $white;
+
+        @include mq('lg') {
+            position: absolute;
+            padding-top: 76px;
+            top: -2000px;
+            left: 0;
+            z-index: 20;
+            overflow-y: scroll;
+            height: 100%;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+    
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background-color: #C4C4C4;
+                border-radius: 3px;
+            }
+        }
+
+        &.catalogofgoods__filters--active {
+
+            @include mq('lg') {
+                top: 0;
+
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 25px;
+        top: 29px;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+
+      
+    }
+
+    &__line {
+        position: absolute;
+        width: 25px;
+        height: 1px;
+        background-color: $black;               
+        transform: rotate(135deg);
+        left: 0;
+        right: 0;   
+        
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 1px;
+            background-color: $black;
+            transform: rotate(-90deg);
+            right: 0;
+        }
+
+    }    
+
+    &-categories__items {
+        height: 318px;
+    }
+
+    .button {     
+        border-radius: 3px;
+    }
+
+    @include mq('sm') {
+        padding-bottom: 36px;
+    }
+
+}
+
+.catalogofgoods-offers__item,
+.catalogofgoods-brend__item {
+    &:not(:last-child) {    
+        padding-bottom: 12px;   
+    }
+}
+
+.catalogofgoods-categories__item {
+    padding-left: 16px;
+    border-left: 2px solid transparent;
+
+    &:hover {
+        border-left: 2px solid $green-900;
+        color: $green-900;
+    }
+   
+}
+
+.filter {
+    width: 295px;
+    margin-right: 32px;
+    border: 1px solid $silver-600;
+    border-radius: 6px;
+    margin-bottom: 30px;
+
+    &__items {
+        padding: 18px 18px 18px 0;
+        font-size: 18px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #C4C4C4;
+            border-radius: 3px;
+        }
+    }
+
+    &__item-li {
+        padding-bottom: 12px;       
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    &__checkbox {
+        width: 24px;
+        height: 24px;
+        background-color: $silver-100;
+        border: 1px solid $silver-600;
+        border-radius: 3px;
+        margin: 0 8px 0 0;  
+
+        &:checked {
+            background-image: url('../images/icons/checkbox.svg');
+            background-repeat: no-repeat;
+            background-size: 12px 9px;
+            background-position: center center;
+        }
+
+        @include mq('sm') {
+            min-width: 24px;
+        }
+    }
+
+    &__label {
+        padding-left: 18px;
+        display: flex;
+    }
+
+}
+
+.filter-price {
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+
+    &__form {
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        width: 80px;
+        height: 40px;
+        border: 1px solid $silver-600;
+        border-radius: 3px;
+        background-color: $silver-100;
+    }
+
+    &__from {
+        margin-right: 40px;
+    }
+
+    &__from,
+    &__to {
+        text-align: center;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__span {
+        font-size: 16px;
+        color: $silver-600;
+        font-family: $ruda;
+        margin-right: 9px;
+        padding-top: 13px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url('../images/icons/rub.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            width: 10px;
+            height: 16px;
+            left: 110px;
+        }
+
+    }   
+
+    &__btn {
+        padding: 0 10px;
+        height: 32px;
+    }
+}
+
+.irs--round .irs-bar {
+    background-color: $green-900;
+    height: 2px;
+}
+
+.irs--round .irs-line {
+    height: 2px;
+    background-color: #C4C4C4;
+    border-radius: 0;
+}
+
+.irs--round .irs-handle {
+    background-color: $green-900;  
+    width: 18px;
+    height: 18px;
+    top: 17px;
+}
+
+.irs--round {
+    margin-bottom: 15px;
+}
+
+.irs--round .irs-from,
+.irs--round .irs-to,
+.irs--round .irs-single,
+.irs--round .irs-min,
+.irs--round .irs-max {
+    display: none;
+}
+
+.irs--round .irs-handle {
+    border: none;
+    top: 28px;
+}
+
+.irs--round .irs-handle.state_hover,
+.irs--round .irs-handle:hover {
+    background-color: $green-200;
+}
+
+.irs--flat {
+    height: 30px;
+}
+
+.title-3 {
+    font-size: 24px;
+    font-weight: $fw-400;
+    line-height: 1;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $silver-600;
+    padding: 18px;
+    margin-bottom: 0;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url('../images/icons/chevronup.svg');
+        width: 18px;
+        height: 10px;
+        right: 18px;
+        top: 24px;
+    }
+}
+
+.filter--categories.filter--close {
+    .title-3 {
+        border-bottom: none;
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+
+}
+
+.filter--offers.filter--close,
+.filter--brend.filter--close,
+.filter--price.filter--close {
+    .title-3 {
+        border-bottom: none;
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+

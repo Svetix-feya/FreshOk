@@ -13,7 +13,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="cart hidden">
+        <div class="cart hidden" id="cart">
             <div class="cart__top">
                 <span class="cart__title">
                     Корзина
@@ -23,84 +23,28 @@
                 </button>
                 <button class="cart__close" type="button">
                     <span class="cart__line"></span>
+                    <span class="sr-only">Кнопка закрыть козину</span>
                 </button>
             </div>
-            <ul class="cart__content">
-                <li class="cart__card">
-                    <button class="cart__close-item">
-                        <span class="cart__line-item"></span>
-                    </button>
-                    <article class="product-card">
-                        <div class="product-card__content">
-                            <a class="product-card__link" href="#">
-                                <img class="product-card__img" src="images/catalog/pineapple.jpg"
-                                    alt="Ананас" width="80" height="60">
-                            </a>
-                            <div class="product-card__discription">
-                                <a class="product-card__title-link" href="#">
-                                    <h3 class="product-card__title">
-                                        Ананас, 1кг
-                                    </h3>
-                                </a>
-                                <span class="product-card__price">
-                                    999 <span>₽</span>
-                                </span>
-                            </div>
-                        </div>
-                        <form class="product-card__footer">
-                            <input class="product-card__button" type="number" value="2" min="0" max="99">
-                            </input>
-                            <span class="product-card__sum">
-                                1998 <span>₽</span>
-                            </span>
-                        </form>
-                    </article>
-                </li>
-                <li class="cart__card">
-                    <button class="cart__close-item">
-                        <span class="cart__line-item"></span>
-                    </button>
-                    <article class="product-card">
-                        <div class="product-card__content">
-                            <a class="product-card__link" href="#">
-                                <img class="product-card__img" src="images/catalog/dragon-fruit.jpg"
-                                    alt="Питахайя" width="80" height="60">
-                            </a>
-                            <div class="product-card__discription">
-                                <a class="product-card__title-link" href="#">
-                                    <h3 class="product-card__title">
-                                        Питахайя красная с белой мякотью, 1шт
-                                    </h3>
-                                </a>
-                                <span class="product-card__price">
-                                    1019 <span>₽</span>
-                                </span>
-                            </div>
-                        </div>
-                        <form class="product-card__footer">
-                            <input class="product-card__button" type="number" value="2" min="0" max="99">
-                            </input>
-                            <span class="product-card__sum">
-                                2038 <span>₽</span>
-                            </span>
-                        </form>
-                    </article>
-                </li>
+            <ul class="cart__content">            
             </ul>
             <div class="cart__total">
                 <span class="cart__total-title">
                     Товаров на сумму
                 </span>
-                <span class="cart__total-sum">
-                    2038 <span>₽</span>
+                <div class="cart__total-sum-wrapper">
+                    <span class="cart__total-sum">
+                    0 
                 </span>
+                <span>₽</span>   
+                </div>             
             </div>
-            <a class="btn btn--big" href="#">
+            <button class="btn btn--big" type="submit">
                 Оформить заказ
-            </a>
+            </button>
         </div>
         <div class="burger-menu">
-            <a class="logo logo--menu" href="#">
+            <a class="logo logo--menu" href="index.html">
                 <img class="logo__img" src="images/logo/logo-green.svg" alt="Логотип" width="200" height="60">
             </a>
             <div class="usernav">
@@ -114,10 +58,13 @@
                             Вход
                             <svg class="usernav__icon">
                                 <use xlink:href="images/sprite.svg#user"></use>
-                            </svg>
+                            </svg>                            
                         </a>
                     </li>
-                    <span class="usernav__symbol">|</span>
+                    <li class="usernav__item">
+                        <span class="usernav__symbol">|</span>
+                    </li>
+                    
                     <li class="usernav__item usernav__item--menu">
                         <a class="usernav__link" href="#">
                             Регистарация
@@ -125,7 +72,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="catalog catalog--menu" href="#">
+            <a class="catalog catalog--menu" href="catalog.html">
                 <span class="catalog__burger"></span>
                 <span class="catalog__menu">Каталог продуктов</span>
             </a>

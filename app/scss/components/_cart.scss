@@ -1,21 +1,21 @@
 .cart {
-    position: absolute;        
+    position: absolute;  
+    display: flex;          
     line-height: 1.2;
     right: 0;   
     width: 475px;    
-    z-index: 20; 
-
-    @include mq('lg') {
-        top: 9px;
-    } 
+    z-index: 20;  
+    flex-direction: column;  
+    height: 100vh;
     
     @include mq('sm') {
         width: 100%;
+        
     } 
 
     &__top {
         background-color: $white;
-        padding: 19px 0 12px 24px;
+        padding: 19px 60px 12px 24px;
         position: relative;
     }
 
@@ -24,6 +24,7 @@
         font-size: 24px;
         margin-bottom: 12px;  
         display: block;
+        color: $black;
         
         @include mq('sm') {
             font-size: 18px;
@@ -33,11 +34,12 @@
 
     &__clean-cart {
         font-weight: $fw-300;
+        color: $black;
     }
 
     &__close {
         position: absolute;
-        right: 26px;
+        right: 8px;
         top: 50%;
         transform: translateY(-50%);
         width: 40px;
@@ -50,6 +52,9 @@
         height: 1px;
         background-color: $black;               
         transform: rotate(135deg);
+        left: 0;
+        right: 0;   
+        
 
         &::after {
             position: absolute;
@@ -65,8 +70,8 @@
     &__content {
         background-color: $silver-100;
         padding: 12px; 
-        height: calc(100vh - 194px);    
-        overflow-y: scroll; 
+        height: 100%;    
+        overflow-y: auto;         
     }
 
     &__card {
@@ -88,14 +93,19 @@
 
     &__close-item {
         position: absolute;
-        right: 26px;
-        width: 12px;
-        height: 12px;
-        top: 12px;
+        right: 12px;
+        width: 22px;
+        height: 22px;
+        top: 12px;    
+        z-index: 99; 
+
+        
     }
 
     &__line-item {
         position: absolute;
+        right: 0;
+        top: 6px;
         width: 15px;
         height: 1px;
         background-color: $silver-600;
@@ -104,8 +114,8 @@
         &::after {
             position: absolute;
             content: '';
-            width: 15px;
-            height: 1px;
+            width: 100%;
+            height: 100%;
             background-color: $silver-600;
             transform: rotate(-90deg);
             left: 0;
@@ -120,11 +130,13 @@
         
         @include mq('sm') {
             display: block;
+            padding-left: 15px;
         }
 
         &__content {
             flex-direction: row; 
             justify-content: start; 
+            padding-bottom: 0;
             
             @include mq('sm') {
                 height: auto;
@@ -133,23 +145,48 @@
 
         &__title {
             padding-bottom: 0;  
-            @include line-clamp(2);         
+            @include line-clamp(2); 
+                  
+            @include mq('lg') {
+                margin-bottom: 0;
+            }
+            
+            @include mq('sm') {
+                margin-bottom: 12px;
+            }
         }
 
         &__discription {
-            display: block;
+            padding: 0 18px; 
+                  
+            @include mq('sm') {
+                justify-content: space-between;
+                
+            }           
         }
 
         &__price,
-        &__sum {
-            font-weight: f$fw-600;
+        &__sum,
+        .product-card__form span:last-child {
+            font-weight: $fw-600;
             font-size: 20px;
             line-height: 1;            
         }
 
-        &__sum {
+        &__sum,
+        .product-card__form span:last-child {
             color: $dark-500;
             display: flex;            
+        }
+
+        &__sum {
+            width: 60px;
+            display: flex;
+            justify-content: end;
+                  
+            @include mq('sm') {
+                flex-grow: 1;
+            }
         }
 
         &__link {
@@ -173,12 +210,22 @@
         }
 
         &__footer,
-        &__button {
+        &__counter {
             display: flex;
         }
 
-        &__button {
-            margin-right: 12px;
+        &__counter {
+            margin-right: 32px;
+            align-items: stretch;
+                  
+            @include mq('lg') {
+                margin-bottom: 0;                
+            }
+
+                  
+            @include mq('sm') {
+                margin: 0 0 0 23px;
+            }
         }
 
         &__footer {
@@ -189,64 +236,33 @@
                 justify-content: space-between;
                 padding-left: 35px;
             }
-        }  
-
-        .jq-number__spin {
-            position: absolute;            
-            background: $green-900;
-            width: 24px;
-            height: 24px;           
-        }
-
-        .jq-number__spin.plus {
-            right: 100px;
-            cursor: pointer;
-
+        } 
+        
+        &__minus {
+            right: 135px;
+                  
             @include mq('sm') {
-                left: 78px;
+                right: 0;
+                left: 0;
+            }
+        }
+        &__plus {
+            right: 80px;
+                  
+            @include mq('sm') {
+                right: 0;
+                left: 58px;
             }
         }
 
-        .jq-number__spin.minus {
-            right: 157px;
-            cursor: pointer;
-
-            @include mq('sm') {
-                left: 16px;
+        &__form {
+            align-items: flex-end;
+                  
+            @include mq('lg') {
+                flex-direction: row;
             }
         }
 
-        .jq-number__spin::after,
-        .jq-number__spin.plus::before {
-            position: absolute;
-            content: '';
-            background-color: $white;
-            width: 16px;
-            height: 1px;
-            top: 12px;
-            left: 4px;
-        }
-
-        .jq-number__spin.plus::before {
-            transform: rotate(90deg);
-            left: 4px;
-            bottom: 11px;
-            right: 0;
-        }
-        
-        .jq-number__field input {
-            width: 36px;
-            background-color: rgba($green-900, 0.1);
-            height: 24px;
-            display: block;            
-            font-weight: $fw-400;
-            font-size: 16px;
-            line-height: 1;           
-            font-family: $opensans; 
-            margin-right: 36px; 
-            text-align: center;  
-        }       
-        
     }
 
     &__total {
@@ -258,14 +274,26 @@
 
     &__total-title {
         font-weight: $fw-400;
-        font-size: 14px;
+        font-size: 24px;
         line-height: 1.2;
+        color: $black;
+
+        // @include mq('sm') {
+        //     font-size: 14px;            
+        // }
     }    
 
-    &__total-sum {
-        font-size: 18px;
+    &__total-sum,
+    .cart__total-sum-wrapper span:last-child {
+        font-size: 24px;
         line-height: 1;
         color: $dark-500;
-        margin-right: 1px;        
+        margin-right: 1px; 
+        font-weight: $fw-600;   
+        
+        
+        // @include mq('sm') {
+        //     font-size: 18px;            
+        // }
     }
 }

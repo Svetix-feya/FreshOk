@@ -1,0 +1,309 @@
+.catalog-content {
+
+    &__inner {          
+
+        .top-products__items {          
+            display: flex;     
+            flex-wrap: wrap;  
+            margin-bottom: 30px;
+
+            @include mq('lg') {
+                justify-content: center;
+            }
+
+            @include mq('sm') {
+                margin-bottom: 0;
+            }
+        
+        } 
+
+        .top-products__item.top-products__item--list {
+
+            .product-card {
+
+                max-height: 162px; 
+                padding: 18px;
+
+                &__img {
+                    object-fit: contain;
+                    max-width: 199px;
+                    max-height: 110px;
+                }
+
+                &__content {
+                    padding-bottom: 0;
+                }
+
+                &__favorite::before {
+                    right: 16px;
+                    top: 40px;
+                }
+
+                &__title {
+                    padding-right: 51px;
+                }
+
+                &__cost {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;                    
+                }
+
+                &__link {
+            
+                    &::after {
+                        width: 20px;
+                        height: 20px;
+                        background-size: 10px 10px;                
+                    }
+
+                    &::before {                        
+                        top: -18px;
+                        left: -18px;
+                        height: 130%;
+                        width: 111%;
+                    }
+                }
+
+            }   
+
+        }
+
+    }
+
+    &__filter {
+        margin-bottom: 48px;
+        display: flex;
+        justify-content: right;
+
+        
+        @include mq('lg') {
+            justify-content: left;
+            margin-bottom: 30px;
+        }
+        
+    }
+
+
+
+    &__filter-btn {
+        width: 47px;
+        height: 47px;
+        background-color: $silver-100;
+        
+       
+        
+    }   
+
+    &__select,
+    .filter-btn--list {
+        margin-right: 15px;
+    }  
+    
+    &__select {   
+
+        &.focused {            
+            box-shadow: 0 0 0 3px rgba($green-500, 0.5);
+            border-radius: 3px;
+        }
+
+        &.opened {        
+            border-radius: 3px 3px 0 0;
+            box-shadow: 0 0 0 1px rgba($dark-500, 1);
+            z-index: 10;
+
+            .jq-selectbox__select {
+                border-bottom: 1px solid $dark-500;
+                border-radius: 3px 3px 0 0; 
+            }
+        }
+
+        
+ 
+    
+    
+    }   
+
+    .product-card {
+        &__discription-top {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+        
+    &__inner-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 48px;
+
+        @include mq('sm') {
+            display: block;
+            padding-top: 24px;
+        }
+    }
+
+
+
+}
+
+.select {
+    &--name {
+        width: 188px;
+        
+        @include mq('lg') {
+            width: 114px;
+        }
+    }
+
+    &--num {
+        width: 100px;
+        
+        @include mq('lg') {
+            width: 71px;
+        }
+    }
+}
+
+.jq-selectbox {    
+    z-index: 2;
+
+    &__select {
+        height: 47px;
+        background: none;
+        box-shadow: none;
+        border: 1px solid $silver-600;
+        border-radius: 3px;   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 47px 0 12px;  
+           
+  
+        &:focus {
+         
+            border-radius: 3px solid rgba($green-500, 0.5);
+        } 
+        
+        
+        @include mq('lg') {
+            padding: 0 26px 0 6px;
+        }
+  
+    }
+
+    li {
+        padding-bottom: 15px;
+
+        &:hover {
+            color: rgba($green-500, 0.5);
+     
+        }
+     
+    }
+   
+    &__trigger {
+        border-left: none;
+    }
+
+    &__trigger-arrow {
+        position: absolute;
+        top: 18px;
+        right: 12px;
+        width: 10px;
+        height: 6px;
+        border: none;
+        background-image: url('../images/icons/select.svg');
+    }
+
+    &__dropdown {
+        padding: 15px 11px 0 11px;
+        border: 1px solid $silver-600;
+        border-radius: 0 0 6px 6px;
+        background-color: $white;
+        width: 100%;
+    }
+
+    
+    @include mq('lg') {
+        font-size: 12px;
+    }
+
+}  
+
+
+.catalog-content__filter-btn.catalog-content__filter-btn--active.filter-btn--list {
+    background-image: url('../images/icons/group-11.svg');
+
+
+   
+}
+
+.catalog-content__filter-btn.catalog-content__filter-btn--active.filter-btn--grid {
+    background-image: url('../images/icons/group-10.svg');
+  
+}    
+
+.filter-btn {    
+    
+    &--list,
+    &--grid {
+     
+        transition: opacity 0.3s, box-shadow 0.3s, border-radius 0.3s;   
+        background-size: 35px 35px ;
+        background-position: center center;
+        background-repeat: no-repeat; 
+
+        @include mq('lg') {
+            display: none;
+        }
+
+    } 
+    
+    &--check {
+        margin-right: 10px;
+        background-image: url('../images/icons/filter.svg');
+        background-position: center center;
+        background-size: 32px 36px;
+        background-repeat: no-repeat;
+        display: none;
+
+        @include mq('lg') {
+            display: block;
+        }
+    }
+  
+}
+
+.catalog-content__filter .filter-btn--list {
+
+    background-image: url('../images/icons/Group-16.svg');
+
+    &:active {  
+        background-image: url('../images/icons/group-11.svg');             
+    }  
+
+    &:hover {  
+        background-image: url('../images/icons/group-hov.svg');             
+    }  
+}
+
+.catalog-content__filter .filter-btn--grid {
+
+    background-image: url('../images/icons/Group-14.svg');
+
+    &:active {  
+        background-image: url('../images/icons/group-10.svg');
+              
+    }
+
+    &:hover {  
+        background-image: url('../images/icons/group-hov2.svg');
+              
+    }
+}
+
+
+
+
+
+     
